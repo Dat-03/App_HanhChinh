@@ -1,16 +1,19 @@
 export enum routes {
     //auth
     ONBOARD = 'ONBOARD',
-    SIGN_IN = 'SIGN_IN',
-    CREATE_ACCOUNT = 'CREATE_ACCOUNT',
     LOBBY = 'LOBBY',
-    UPDATE_PROFILE = 'UPDATE_PROFILE',
 
+    // Bottom tab GV
     BOTTOM_TAB = 'BOTTOM_TAB',
     HOME = 'HOME',
     HISTORY = 'HISTORY',
     CONTACT = 'CONTACT',
     SETTING = 'SETTING',
+
+    // Bottom tab Manager 
+    HOMEMANAGER = 'HOME',
+    HISTORYMANAGER = 'HISTORY',
+    SETTINGMANAGER = 'SETTING',
    
     
 

@@ -5,7 +5,7 @@ import React, {FunctionComponent} from 'react';
 
 import useStyles from './styles';
 
-const Home: FunctionComponent = () => {
+const SettingManage: FunctionComponent = () => {
   const styles = useStyles();
   return (
     <View style={styles.container}>
@@ -14,4 +14,4 @@ const Home: FunctionComponent = () => {
   );
 };
 
-export default Home;
+export default SettingManage;
