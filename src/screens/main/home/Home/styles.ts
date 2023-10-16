@@ -4,10 +4,10 @@ import {Device} from '../../../../utils';
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
-const usestyles = makeStyles(({colors}) => ({
+const useStyles = makeStyles(({colors}) => ({
   container: {
     flex: normalize(1),
   },
 }));
 
-export default usestyles;
+export default useStyles;
