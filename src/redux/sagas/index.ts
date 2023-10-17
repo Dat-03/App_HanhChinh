@@ -1,8 +1,5 @@
-import { all, fork } from 'redux-saga/effects';
-
-import watchAuthSaga from './auth.saga';
-
+import {all, fork} from 'redux-saga/effects';
 
 export default function* RootSaga() {
-  yield all([fork(watchAuthSaga)]);
+  yield all([]);
 }

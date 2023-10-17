@@ -4,17 +4,14 @@ import {navigationRef} from './NavigationService';
 import AppNavigator from './navigators/AppNavigator';
 import AuthNavigator from './navigators/AuthNavigator';
 import {useAppSelector} from '../hooks';
-import {getAuthEnableSignIn} from '../redux/selectors/auth.selector';
-import { ButtonCustom } from '../components';
-import { HomeManager } from '../screens/Manager';
+
+import {HomeManager} from '../screens/Manager';
 
 const RootNavigation = () => {
-  const enableSignIn: boolean = useAppSelector(getAuthEnableSignIn);
-  console.log(enableSignIn);
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <HomeManager />
+      <AppNavigator />
     </NavigationContainer>
   );
 };

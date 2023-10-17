@@ -1,15 +1,13 @@
-import { FunctionComponent } from 'react';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {FunctionComponent} from 'react';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import Toast from 'react-native-toast-message';
-import { RootNavigation, ThemeContext } from './src';
-import Alert from './src/components/customs/Alert';
+import {RootNavigation, ThemeContext} from './src';
 import Loading from './src/components/shared/Loading';
-import { toastConfig } from './src/utils/toastConfig';
+import {toastConfig} from './src/utils/toastConfig';
 
 const App: FunctionComponent = () => {
-
   return (
     <SafeAreaProvider
       initialMetrics={{
@@ -19,7 +17,7 @@ const App: FunctionComponent = () => {
       <ThemeContext>
         <GestureHandlerRootView style={{flex: 1}}>
           {/* ALERT */}
-          <Alert />
+
           {/* LOADING API */}
           <Loading />
           {/* MAIN APP */}
