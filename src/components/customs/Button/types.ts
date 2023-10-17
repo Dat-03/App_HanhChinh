@@ -5,4 +5,8 @@ export type ButtonProps = {
   onPressButton?: () => void;
   style?: ViewProps['style'];
   textButton: string;
+  name?: string;
+  type?: string;
+  color?: string;
+  size?: number;
 };
