@@ -19,7 +19,7 @@ const App: FunctionComponent = () => {
           {/* ALERT */}
 
           {/* LOADING API */}
-          <Loading />
+          {/* <Loading /> */}
           {/* MAIN APP */}
           <RootNavigation />
           <Toast config={toastConfig} topOffset={20} visibilityTime={2500} />
