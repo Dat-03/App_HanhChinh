@@ -14,6 +14,14 @@ export enum routes {
     HOMEMANAGER = 'HOME',
     HISTORYMANAGER = 'HISTORY',
     SETTINGMANAGER = 'SETTING',
+    // Screen home manager
+    ACHIEVEMENT = 'ACHIEVEMENT',
+    EVENT = 'EVENT',
+    INCIDENT = 'INCIDENT',
+    PERSONNEL = 'PERSONNEL',
+    ROOMCHECKING = 'ROOMCHECKING',
+    STATISTICAL = 'STATISTICAL',
+
    
     
 
