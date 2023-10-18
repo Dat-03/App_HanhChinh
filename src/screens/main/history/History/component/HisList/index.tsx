@@ -1,9 +1,7 @@
 import { View, Text ,FlatList,Image} from 'react-native'
 import React from 'react'
 import useStyles from './styles'
-import { images } from '../../../../../../assets';
-
-const HisList = () => {
+const HisList:React.FC = () => {
   const styles=useStyles();
   return (
     <View style={styles.container}>
@@ -34,7 +32,7 @@ const HisList = () => {
                 </View>
             </View>
             <View style={styles.avatar}>
-                <Image source={images.default} style={styles.img} />
+                {/* <Image source={.default} style={styles.img} /> */}
             </View>
         </View>
 
