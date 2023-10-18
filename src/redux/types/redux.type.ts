@@ -1,6 +1,5 @@
-export enum Redux{
-  auth = 'auth',
+export enum Redux {
   loading = 'loading',
   app = 'app',
-  alert = 'alert',
+  theme = 'theme',
 }

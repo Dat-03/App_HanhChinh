@@ -3,9 +3,10 @@ import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent} from 'react';
 
-import styles from './styles';
+import useStyles from './styles';
 
 const Home: FunctionComponent = () => {
+  const styles = useStyles();
   return (
     <View style={styles.container}>
       <Text>HI</Text>
