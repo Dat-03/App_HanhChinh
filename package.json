@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.148",
+    "@mui/material": "^5.14.13",
     "@react-native-community/datetimepicker": "^7.6.1",
     "@react-native-firebase/app": "^18.5.0",
     "@react-native-firebase/auth": "^18.5.0",
@@ -20,6 +22,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "@rneui/base": "^4.0.0-rc.8",
     "@rneui/themed": "^4.0.0-rc.8",
+    "add": "^2.0.6",
     "axios": "^1.5.1",
     "date-fns": "^2.30.0",
     "directory": "^0.1.0",
@@ -28,8 +31,10 @@
     "os": "^0.1.2",
     "path": "^0.12.7",
     "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-native": "0.72.6",
     "react-native-asset": "^2.1.1",
+    "react-native-config": "^1.5.1",
     "react-native-device-info": "^10.11.0",
     "react-native-encrypted-storage": "^4.0.3",
     "react-native-flipper": "^0.212.0",
@@ -48,7 +53,9 @@
     "redux": "^4.2.1",
     "redux-flipper": "^2.0.2",
     "redux-persist": "^6.0.0",
-    "redux-saga": "^1.2.3"
+    "redux-saga": "^1.2.3",
+    "timeline": "^3.4.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
