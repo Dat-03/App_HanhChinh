@@ -6,6 +6,7 @@ import AuthNavigator from './navigators/AuthNavigator';
 import {useAppSelector} from '../hooks';
 import {getAuthEnableSignIn} from '../redux/selectors/auth.selector';
 import Support from '../screens/main/home/Support';
+import { History } from '../screens/main';
 
 const RootNavigation = () => {
   const enableSignIn: boolean = useAppSelector(getAuthEnableSignIn);
@@ -13,8 +14,8 @@ const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <Support />
-      
+      {/* <Support /> */}
+      <History/>
     </NavigationContainer>
   );
 };

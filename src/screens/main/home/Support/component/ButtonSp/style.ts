@@ -10,7 +10,7 @@ const useStyles = makeStyles(({colors}) => ({
         paddingHorizontal:normalize(10)
     },
     btn:{
-        borderColor:'#EC449C',
+        borderColor:colors.textBtnColor,
         borderRadius:normalize(5),
         height:normalize(40),
         borderWidth:normalize(2),

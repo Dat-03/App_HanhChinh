@@ -16,7 +16,7 @@ const Support: React.FC = () => {
                 <AcceptRequire />
             </View>
             <View>
-                <Timeline />
+               <Timeline/>
             </View>
             <View>
                 <ButtonSp />

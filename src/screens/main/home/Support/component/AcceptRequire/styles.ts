@@ -6,13 +6,13 @@ const HEIGHT = Device.getDeviceHeight(); //cho hinh`
 
 const useStyles = makeStyles(({colors}) => ({
   container: {
-    marginTop:normalize(20),
     height: normalize(100 ),
-    margin:normalize(10),
     backgroundColor:colors.grey5,
     borderRadius:normalize(5),
-    paddingLeft:normalize(15),
-    flexDirection:'row'
+    marginHorizontal:normalize(10),
+    marginVertical:normalize(10),
+    flexDirection:'row',
+    paddingLeft:normalize(10)
   },
   title:{
     color:colors.black,
