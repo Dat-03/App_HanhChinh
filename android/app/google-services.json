@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "71174207638",
+    "project_id": "dutt-85aae",
+    "storage_bucket": "dutt-85aae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71174207638:android:f9a041e3a7af54d3eb2ab7",
+        "android_client_info": {
+          "package_name": "com.app_hanhchinh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71174207638-sdp2gdi5vbo4b14dobk2ar8ctnsd6854.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app_hanhchinh",
+            "certificate_hash": "598781fdc8c39c73ceced3a13be4a83136e6271b"
+          }
+        },
+        {
+          "client_id": "71174207638-f592bchep4n26turj77r886pagt8197a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc9eDAdMkNc1tLFJlvuGppi-honDIcBk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71174207638-0lqlho8865n2l08t2bqbtkc07bfij808.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
