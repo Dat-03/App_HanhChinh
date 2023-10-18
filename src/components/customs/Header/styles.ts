@@ -28,15 +28,11 @@ const useStyles = makeStyles(({colors}) => ({
     alignItems: 'baseline',
   },
   textTitle: {
-    fontSize: normalize(22),
+    fontSize: normalize(20),
     lineHeight: normalize(35.2),
-    paddingHorizontal: normalize(50),
     color: colors.black,
-    marginStart: normalize(30),
+    marginStart: normalize(40),
     fontWeight: 'bold',
-  },
-  leftIcon: {
-    color: colors.primary,
   },
   rightIcon: {
     color: colors.black,

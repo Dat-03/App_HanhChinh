@@ -6,12 +6,14 @@ import AuthNavigator from './navigators/AuthNavigator';
 import {useAppSelector} from '../hooks';
 
 import {HomeManager} from '../screens/Manager';
+import Achievement from '../screens/Manager/home/Achievement';
+import Personnel from '../screens/Manager/home/Personnel';
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <HomeManager />
+      <Personnel />
     </NavigationContainer>
   );
 };

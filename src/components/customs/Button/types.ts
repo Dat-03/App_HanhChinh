@@ -9,4 +9,6 @@ export type ButtonProps = {
   type?: string;
   color?: string;
   size?: number;
+  textTitle?: string;
+  iconRight?:boolean;
 };

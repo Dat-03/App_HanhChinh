@@ -6,13 +6,28 @@ import {Avatar, Icon} from '@rneui/themed';
 
 const ButtonCustom: React.FunctionComponent<ButtonProps> = props => {
   const styles = useStyles();
-  const {textButton, onPressButton, style, name, type, color, size} =
-    props;
+  const {
+    textButton,
+    onPressButton,
+    style,
+    name,
+    type,
+    color,
+    size,
+    textTitle,
+    iconRight,
+  } = props;
 
   return (
     <TouchableOpacity onPress={onPressButton} style={[styles.button, style]}>
       <Avatar icon={{name: name, type: type, color: color, size: size}} />
-      <Text style={[styles.buttonText, style]}>{textButton}</Text>
+      <View style={styles.viewText}>
+        <Text style={[styles.buttonText, style]}>{textButton}</Text>
+        <Text style={styles.textTitle}>{textTitle}</Text>
+      </View>
+      <View>
+        {iconRight && <Icon name="right" type="antdesign" size={25} />}
+      </View>
     </TouchableOpacity>
   );
 };
