@@ -10,12 +10,11 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 
-
 import {useAppSelector} from '../../../hooks';
 
 import useStyles from './styles';
-import { getAppIsLoading } from '../../../redux/selectors/app.selector';
-import { jsonFiles } from '../../../assets/json';
+
+import {jsonFiles} from '../../../assets/json';
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 
@@ -23,7 +22,6 @@ const Loading: FunctionComponent = () => {
   // hooks
   const styles = useStyles();
   const progress = useSharedValue(0.5);
-  const isLoading: boolean = useAppSelector(getAppIsLoading);
 
   const overlayStyle = useAnimatedStyle(() => {
     const background = interpolateColor(
@@ -52,14 +50,13 @@ const Loading: FunctionComponent = () => {
   }, []);
 
   // if isShow = false => not show anything
-  if (!isLoading) {
+  if ('') {
     return <View />;
   }
 
   return (
     <AnimatedView style={[styles.overlay, overlayStyle]}>
       <AnimatedView style={[styles.container, containerStyle]}>
-       
         <Text style={styles.titleStyle}>Loading...</Text>
       </AnimatedView>
     </AnimatedView>
