@@ -68,6 +68,7 @@ export const usePermission = () => {
 
   const showPermissionDialog = async (type: String) => {
     const permissions = REQUEST_PERMISSION_TYPE[type][Platform.OS];
+    //@ts-ignore
     try {
       const result = await check(permissions);
 

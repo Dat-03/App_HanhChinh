@@ -18,7 +18,7 @@ const usestyles = makeStyles(({colors}) => ({
   },
   buttonText: {
     fontSize: normalize(HEIGHT * 0.02),
-    fontWeight: '700',
+    
     letterSpacing: normalize(0.2),
     fontStyle: 'normal',
     fontFamily: 'Urbanist-Regular',

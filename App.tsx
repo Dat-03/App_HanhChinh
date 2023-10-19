@@ -7,6 +7,7 @@ import { RootNavigation, ThemeContext } from './src';
 import Alert from './src/components/customs/Alert';
 import Loading from './src/components/shared/Loading';
 import { toastConfig } from './src/utils/toastConfig';
+import { Home } from './src/screens/main';
 
 const App: FunctionComponent = () => {
 
@@ -29,6 +30,7 @@ const App: FunctionComponent = () => {
           {/* Modal progressing when upgrade version of app */}
         </GestureHandlerRootView>
       </ThemeContext>
+
     </SafeAreaProvider>
   );
 };
