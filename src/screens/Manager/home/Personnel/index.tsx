@@ -1,19 +1,24 @@
 import {View} from 'react-native';
-import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent} from 'react';
 
-import useStyles from './styles';
 import {HeaderCustom, TabViewItem} from '../../../../components';
 import {PersonnelScreen, RatingScreen} from './components';
+import useStyles from './styles';
+import {NavigationService} from '../../../../navigation';
+import {routes} from '../../../../constants';
 
 const Personnel: FunctionComponent = () => {
   const styles = useStyles();
+  const handlePressGoback = () => {
+    NavigationService.navigate(routes.HOMEMANAGER);
+  };
   return (
     <View style={styles.container}>
       <HeaderCustom
         title="Danh sách nhân sự"
         leftIcon={{name: 'left', type: 'antdesign'}}
+        onPressLeftIcon={handlePressGoback}
       />
       <TabViewItem
         tabStyle={styles.tabStyle}

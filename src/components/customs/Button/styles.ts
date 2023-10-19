@@ -25,6 +25,7 @@ const useStyles = makeStyles(({colors}) => ({
     fontStyle: 'normal',
     fontFamily: 'Urbanist-Regular',
     color: colors.black,
+
   },
   textTitle: {
     fontSize: normalize(13),
@@ -35,7 +36,7 @@ const useStyles = makeStyles(({colors}) => ({
     color: colors.grey3,
   },
   viewText: {
-    marginEnd: normalize(30),
+    width: normalize(190)
   },
 }));
 

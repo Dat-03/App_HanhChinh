@@ -9,10 +9,7 @@ const TabViewItem: React.FunctionComponent<CustomTabViewItemProps> = props => {
   const [index, setIndex] = React.useState(0);
   const styles = useStyles();
   return (
-    <ScrollView
-      overScrollMode="never"
-      stickyHeaderIndices={[1]}
-      showsVerticalScrollIndicator={false}>
+    <View style={{flex: 1}}>
       <Tab
         containerStyle={styles.container}
         buttonStyle={props.tabStyle || {backgroundColor: '#FFF'}}
@@ -37,7 +34,7 @@ const TabViewItem: React.FunctionComponent<CustomTabViewItemProps> = props => {
           {props.screen2}
         </TabView.Item>
       </TabView>
-    </ScrollView>
+    </View>
   );
 };
 

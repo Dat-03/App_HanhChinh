@@ -16,6 +16,7 @@ const ButtonCustom: React.FunctionComponent<ButtonProps> = props => {
     size,
     textTitle,
     iconRight,
+    isTitle,
   } = props;
 
   return (
@@ -23,7 +24,7 @@ const ButtonCustom: React.FunctionComponent<ButtonProps> = props => {
       <Avatar icon={{name: name, type: type, color: color, size: size}} />
       <View style={styles.viewText}>
         <Text style={[styles.buttonText, style]}>{textButton}</Text>
-        <Text style={styles.textTitle}>{textTitle}</Text>
+        {isTitle && <Text style={styles.textTitle}>{textTitle}</Text>}
       </View>
       <View>
         {iconRight && <Icon name="right" type="antdesign" size={25} />}
