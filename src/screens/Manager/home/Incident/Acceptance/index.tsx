@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import useStyles from './styles';
-import ButtonNotification from '../../../../../components/customs/ButtonNotification';
+import ButtonNotification from '../../../../../components/customs/ButtonRoom';
 import {ItemButton} from './components';
 
 const Acceptance: React.FC = () => {
