@@ -7,9 +7,9 @@ const useStyles = makeStyles(({colors}) => ({
   container: {
     height: Device.getDeviceWithScreen() * 0.15,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     borderBottomWidth: 0,
-    backgroundColor: colors.background,
+    backgroundColor: colors.colorMain,
   },
   viewRow: {
     flexDirection: 'row',
@@ -30,10 +30,13 @@ const useStyles = makeStyles(({colors}) => ({
   textTitle: {
     fontSize: normalize(20),
     lineHeight: normalize(35.2),
-    color: colors.black,
-    marginStart: normalize(40),
+    color: colors.white,
+    marginStart: normalize(50),
     fontWeight: 'bold',
+    width: normalize(200),
+    textAlign: 'center',
   },
+
   rightIcon: {
     color: colors.black,
   },

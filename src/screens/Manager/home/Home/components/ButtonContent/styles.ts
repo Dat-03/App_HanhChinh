@@ -8,9 +8,8 @@ const HEIGHT = Device.getDeviceHeight();
 const useStyles = makeStyles(({colors}) => ({
   content: {
     borderTopLeftRadius: normalize(30),
-    backgroundColor: theme.lightColors?.grey0,
+    backgroundColor: colors.grey5,
     borderTopRightRadius: normalize(50),
-    flex: normalize(1),
   },
   textContent: {
     textAlign: 'center',
@@ -22,6 +21,9 @@ const useStyles = makeStyles(({colors}) => ({
   button: {
     paddingHorizontal: normalize(24),
     paddingVertical: normalize(30),
+  },
+  scrollView: {
+    
   },
 }));
 

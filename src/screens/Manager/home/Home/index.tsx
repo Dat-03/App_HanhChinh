@@ -2,9 +2,8 @@ import {Text, View} from 'react-native';
 
 import React, {FunctionComponent} from 'react';
 
-import ButtonContent from './components/ButtonContent';
 import useStyles from './styles';
-import Header_home from './components/Header';
+import {ButtonContent, Header_home} from './components';
 
 const HomeManage: FunctionComponent = () => {
   const styles = useStyles();
@@ -16,7 +15,9 @@ const HomeManage: FunctionComponent = () => {
       <View style={styles.content}>
         <Text style={styles.textContent}>Dịch vụ trưc tuyến </Text>
         <View style={styles.button}>
-          <ButtonContent />
+          <View style={styles.content}>
+            <ButtonContent />
+          </View>
         </View>
       </View>
     </View>

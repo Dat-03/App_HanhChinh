@@ -7,11 +7,18 @@ const HEIGHT = Device.getDeviceHeight();
 const useStyles = makeStyles(({colors}) => ({
   container: {
     flex: normalize(1),
+    backgroundColor: colors.colorMain,
+  },
+  content: {
+    flex: normalize(1),
+    borderTopLeftRadius: normalize(30),
+    borderTopRightRadius: normalize(30),
+    backgroundColor: colors.grey0,
   },
   tabStyle: {},
   titleStyle: {
-    color: colors.blue,
-    fontSize: normalize(18),
+    color: colors.colorMain,
+    fontWeight: 'bold',
   },
 }));
 

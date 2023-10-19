@@ -17,18 +17,20 @@ const Personnel: FunctionComponent = () => {
     <View style={styles.container}>
       <HeaderCustom
         title="Danh sách nhân sự"
-        leftIcon={{name: 'left', type: 'antdesign'}}
+        leftIcon={{name: 'left', type: 'antdesign', color: 'white'}}
         onPressLeftIcon={handlePressGoback}
       />
-      <TabViewItem
-        tabStyle={styles.tabStyle}
-        title1={'Personnel'}
-        title2={'Rating'}
-        screen1={<PersonnelScreen />}
-        screen2={<RatingScreen />}
-        viewStyle={{height: 800}}
-        titleStyle={styles.titleStyle}
-      />
+      <View style={styles.content}>
+        <TabViewItem
+          tabStyle={styles.tabStyle}
+          title1={'Personnel'}
+          title2={'Rating'}
+          screen1={<PersonnelScreen />}
+          screen2={<RatingScreen />}
+          viewStyle={{height: 800}}
+          titleStyle={styles.titleStyle}
+        />
+      </View>
     </View>
   );
 };

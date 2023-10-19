@@ -1,10 +1,10 @@
-import {makeStyles, normalize} from '@rneui/themed';
-import {Device} from '../../../../utils';
+import { makeStyles, normalize } from '@rneui/themed';
+import { Device } from '../../../../../utils';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
-const usestyles = makeStyles(({colors}) => ({
+const useStyles = makeStyles(({colors}) => ({
   container: {
     flex: normalize(1),
     backgroundColor: colors.colorMain,
@@ -15,11 +15,6 @@ const usestyles = makeStyles(({colors}) => ({
     borderTopRightRadius: normalize(30),
     backgroundColor: colors.grey0,
   },
-  tabStyle: {},
-  titleStyle: {
-    color: colors.colorMain,
-    fontWeight: 'bold',
-  },
 }));
 
-export default usestyles;
+export default useStyles;

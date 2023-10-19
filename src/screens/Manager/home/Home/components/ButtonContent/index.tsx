@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import React from 'react';
 import ButtonCustom from '../../../../../../components/customs/Button';
 import useStyles from './styles';
@@ -8,7 +8,7 @@ import {routes} from '../../../../../../constants';
 const ButtonContent: React.FC = () => {
   const styles = useStyles();
   return (
-    <View style={styles.content}>
+    <ScrollView style={styles.scrollView}>
       <ButtonCustom
         textButton="Nhân sự"
         textTitle="asdasdasdasd"
@@ -42,7 +42,6 @@ const ButtonContent: React.FC = () => {
         size={25}
         onPressButton={() => NavigationService.navigate(routes.ACHIEVEMENT)}
       />
-
       <ButtonCustom
         textButton="Sự kiện bộ môn"
         name="event-note"
@@ -59,7 +58,7 @@ const ButtonContent: React.FC = () => {
         size={25}
         onPressButton={() => NavigationService.navigate(routes.ROOMCHECKING)}
       />
-    </View>
+    </ScrollView>
   );
 };
 
