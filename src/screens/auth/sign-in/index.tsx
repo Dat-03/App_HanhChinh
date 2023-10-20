@@ -3,10 +3,14 @@ import React, {useEffect} from 'react';
 import {
   GoogleSignin,
   statusCodes,
+  GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import {NavigationService} from '../../../navigation';
 import {routes} from '../../../constants';
+import styles from './styles';
+import {Image} from '@rneui/themed';
+import images from '../../../assets/images';
 
 const SignIn = () => {
   useEffect(() => {
@@ -32,8 +36,6 @@ const SignIn = () => {
       console.log('User signed in:', userSignIn.user);
       Alert.alert('Logged in successfully');
       NavigationService.navigate(routes.MYPROFILE);
-
-      // LSuccessful login moves to the Home screen
     } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log('Google Sign-In canceled.');
@@ -43,17 +45,35 @@ const SignIn = () => {
         console.log('Google Play Services not available.');
       } else {
         console.error('Google Sign-In Error:', error);
-        Alert.alert('Login failed 1');
+        Alert.alert('Login failed 1', error.code);
       }
     }
   };
   return (
-    <View>
-      <TouchableOpacity
-        style={{width: 100, height: 100, backgroundColor: 'red'}}
-        onPress={signInWithGoogleAsync}>
-        <Text>Sign In with Google</Text>
-      </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.backgroundHeader} />
+      <View style={styles.loginContainer}>
+        <Image
+          resizeMode="contain"
+          style={styles.imageLogoStyle}
+          source={images.logoFPT}
+        />
+        <Image
+          resizeMode="cover"
+          style={styles.imageBeeStyle}
+          source={images.bee}
+        />
+        <TouchableOpacity
+          style={styles.btnGoogle}
+          onPress={signInWithGoogleAsync}>
+          <Image
+            resizeMode="cover"
+            style={styles.imageGoogle}
+            source={images.google}
+          />
+          <Text style={styles.text}>Google</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
