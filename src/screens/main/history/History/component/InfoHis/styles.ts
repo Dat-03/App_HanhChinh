@@ -14,18 +14,19 @@ const useStyles = makeStyles(({colors}) => ({
  img:{
     width:normalize(50),
     height:normalize(50),
+    borderRadius:normalize(99),
+  
   },
   content:{
     flexDirection:'row',
     justifyContent:'space-between',
-    height:normalize(60)
+    height:normalize(60),
+    alignItems:'center'
   },
   name:{
     fontSize:normalize(18),
-    marginLeft:normalize(-100),
     color:colors.white,
-    marginTop:normalize(20)
-
+    marginStart:normalize(10)
   }
 
 }));

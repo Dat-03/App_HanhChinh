@@ -18,7 +18,7 @@ const AcceptRequire:React.FC =  () => {
                 </View>
             </View>
             <View style={styles.avatar}>
-                <Image source={images.default} style={styles.img} />
+                <Image source={images.avatar} style={styles.img} />
             </View>
         </View>
     )

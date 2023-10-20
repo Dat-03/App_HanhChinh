@@ -4,8 +4,8 @@ import { BigButton } from '../../../../components'
 import useStyles from './styles'
 import { Button, Icon } from '@rneui/base'
 import AcceptRequire from './component/AcceptRequire'
-import Timeline from './component/TimeLine'
 import ButtonSp from './component/ButtonSp'
+import StatusRequire from './component/StatusRequire'
 
 const Support: React.FC = () => {
     const styles = useStyles();
@@ -16,7 +16,7 @@ const Support: React.FC = () => {
                 <AcceptRequire />
             </View>
             <View>
-               <Timeline/>
+               <StatusRequire/>
             </View>
             <View>
                 <ButtonSp />

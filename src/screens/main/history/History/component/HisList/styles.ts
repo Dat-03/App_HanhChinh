@@ -20,7 +20,7 @@ const useStyles = makeStyles(({colors}) => ({
     },
     hislist: {
         height: normalize(100 ),
-        backgroundColor:colors.grey5,
+        backgroundColor:colors.itemColor,
         borderRadius:normalize(5),
         marginHorizontal:normalize(10),
         marginVertical:normalize(10),
@@ -51,6 +51,7 @@ const useStyles = makeStyles(({colors}) => ({
       img:{
         width:normalize(50),
         height:normalize(50),
+        borderRadius:normalize(50)
       }
     
     

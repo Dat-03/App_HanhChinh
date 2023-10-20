@@ -14,7 +14,8 @@ declare module '@rneui/themed'{
   export interface Colors {
     redcolor: string;
     background1: string;
-    textBtnColor:string
+    textBtnColor:string,
+    itemColor:string
   }
 }
 export const theme = createTheme({
@@ -36,7 +37,8 @@ export const theme = createTheme({
     red: '#FF0000',
     colorMain: '#ec449c',
     colorBorder: '#CDCDCD',
-    blue:'#4169E1'
+    blue:'#4169E1',
+    itemColor:'#F1F4F5'
   },
   darkColors: {
     primary: '#F89300',

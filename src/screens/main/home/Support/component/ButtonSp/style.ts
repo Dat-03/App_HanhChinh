@@ -10,7 +10,7 @@ const useStyles = makeStyles(({colors}) => ({
         paddingHorizontal:normalize(10)
     },
     btn:{
-        borderColor:colors.textBtnColor,
+        borderColor:colors.background1,
         borderRadius:normalize(5),
         height:normalize(40),
         borderWidth:normalize(2),
@@ -18,7 +18,7 @@ const useStyles = makeStyles(({colors}) => ({
         justifyContent:'center',
     },
     textBtn:{
-        color:colors.textBtnColor,
+        color:colors.background1,
     }
 
 }));
