@@ -14,8 +14,12 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import {routes} from '../../constants';
+import {
+  HistoryManager,
+  HomeManager,
+  SettingManager,
+} from '../../screens/Manager';
 import {Device} from '../../utils';
-import {Home, History, Contact, Setting} from '../../screens/main';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -29,13 +33,11 @@ const screenOptions: BottomTabNavigationOptions = {
 
 const choseIcon = (route: routes) => {
   switch (route) {
-    case routes.HOME:
+    case routes.HOMEMANAGER:
       return 'home';
-    case routes.HISTORY:
+    case routes.HISTORYMANAGER:
       return 'id-card';
-    case routes.CONTACT:
-      return 'bookmarks';
-    case routes.SETTING:
+    case routes.SETTINGMANAGER:
       return 'person';
     default:
       return 'home';
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
 
 const AnimatedTouch = Animated.createAnimatedComponent(TouchableOpacity);
 
-const BottomNavigator: FunctionComponent = () => {
+const BottomManager: FunctionComponent = () => {
   const Tab = ({navigation, descriptors, state}: BottomTabBarProps) => {
     const progressGrowth = useSharedValue(0);
 
@@ -157,12 +159,17 @@ const BottomNavigator: FunctionComponent = () => {
     <BottomTabs.Navigator
       screenOptions={screenOptions}
       tabBar={(props: BottomTabBarProps) => <Tab {...props} />}>
-      <BottomTabs.Screen name={routes.HOME} component={Home} />
-      <BottomTabs.Screen name={routes.HISTORY} component={History} />
-      <BottomTabs.Screen name={routes.CONTACT} component={Contact} />
-      <BottomTabs.Screen name={routes.SETTING} component={Setting} />
+      <BottomTabs.Screen name={routes.HOMEMANAGER} component={HomeManager} />
+      <BottomTabs.Screen
+        name={routes.HISTORYMANAGER}
+        component={HistoryManager}
+      />
+      <BottomTabs.Screen
+        name={routes.SETTINGMANAGER}
+        component={SettingManager}
+      />
     </BottomTabs.Navigator>
   );
 };
 
-export default BottomNavigator;
+export default BottomManager;

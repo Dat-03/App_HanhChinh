@@ -7,36 +7,41 @@ const HEIGHT = Device.getDeviceHeight();
 
 const useStyles = makeStyles(({colors}) => ({
   button: {
-    borderRadius: normalize(8),
-    alignItems: 'center',
-    marginVertical: normalize(10),
+    borderRadius: normalize(10),
     width: '100%',
-    height: normalize(66),
+    height: normalize(101),
     borderWidth: normalize(0.5),
-    borderColor: colors.colorBorder,
+    borderColor: colors.grey5,
+    paddingVertical: normalize(15),
+    backgroundColor: '#E9ECEF',
     paddingHorizontal: normalize(20),
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
-  buttonText: {
-    fontSize: normalize(15),
-    fontWeight: '700',
+  typeError: {
+    fontSize: normalize(18),
+    fontWeight: 'bold',
     letterSpacing: normalize(0.2),
     fontStyle: 'normal',
     fontFamily: 'Urbanist-Regular',
     color: colors.black,
-
   },
-  textTitle: {
-    fontSize: normalize(13),
-    fontWeight: '400',
+  room: {
+    fontSize: normalize(15),
+    fontWeight: '800',
     letterSpacing: normalize(0.2),
     fontStyle: 'normal',
     fontFamily: 'Urbanist-Regular',
-    color: colors.grey3,
+    color: colors.grey4,
+  },
+  deadline: {
+    marginStart: normalize(50),
+    fontSize: normalize(16),
+    fontWeight: 'bold',
   },
   viewText: {
-    width: normalize(190)
+    paddingTop: normalize(10),
+  },
+  viewDeadline: {
+    flexDirection: 'row',
   },
 }));
 

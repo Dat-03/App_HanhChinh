@@ -1,7 +1,7 @@
 import {ReactElement} from 'react';
 import {ViewProps} from 'react-native';
 
-export type ButtonProps = {
+export type ButtonSimpleProps = {
   onPressButton?: () => void;
   style?: ViewProps['style'];
   textButton: string;
@@ -9,7 +9,4 @@ export type ButtonProps = {
   type?: string;
   color?: string;
   size?: number;
-  textTitle?: string;
-  iconRight?:boolean;
-  isTitle?: boolean;
 };
