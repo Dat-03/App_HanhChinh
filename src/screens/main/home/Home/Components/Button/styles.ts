@@ -14,7 +14,7 @@ const useStyles = makeStyles(({colors}) => ({
     
   },
   button:{
-    backgroundColor:colors.success,
+    backgroundColor:colors.grey4,
     height:normalize(HEIGHT*0.1),
     width:normalize(HEIGHT*0.4),
     borderRadius: normalize(10),

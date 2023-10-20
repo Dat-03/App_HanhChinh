@@ -8,15 +8,16 @@ const Button = () => {
     return (
         <View style={styles.container}>
             <View style={styles.button}>
-                <Icon name='pen' type='font-awesome-5'/>
+                <Icon name='pencil-square' type='font-awesome' color="#ec449c"/>
                 <Text style={styles.tile}>Báo cáo sự cố</Text>   
             </View>
             <View style={styles.button}>
-                <Icon name='passport' type='font-awesome-5'/>
+                <Icon name='passport' type='font-awesome-5' color="#ec449c"/>
                 <Text style={styles.tile}>Báo cáo sự cố</Text>   
             </View><View style={styles.button}>
-                <Icon name='' type=''/>
+                <Icon name='list-alt' type='font-awesome' color="#ec449c"/>
                 <Text style={styles.tile}>Báo cáo sự cố</Text>   
+                
             </View>
         </View>
     )

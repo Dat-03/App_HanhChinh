@@ -19,9 +19,10 @@ const Home: FunctionComponent = () => {
           <Image source={images.Ellipse} />
           <Text style={styles.name}>Trần Cao Hiệp</Text>
         </View>
-        <Icon name='bell' type='font-awesome' style={styles.notification} />
+        <Icon name='bell' type='font-awesome-5' color="#fff" style={styles.notification} />
       </View>
       <View style={styles.View}>
+        <Text style={styles.textconter}>Dịch vụ trực tuyến</Text>
         <View style={styles.button}>
           <Button />
         </View>

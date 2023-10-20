@@ -7,7 +7,7 @@ const HEIGHT = Device.getDeviceHeight();
 const useStyles = makeStyles(({colors}) => ({
   container: {
     flex: normalize(1),
-    backgroundColor: colors.primary,
+    backgroundColor: colors.colorMain,
   },
  header:{
   flexDirection:'row',
@@ -23,10 +23,12 @@ const useStyles = makeStyles(({colors}) => ({
  },
  name:{
   fontSize:normalize(18),
-  marginStart:normalize(15)
+  marginStart:normalize(15),
+  color:'white',
  },
  notification:{
-  paddingVertical:normalize(10)
+  paddingVertical:normalize(10),
+  
  },
  View:{
   backgroundColor:colors.white,
@@ -35,8 +37,13 @@ const useStyles = makeStyles(({colors}) => ({
   borderRadius:normalize(10),
 
  },
+ textconter:{
+  fontSize:normalize(18),
+  paddingStart:normalize(120),
+  paddingTop:normalize(10)
+ },
  button:{
-  paddingTop:normalize(200),
+  paddingVertical:normalize(150),
  }, 
 }));
 

@@ -1,18 +1,25 @@
 export enum routes {
-    //auth
-    ONBOARD = 'ONBOARD',
-    SIGN_IN = 'SIGN_IN',
-    CREATE_ACCOUNT = 'CREATE_ACCOUNT',
-    LOBBY = 'LOBBY',
-    UPDATE_PROFILE = 'UPDATE_PROFILE',
+  //auth
+  ONBOARD = 'ONBOARD',
+  LOBBY = 'LOBBY',
+  SIGN_IN = 'SIGN_IN',
 
-    BOTTOM_TAB = 'BOTTOM_TAB',
-    HOME = 'HOME',
-    HISTORY = 'HISTORY',
-    CONTACT = 'CONTACT',
-    SETTING = 'SETTING',
-   
-    
+  // Bottom tab GV
+  BOTTOM_TAB = 'BOTTOM_TAB',
+  HOME = 'HOME',
+  HISTORY = 'HISTORY',
+  CONTACT = 'CONTACT',
+  SETTING = 'SETTING',
 
-
+  // Bottom tab Manager
+  HOMEMANAGER = 'HOME',
+  HISTORYMANAGER = 'HISTORY',
+  SETTINGMANAGER = 'SETTING',
+  // Screen home manager
+  ACHIEVEMENT = 'ACHIEVEMENT',
+  EVENT = 'EVENT',
+  INCIDENT = 'INCIDENT',
+  PERSONNEL = 'PERSONNEL',
+  ROOMCHECKING = 'ROOMCHECKING',
+  STATISTICAL = 'STATISTICAL',
 }

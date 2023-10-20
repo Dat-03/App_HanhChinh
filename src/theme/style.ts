@@ -1,35 +1,65 @@
-import {createTheme} from '@rneui/themed';
+import { createTheme } from '@rneui/themed';
+import { useAppSelector } from '../hooks';
+
+declare module '@rneui/themed' {
+  export interface Colors {
+    red: string;
+    colorMain: string;
+    colorBorder: string;
+    blue: string;
+    
+  }
+}
 
 export const theme = createTheme({
   lightColors: {
     primary: '#F89300',
-    secondary: '#FEF4E6',
+    secondary: '#FFF7EB',
     greyOutline: '#F9f9f9',
+    background: '#FFFFFF',
     grey5: '#B0B3B8',
     grey4: '#727272',
     divider: '#e3f3ff',
     grey1: '#F5F5F5',
-    black:'#000',
-    grey0:'#FFFFFF',
-    
-    
+    black: '#000',
+    grey0: '#FFFFFF',
+  
+
+
+
+    grey2: '#90939B',
+    white: '#FFFFFF',
+    red: '#FF0000',
+    colorMain: '#ec449c',
+    colorBorder: '#CDCDCD',
+    blue: '#4169E1'
   },
   darkColors: {
     primary: '#F89300',
-    secondary: '#FEF4E6',
+    secondary: '#FFF7EB',
     greyOutline: '#F9f9f9',
     grey5: '#B0B3B8',
     grey4: '#f1f1f4',
     divider: '#e3f3ff',
-    grey1: '#1f222a',
-    black:'#E4E6EB',
-    grey0:'#FFFFFF'
+    grey1: '#212121',
+    black: '#FAFAFA',
+    grey0: '#181A20',
+    grey2: '#90939B',
+    white: '#FFFFFF',
+    background: '#181A20',
+
+    red: '#FF0000',
   },
-  mode: 'light',
-  components:{
-    
-  }
- 
-  
-   
+  components: {
+    Button: (props, theme) => ({
+      containerStyle: {
+        backgroundColor: theme.colors.background,
+        height: 100,
+        width: 100,
+      },
+      titleStyle: {
+        fontSize: 20,
+      },
+    }),
+  },
 });
