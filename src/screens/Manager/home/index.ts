@@ -4,6 +4,7 @@ import Achievement from './Achievement';
 import Event from './Event';
 import Incident from './Incident';
 import Personnel from './Personnel';
+import {DetailPersonal} from './Personnel/components/personnelScreen/components';
 import RoomChecking from './RoomChecking';
 import Statistical from './Statistical';
 
@@ -24,6 +25,10 @@ export const homeManagerScreens: Screen[] = [
   {
     name: routes.PERSONNEL,
     component: Personnel,
+  },
+  {
+    name: routes.DETAILPERSONAL,
+    component: DetailPersonal,
   },
   {
     name: routes.ROOMCHECKING,
