@@ -5,6 +5,7 @@ import {navigationRef} from './NavigationService';
 import Personnel from '../screens/Manager/home/Personnel';
 import {HomeManager} from '../screens/Manager';
 import AppNavigator from './navigators/AppNavigator';
+import AuthNavigator from './navigators/AuthNavigator';
 
 const RootNavigation = () => {
   return (
