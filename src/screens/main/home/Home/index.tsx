@@ -7,6 +7,9 @@ import useStyles from './styles';
 import { images } from '../../../../assets';
 import { Icon } from '@rneui/themed';
 import Button from './Components/Button';
+import { ButtonContent, Header_home } from '../../../Manager/home/Home/components';
+import Buttonitem from './Components/Button';
+import Header_Home from './Components/Header';
 
 
 
@@ -14,20 +17,18 @@ const Home: FunctionComponent = () => {
   const styles = useStyles();
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.avatar}>
-          <Image source={images.Ellipse} />
-          <Text style={styles.name}>Trần Cao Hiệp</Text>
-        </View>
-        <Icon name='bell' type='font-awesome-5' color="#fff" style={styles.notification} />
+      <View>
+        <Header_Home />
       </View>
-      <View style={styles.View}>
-        <Text style={styles.textconter}>Dịch vụ trực tuyến</Text>
+      <View style={styles.content}>
+        <Text style={styles.textContent}>Dịch vụ trưc tuyến </Text>
         <View style={styles.button}>
-          <Button />
+          <View style={styles.content}>
+            <Buttonitem />
+          </View>
         </View>
       </View>
-    </View >
+    </View>
   );
 };
 

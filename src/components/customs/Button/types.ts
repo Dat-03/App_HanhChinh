@@ -11,4 +11,5 @@ export type ButtonProps = {
   size?: number;
   textTitle?: string;
   iconRight?:boolean;
+  isTitle?: boolean;
 };

@@ -3,3 +3,5 @@ export {default as Button} from './Button';
 export {default as BigButton} from './BigButton';
 export {default as HeaderCustom} from './Header';
 export {default as TabViewItem} from './TabViewItem';
+export {default as ButtonSimple} from './ButtonSimple';
+export {default as ButtonNotification} from './ButtonRoom';

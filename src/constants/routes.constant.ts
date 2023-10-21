@@ -12,6 +12,7 @@ export enum routes {
   SETTING = 'SETTING',
 
   // Bottom tab Manager
+  BOTTOMMANAGER = 'BOTTOMMANAGER',
   HOMEMANAGER = 'HOME',
   HISTORYMANAGER = 'HISTORY',
   SETTINGMANAGER = 'SETTING',
@@ -22,4 +23,8 @@ export enum routes {
   PERSONNEL = 'PERSONNEL',
   ROOMCHECKING = 'ROOMCHECKING',
   STATISTICAL = 'STATISTICAL',
+
+  REPORT = 'REPORT',
+  
+  
 }

@@ -20,7 +20,7 @@ export const theme = createTheme({
     grey5: '#B0B3B8',
     grey4: '#727272',
     divider: '#e3f3ff',
-    grey1: '#F5F5F5',
+    grey1: '#E9ECEF',
     black: '#000',
     grey0: '#FFFFFF',
   

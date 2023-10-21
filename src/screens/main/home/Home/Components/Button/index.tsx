@@ -3,24 +3,39 @@ import React from 'react'
 import useStyles from './styles'
 import { Icon } from '@rneui/themed';
 import { LayoutAnimationType } from 'react-native-reanimated/lib/typescript/reanimated2/layoutReanimation';
-const Button = () => {
+import ButtonCustom from '../../../../../../components/customs/Button';
+import { NavigationService } from '../../../../../../navigation';
+import { routes } from '../../../../../../constants';
+import Report from '../../../Report';
+import { ScrollView } from 'react-native';
+const Buttonitem = () => {
     const styles = useStyles();
     return (
-        <View style={styles.container}>
-            <View style={styles.button}>
-                <Icon name='pencil-square' type='font-awesome' color="#ec449c"/>
-                <Text style={styles.tile}>Báo cáo sự cố</Text>   
-            </View>
-            <View style={styles.button}>
-                <Icon name='passport' type='font-awesome-5' color="#ec449c"/>
-                <Text style={styles.tile}>Báo cáo sự cố</Text>   
-            </View><View style={styles.button}>
-                <Icon name='list-alt' type='font-awesome' color="#ec449c"/>
-                <Text style={styles.tile}>Báo cáo sự cố</Text>   
-                
-            </View>
-        </View>
+        <ScrollView style={styles.scrollView}>
+        <ButtonCustom
+          textButton="Báo cáo sự cố"
+          name="pencil-square"
+          type="font-awesome"
+          color="#ec449c"
+          size={25}
+          onPressButton={() => NavigationService.navigate(routes.REPORT)}
+        />
+        <ButtonCustom
+          textButton="Yêu cầu hộ trợ CNTT"
+          name="globe"
+          type="entypo"
+          color="#ec449c"
+          size={25}
+        />
+        <ButtonCustom
+          textButton="Quản lý mượn phòng học,hội trường"
+          name="appstore1"
+          type="antdesign"
+          color="#ec449c"
+          size={25}
+       />
+      </ScrollView>
     )
 }
 
-export default Button
+export default Buttonitem

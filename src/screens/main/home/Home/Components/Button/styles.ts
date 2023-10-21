@@ -6,30 +6,25 @@ const WIDTH =  Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
 const useStyles = makeStyles(({colors}) => ({
-  container: {
-    flex: normalize(1),
-    backgroundColor:colors.primary,
-    alignItems:'center',
-    justifyContent:'center',
+  content: {
+    borderTopLeftRadius: normalize(30),
+    backgroundColor: colors.grey5,
+    borderTopRightRadius: normalize(50),
+  },
+  textContent: {
+    textAlign: 'center',
+    paddingTop: normalize(20),
+    fontSize: normalize(20),
+    fontWeight: 'bold',
+    color: colors.black,
+  },
+  button: {
+    paddingHorizontal: normalize(24),
+    paddingVertical: normalize(30),
+  },
+  scrollView: {
     
   },
-  button:{
-    backgroundColor:colors.grey4,
-    height:normalize(HEIGHT*0.1),
-    width:normalize(HEIGHT*0.4),
-    borderRadius: normalize(10),
-    alignItems:'center',
-    paddingStart:normalize(15),
-    flexDirection:'row',
-    marginVertical:normalize(10)
-    
-  },
-  tile:{
-    paddingStart:normalize(20),
-    fontSize:normalize(16)
-  }
- 
-  
 }));
 
 export default useStyles;

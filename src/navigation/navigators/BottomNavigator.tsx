@@ -128,19 +128,19 @@ const BottomNavigator: FunctionComponent = () => {
                 styles.box,
                 animatedStyle,
                 {
-                  backgroundColor: isFocused ? '#1877F2' : 'white',
+                  backgroundColor: isFocused ? '#ec449c' : 'white',
                 },
               ]}>
               <Icon
                 name={choseIcon(route.name as routes)}
                 type="ionicon"
-                color={isFocused ? 'white' : '#6396FF'}
+                color={isFocused ? 'white' : '#ec449c'}
                 size={24}
               />
 
               <Text
                 style={{
-                  color: isFocused ? 'white' : '#6396FF',
+                  color: isFocused ? 'white' : '#ec449c',
                   fontSize: 10,
                   marginTop: 1,
                 }}>

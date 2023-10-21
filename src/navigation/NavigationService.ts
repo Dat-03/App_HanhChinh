@@ -6,7 +6,9 @@ import {
     StackActions,
 } from '@react-navigation/native';
 import { routes } from '../constants';
-
+export const handlenPressGoback =() =>{
+    NavigationService.goBack();
+}
 export const navigationRef = React.createRef<NavigationContainerRef<any>>();
 
 export class NavigationService {

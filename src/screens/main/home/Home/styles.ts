@@ -9,42 +9,35 @@ const useStyles = makeStyles(({colors}) => ({
     flex: normalize(1),
     backgroundColor: colors.colorMain,
   },
- header:{
-  flexDirection:'row',
-  justifyContent:'space-between',
-  paddingTop:normalize(150),
-  paddingHorizontal:normalize(20),
-  marginVertical:normalize(20)
- },
- avatar:{
-  flexDirection:'row',
-  justifyContent:'center',
-  alignItems:'center'
- },
- name:{
-  fontSize:normalize(18),
-  marginStart:normalize(15),
-  color:'white',
- },
- notification:{
-  paddingVertical:normalize(10),
-  
- },
- View:{
-  backgroundColor:colors.white,
-  height:normalize(HEIGHT*1),
-  width:normalize(HEIGHT*0.47),
-  borderRadius:normalize(10),
-
- },
- textconter:{
-  fontSize:normalize(18),
-  paddingStart:normalize(120),
-  paddingTop:normalize(10)
- },
- button:{
-  paddingVertical:normalize(150),
- }, 
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: normalize(24),
+    paddingVertical: normalize(24),
+    alignItems: 'center',
+  },
+  textName: {
+    fontSize: normalize(20),
+    fontWeight: 'bold',
+    color: colors.grey0,
+  },
+  content: {
+    borderTopLeftRadius: normalize(30),
+    borderTopRightRadius: normalize(50),
+    height:normalize(HEIGHT*2),
+    backgroundColor:colors.grey0,
+  },
+  textContent: {
+    textAlign: 'center',
+    paddingTop: normalize(20),
+    fontSize: normalize(20),
+    fontWeight: 'bold',
+    color: colors.black,
+  },
+  button: {
+    paddingHorizontal: normalize(24),
+    paddingVertical: normalize(30),
+  },
 }));
 
 export default useStyles;
