@@ -8,21 +8,14 @@ import {
 
 import BottomNavigator from './BottomNavigator';
 
-import {routes} from '../../constants';
-import {Screen} from '../../types';
+import { routes } from '../../constants';
 import {
-  homeScreens,
-  historyScreens,
   contactScreens,
+  historyScreens,
+  homeScreens,
   settingScreens,
 } from '../../screens/main';
-import {
-  historyManagerScreens,
-  homeManagerScreens,
-  managerScreen,
-  settingManagerScreens,
-} from '../../screens/Manager';
-import BottomManager from './BottomManager';
+import { Screen } from '../../types';
 
 const AppStack = createStackNavigator();
 
@@ -41,22 +34,13 @@ const mainScreens: Screen[] = [
   ...contactScreens,
   ...settingScreens,
 ];
-const managerScreens: Screen[] = [
-  {
-    name: routes.BOTTOMMANAGER,
-    component: BottomManager,
-  },
-  ...homeManagerScreens,
-  ...historyManagerScreens,
-  ...settingManagerScreens,
-];
 
 const AppNavigator = () => {
   return (
     <AppStack.Navigator
       screenOptions={screenOption}
-      initialRouteName={routes.BOTTOMMANAGER}>
-      {managerScreens.map((screen: Screen) => {
+      initialRouteName={routes.BOTTOM_TAB}>
+      {mainScreens.map((screen: Screen) => {
         return (
           <AppStack.Screen
             key={screen.name}

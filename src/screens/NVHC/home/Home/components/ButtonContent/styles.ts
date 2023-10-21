@@ -1,20 +1,29 @@
 import {makeStyles, normalize} from '@rneui/themed';
 import {Device} from '../../../../../../utils';
 import {theme} from '../../../../../../theme';
-import {color} from '@rneui/base';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
 const useStyles = makeStyles(({colors}) => ({
-  container: {
-    flex: 1,
+  content: {
+    borderTopLeftRadius: normalize(30),
+    backgroundColor: colors.grey5,
+    borderTopRightRadius: normalize(50),
   },
-  textName: {
+  textContent: {
+    textAlign: 'center',
+    paddingTop: normalize(20),
     fontSize: normalize(20),
     fontWeight: 'bold',
     color: colors.black,
-    padding:normalize(20)
+  },
+  button: {
+    paddingHorizontal: normalize(24),
+    paddingVertical: normalize(30),
+  },
+  scrollView: {
+    
   },
 }));
 
