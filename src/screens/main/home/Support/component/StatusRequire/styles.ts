@@ -18,7 +18,7 @@ const useStyles = makeStyles(({colors}) => ({
  itemStatus:{
   flexDirection:'row',
   marginHorizontal:normalize(10),
-  marginVertical:normalize(20)
+  
  },
  icon:{
     backgroundColor:colors.background1,

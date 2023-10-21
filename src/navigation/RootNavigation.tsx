@@ -4,15 +4,16 @@ import { navigationRef } from './NavigationService';
 
 import { History } from '../screens/main';
 import Support from '../screens/main/home/Support';
+import AppNavigator from './navigators/AppNavigator';
 
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <Support/>
+      {/* <Support/> */}
       {/* <History/> */}
-      
+      <AppNavigator />
     </NavigationContainer>
   );
 };

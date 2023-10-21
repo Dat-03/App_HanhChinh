@@ -55,8 +55,8 @@ const AppNavigator = () => {
   return (
     <AppStack.Navigator
       screenOptions={screenOption}
-      initialRouteName={routes.BOTTOMMANAGER}>
-      {managerScreens.map((screen: Screen) => {
+      initialRouteName={routes.BOTTOM_TAB}>
+      {mainScreens.map((screen: Screen) => {
         return (
           <AppStack.Screen
             key={screen.name}

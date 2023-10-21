@@ -11,7 +11,7 @@ export enum routes {
     HISTORY = 'HISTORY',
     CONTACT = 'CONTACT',
     SETTING = 'SETTING',
-
+    DETAIL ='DETAIL',
     SUPPORT='SUPPORT',
    
     

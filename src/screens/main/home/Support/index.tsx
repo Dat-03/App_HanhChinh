@@ -9,6 +9,7 @@ import StatusRequire from './component/StatusRequire'
 
 const Support: React.FC = () => {
     const styles = useStyles();
+    
     return (
         <View style={styles.container}>
             <Text style={styles.Title}>Yêu cầu hỗ trợ sự cố</Text>

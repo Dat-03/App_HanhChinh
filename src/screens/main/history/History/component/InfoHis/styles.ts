@@ -9,7 +9,6 @@ const useStyles = makeStyles(({colors}) => ({
     height:normalize(40),
     marginHorizontal:normalize(20),
     marginVertical:normalize(50),
-
  },
  img:{
     width:normalize(50),

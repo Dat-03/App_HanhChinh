@@ -19,6 +19,11 @@ const useStyle = makeStyles(({colors}) => ({
     color:colors.black,
     fontWeight:'bold',
    
+  },
+  noti:{
+    marginHorizontal:normalize(20),
+    backgroundColor:colors.itemColor,
+    marginVertical:normalize(20)
   }
 }));
 
