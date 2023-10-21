@@ -1,11 +1,11 @@
-import {FunctionComponent} from 'react';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { FunctionComponent } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { StatusBar } from 'react-native';
 import Toast from 'react-native-toast-message';
-import {RootNavigation, ThemeContext} from './src';
-import Loading from './src/components/shared/Loading';
-import {toastConfig} from './src/utils/toastConfig';
+import { RootNavigation, ThemeContext } from './src';
+import { toastConfig } from './src/utils/toastConfig';
 
 const App: FunctionComponent = () => {
   return (
@@ -16,15 +16,9 @@ const App: FunctionComponent = () => {
       }}>
       <ThemeContext>
         <GestureHandlerRootView style={{flex: 1}}>
-          {/* ALERT */}
-
-          {/* LOADING API */}
-          {/* <Loading /> */}
-          {/* MAIN APP */}
           <RootNavigation />
+          <StatusBar backgroundColor={'#ec449c'} />
           <Toast config={toastConfig} topOffset={20} visibilityTime={2500} />
-
-          {/* Modal progressing when upgrade version of app */}
         </GestureHandlerRootView>
       </ThemeContext>
     </SafeAreaProvider>

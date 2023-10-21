@@ -7,6 +7,13 @@ const HEIGHT = Device.getDeviceHeight();
 const usestyles = makeStyles(({colors}) => ({
   container: {
     flex: normalize(1),
+    backgroundColor: colors.colorMain,
+  },
+  content: {
+    borderTopLeftRadius: normalize(30),
+    borderTopRightRadius: normalize(30),
+    backgroundColor: colors.grey0,
+    flex: 1,
   },
 }));
 

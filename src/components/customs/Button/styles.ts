@@ -9,22 +9,34 @@ const useStyles = makeStyles(({colors}) => ({
   button: {
     borderRadius: normalize(8),
     alignItems: 'center',
-    flexDirection: 'row',
     marginVertical: normalize(10),
-    width: '90%',
+    width: '100%',
     height: normalize(66),
     borderWidth: normalize(0.5),
-    borderColor:'gray',
-    paddingHorizontal:normalize(20)
+    borderColor: colors.colorBorder,
+    paddingHorizontal: normalize(20),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   buttonText: {
-    fontSize: normalize(18),
+    fontSize: normalize(15),
     fontWeight: '700',
     letterSpacing: normalize(0.2),
     fontStyle: 'normal',
     fontFamily: 'Urbanist-Regular',
     color: colors.black,
-    marginStart: normalize(15)
+
+  },
+  textTitle: {
+    fontSize: normalize(13),
+    fontWeight: '400',
+    letterSpacing: normalize(0.2),
+    fontStyle: 'normal',
+    fontFamily: 'Urbanist-Regular',
+    color: colors.grey3,
+  },
+  viewText: {
+    width: normalize(190)
   },
 }));
 
