@@ -2,16 +2,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {navigationRef} from './NavigationService';
 
-import Personnel from '../screens/Manager/home/Personnel';
-import {HomeManager} from '../screens/Manager';
-import AppNavigator from './navigators/AppNavigator';
-import AuthNavigator from './navigators/AuthNavigator';
+import NVHCNavigator from './navigators/NVHCNavigator';
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <AppNavigator />
+      <NVHCNavigator />
     </NavigationContainer>
   );
 };

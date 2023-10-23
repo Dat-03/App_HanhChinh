@@ -8,12 +8,12 @@ import {
 
 import {routes} from '../../constants';
 import {
-  historyManagerScreens,
-  homeManagerScreens,
-  settingManagerScreens,
-} from '../../screens/Manager';
+  historyNVHCScreens,
+  homeNVHCScreens,
+  settingNVHCScreens,
+} from '../../screens/NVHC';
 import {Screen} from '../../types';
-import BottomManager from './BottomManager';
+import BottomNVHC from './BottomNVHC';
 
 const AppStack = createStackNavigator();
 
@@ -22,22 +22,22 @@ const screenOption: StackNavigationOptions = {
   cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 };
 
-const managerScreens: Screen[] = [
+const nvhcScreens: Screen[] = [
   {
-    name: routes.BOTTOMMANAGER,
-    component: BottomManager,
+    name: routes.BOTTOMNVHC,
+    component: BottomNVHC,
   },
-  ...homeManagerScreens,
-  ...historyManagerScreens,
-  ...settingManagerScreens,
+  ...homeNVHCScreens,
+  ...historyNVHCScreens,
+  ...settingNVHCScreens,
 ];
 
-const ManagerNavigator = () => {
+const NVHCNavigator = () => {
   return (
     <AppStack.Navigator
       screenOptions={screenOption}
-      initialRouteName={routes.BOTTOMMANAGER}>
-      {managerScreens.map((screen: Screen) => {
+      initialRouteName={routes.BOTTOMNVHC}>
+      {nvhcScreens.map((screen: Screen) => {
         return (
           <AppStack.Screen
             key={screen.name}
@@ -50,4 +50,4 @@ const ManagerNavigator = () => {
   );
 };
 
-export default ManagerNavigator;
+export default NVHCNavigator;

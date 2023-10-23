@@ -14,11 +14,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import {routes} from '../../constants';
-import {
-  HistoryManager,
-  HomeManager,
-  SettingManager,
-} from '../../screens/Manager';
+import {HistoryNVHC, HomeNVHC, SettingNVHC} from '../../screens/NVHC';
 import {Device} from '../../utils';
 
 const BottomTabs = createBottomTabNavigator();
@@ -33,11 +29,11 @@ const screenOptions: BottomTabNavigationOptions = {
 
 const choseIcon = (route: routes) => {
   switch (route) {
-    case routes.HOMEMANAGER:
+    case routes.HOME:
       return 'home';
-    case routes.HISTORYMANAGER:
+    case routes.HISTORY:
       return 'book';
-    case routes.SETTINGMANAGER:
+    case routes.SETTING:
       return 'settings';
     default:
       return 'home';
@@ -66,7 +62,7 @@ const styles = StyleSheet.create({
 
 const AnimatedTouch = Animated.createAnimatedComponent(TouchableOpacity);
 
-const BottomManager: FunctionComponent = () => {
+const BottomNVHC: FunctionComponent = () => {
   const Tab = ({navigation, descriptors, state}: BottomTabBarProps) => {
     const progressGrowth = useSharedValue(0);
 
@@ -159,17 +155,11 @@ const BottomManager: FunctionComponent = () => {
     <BottomTabs.Navigator
       screenOptions={screenOptions}
       tabBar={(props: BottomTabBarProps) => <Tab {...props} />}>
-      <BottomTabs.Screen name={routes.HOMEMANAGER} component={HomeManager} />
-      <BottomTabs.Screen
-        name={routes.HISTORYMANAGER}
-        component={HistoryManager}
-      />
-      <BottomTabs.Screen
-        name={routes.SETTINGMANAGER}
-        component={SettingManager}
-      />
+      <BottomTabs.Screen name={routes.HOMENVHC} component={HomeNVHC} />
+      <BottomTabs.Screen name={routes.HISTORYNVHC} component={HistoryNVHC} />
+      <BottomTabs.Screen name={routes.SETTINGNVHC} component={SettingNVHC} />
     </BottomTabs.Navigator>
   );
 };
 
-export default BottomManager;
+export default BottomNVHC;

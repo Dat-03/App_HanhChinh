@@ -27,7 +27,7 @@ export const theme = createTheme({
     red: '#FF0000',
     colorMain: '#ec449c',
     colorBorder: '#CDCDCD',
-    blue:'#4169E1'
+    blue: '#4169E1',
   },
   darkColors: {
     primary: '#F89300',
