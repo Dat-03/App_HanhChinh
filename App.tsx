@@ -1,11 +1,11 @@
-import { FunctionComponent } from 'react';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {FunctionComponent} from 'react';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import { StatusBar } from 'react-native';
+import {StatusBar} from 'react-native';
 import Toast from 'react-native-toast-message';
-import { RootNavigation, ThemeContext } from './src';
-import { toastConfig } from './src/utils/toastConfig';
+import {RootNavigation, ThemeContext} from './src';
+import {toastConfig} from './src/utils/toastConfig';
 
 const App: FunctionComponent = () => {
   return (

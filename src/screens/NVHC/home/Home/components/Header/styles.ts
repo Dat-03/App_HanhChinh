@@ -1,20 +1,26 @@
 import {makeStyles, normalize} from '@rneui/themed';
 import {Device} from '../../../../../../utils';
 import {theme} from '../../../../../../theme';
-import {color} from '@rneui/base';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
 const useStyles = makeStyles(({colors}) => ({
   container: {
-    flex: 1,
+    flex: normalize(1),
+    backgroundColor: theme.lightColors?.colorMain,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: normalize(24),
+    paddingVertical: normalize(24),
+    alignItems: 'center',
   },
   textName: {
     fontSize: normalize(20),
     fontWeight: 'bold',
-    color: colors.black,
-    padding:normalize(20)
+    color: colors.grey0,
   },
 }));
 

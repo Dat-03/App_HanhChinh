@@ -26,6 +26,7 @@ const useStyles = makeStyles(({colors}) => ({
     borderTopLeftRadius: normalize(24),
     borderTopRightRadius: normalize(24),
     backgroundColor: theme.lightColors?.grey0,
+    flex: 1,
   },
   textContent: {
     textAlign: 'center',
