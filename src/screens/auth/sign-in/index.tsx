@@ -11,8 +11,20 @@ import {routes} from '../../../constants';
 import styles from './styles';
 import {Image} from '@rneui/themed';
 import images from '../../../assets/images';
+import {useAppDispatch, useAppSelector} from '../../../hooks';
+import {AuthActions} from '../../../redux';
+import {
+  getAuthRoleUser,
+  getAuthUser,
+} from '../../../redux/selectors/authen.selector';
 
 const SignIn = () => {
+  const dispatch = useAppDispatch();
+  const dataUserApi = useAppSelector(getAuthUser);
+  const dataRoleApi = useAppSelector(getAuthRoleUser);
+  console.log('user api :', dataUserApi);
+  console.log('user api role :', dataRoleApi);
+
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
@@ -23,19 +35,15 @@ const SignIn = () => {
     try {
       // Check if your device supports Google Play
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-
-      // Get the user's ID token
       const {idToken} = await GoogleSignin.signIn();
-
-      // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-      // Sign-in the user with the credential
       const userSignIn = await auth().signInWithCredential(googleCredential);
-
-      console.log('User signed in:', userSignIn.user);
-      Alert.alert('Logged in successfully');
-      NavigationService.navigate(routes.MYPROFILE);
+      dispatch(
+        AuthActions.handleLogin({
+          email: userSignIn.user.email,
+          device_token: 'thao',
+        }),
+      );
     } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log('Google Sign-In canceled.');

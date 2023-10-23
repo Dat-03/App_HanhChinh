@@ -5,8 +5,8 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2';
 import createSagaMiddleware from 'redux-saga';
 import RootSaga from '../sagas';
-import {Redux} from '../types/redux.type';
-import {AppReducer} from '../reducer';
+import {AppReducer, LoadingReducer, AuthReducer} from '../reducer';
+import {Redux} from '../types';
 
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
@@ -15,12 +15,13 @@ const persistConfig: PersistConfig<RootState> = {
   version: 1, // version - defaults to 1
   debug: true, // enable logs - default is false
   stateReconciler: autoMergeLevel2,
-  whitelist: [Redux.app],
+  whitelist: [Redux.auth],
   blacklist: [Redux.loading],
 };
 
 const rootReducers = combineReducers({
   app: AppReducer,
+  auth: AuthReducer,
 });
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducers);
 
