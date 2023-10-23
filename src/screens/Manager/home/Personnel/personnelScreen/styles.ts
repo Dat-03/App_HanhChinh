@@ -1,8 +1,9 @@
 import {makeStyles, normalize} from '@rneui/themed';
-import {Device} from '../../../../../../utils';
-import {theme} from '../../../../../../theme';
+
 import {StyleSheet} from 'react-native';
-import colors from '../../../../../../assets/colors';
+import { Device } from '../../../../../utils';
+import colors from '../../../../../assets/colors';
+
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();

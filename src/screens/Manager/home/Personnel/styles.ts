@@ -8,7 +8,7 @@ const HEIGHT = Device.getDeviceHeight();
 
 const styles = StyleSheet.create({
   container: {
-    flex: normalize(1),
+    flex: 1,
     backgroundColor: colors.colorMain,
   },
   content: {

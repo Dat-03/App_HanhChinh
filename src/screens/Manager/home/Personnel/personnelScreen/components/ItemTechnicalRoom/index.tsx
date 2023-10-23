@@ -1,8 +1,9 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import ButtonCustom from '../../../../../../../../components/customs/Button';
-import {NavigationService} from '../../../../../../../../navigation';
-import {routes} from '../../../../../../../../constants';
+import ButtonCustom from '../../../../../../../components/customs/Button';
+import { NavigationService } from '../../../../../../../navigation';
+import { routes } from '../../../../../../../constants';
+
 
 const ItemTechnicalRoom: React.FC = () => {
   const handlePressGoDetail = () => {

@@ -4,8 +4,9 @@ import React, { FunctionComponent } from 'react';
 
 import { HeaderCustom, TabViewItem } from '../../../../components';
 import { NavigationService } from '../../../../navigation';
-import { PersonnelScreen, RatingScreen } from './components';
 import styles from './styles';
+import PersonnelScreen from './personnelScreen';
+import RatingScreen from './ratingScreen';
 
 const Personnel: FunctionComponent = () => {
   const handlePressGoback = () => {

@@ -3,13 +3,20 @@ import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent} from 'react';
 
-import useStyles from './styles';
+import styles from './styles';
+import {HeaderCustom} from '../../../../components';
+import {ButtonContent} from './components';
 
 const Home: FunctionComponent = () => {
-  const styles = useStyles();
   return (
     <View style={styles.container}>
-      <Text>HI</Text>
+      <HeaderCustom />
+      <View style={styles.content}>
+        <Text style={styles.textContent}>Dịch vụ trưc tuyến </Text>
+        <View style={styles.button}>
+          <ButtonContent />
+        </View>
+      </View>
     </View>
   );
 };

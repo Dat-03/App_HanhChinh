@@ -2,11 +2,10 @@ import {Text, View} from 'react-native';
 
 import React, {FunctionComponent} from 'react';
 
-import useStyles from './styles';
+import styles from './styles';
 import {ButtonContent, Header_home} from './components';
 
 const HomeManage: FunctionComponent = () => {
-  const styles = useStyles();
   return (
     <View style={styles.container}>
       <View>

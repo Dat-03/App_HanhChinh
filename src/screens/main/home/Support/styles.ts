@@ -1,24 +1,9 @@
-import {makeStyles, normalize} from '@rneui/themed';
-import {Device} from '../../../../utils';
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
-
-const WIDTH = Device.getDeviceWidth();
-const HEIGHT = Device.getDeviceHeight(); //cho hinh`
-
-const useStyles = makeStyles(({colors}) => ({
+const styles = StyleSheet.create({
   container: {
-    flex: normalize(1),
-    
-    height: normalize(HEIGHT * 0.058),
+    flex: 1,
   },
-  Title:{
-    textAlign:'center',
-    fontSize:normalize(25),
-    marginTop:normalize(10),
-    color:colors.black,
-    fontWeight:'bold'
-  }
-}));
-
-export default useStyles;
-
+});
+export default styles;

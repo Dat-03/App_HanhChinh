@@ -1,11 +1,13 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
-import {NavigationService} from '../../../../../../../../navigation';
-import {routes} from '../../../../../../../../constants';
+
 import {Icon} from '@rneui/themed';
-import {HeaderCustom} from '../../../../../../../../components';
-import {images} from '../../../../../../../../assets';
+import { HeaderCustom } from '../../../../../../../components';
+import { NavigationService } from '../../../../../../../navigation';
+import { routes } from '../../../../../../../constants';
+import { images } from '../../../../../../../assets';
+
 
 const DetailPersonal: React.FC = () => {
   const handlePressGoback = () => {
