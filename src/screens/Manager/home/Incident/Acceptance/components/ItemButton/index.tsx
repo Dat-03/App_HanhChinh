@@ -1,10 +1,9 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {ButtonNotification} from '../../../../../../../components';
-import useStyles from './styles';
+import styles from './styles';
 
 const ItemButton: React.FC = () => {
-  const styles = useStyles();
   return (
     <View style={styles.container}>
       <ButtonNotification

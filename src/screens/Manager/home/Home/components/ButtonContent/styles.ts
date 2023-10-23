@@ -1,11 +1,12 @@
-import {makeStyles, normalize} from '@rneui/themed';
-import {Device} from '../../../../../../utils';
-import {theme} from '../../../../../../theme';
+import { normalize } from '@rneui/themed';
+import { StyleSheet } from 'react-native';
+import colors from '../../../../../../assets/colors';
+import { Device } from '../../../../../../utils';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
-const useStyles = makeStyles(({colors}) => ({
+const styles = StyleSheet.create({
   content: {
     borderTopLeftRadius: normalize(30),
     backgroundColor: colors.grey5,
@@ -16,15 +17,13 @@ const useStyles = makeStyles(({colors}) => ({
     paddingTop: normalize(20),
     fontSize: normalize(20),
     fontWeight: 'bold',
-    color: colors.black,
+    color: colors.black0,
   },
   button: {
     paddingHorizontal: normalize(24),
     paddingVertical: normalize(30),
   },
-  scrollView: {
-    
-  },
-}));
+  scrollView: {},
+});
 
-export default useStyles;
+export default styles;

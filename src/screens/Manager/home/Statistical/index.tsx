@@ -3,7 +3,7 @@ import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent} from 'react';
 
-import useStyles from './styles';
+import styles from './styles';
 import {ButtonSimple, HeaderCustom} from '../../../../components';
 import {Icon} from '@rneui/themed';
 import {NavigationService} from '../../../../navigation';
@@ -11,7 +11,6 @@ import {routes} from '../../../../constants';
 import {ItemButton} from './components';
 
 const Statistical: FunctionComponent = () => {
-  const styles = useStyles();
   const handlePressGoback = () => {
     NavigationService.navigate(routes.HOMEMANAGER);
   };

@@ -1,15 +1,13 @@
-import {View} from 'react-native';
+import { View } from 'react-native';
 
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 
-import {HeaderCustom, TabViewItem} from '../../../../components';
-import {PersonnelScreen, RatingScreen} from './components';
-import useStyles from './styles';
-import {NavigationService} from '../../../../navigation';
-import {routes} from '../../../../constants';
+import { HeaderCustom, TabViewItem } from '../../../../components';
+import { NavigationService } from '../../../../navigation';
+import { PersonnelScreen, RatingScreen } from './components';
+import styles from './styles';
 
 const Personnel: FunctionComponent = () => {
-  const styles = useStyles();
   const handlePressGoback = () => {
     NavigationService.goBack();
   };

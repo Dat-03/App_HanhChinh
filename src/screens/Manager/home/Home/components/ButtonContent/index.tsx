@@ -1,12 +1,11 @@
 import {View, ScrollView} from 'react-native';
 import React from 'react';
 import ButtonCustom from '../../../../../../components/customs/Button';
-import useStyles from './styles';
+import styles from './styles';
 import {NavigationService} from '../../../../../../navigation';
 import {routes} from '../../../../../../constants';
 
 const ButtonContent: React.FC = () => {
-  const styles = useStyles();
   return (
     <ScrollView style={styles.scrollView}>
       <ButtonCustom

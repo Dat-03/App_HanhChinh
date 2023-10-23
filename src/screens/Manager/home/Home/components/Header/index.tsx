@@ -3,11 +3,10 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import React, {FunctionComponent} from 'react';
 
 import {Icon} from '@rneui/themed';
-import useStyles from './styles';
+import styles from './styles';
 import {images} from '../../../../../../assets';
 
 const Header_home: FunctionComponent = () => {
-  const styles = useStyles();
   return (
     <View style={styles.header}>
       <TouchableOpacity>

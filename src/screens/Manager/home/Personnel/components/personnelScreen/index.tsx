@@ -1,11 +1,9 @@
-import {View, Text} from 'react-native';
 import React from 'react';
-import useStyles from './styles';
-import ButtonCustom from '../../../../../../components/customs/Button';
-import {ItemTechnicalRoom} from './components';
+import { Text, View } from 'react-native';
+import { ItemTechnicalRoom } from './components';
+import styles from './styles';
 
 const PersonnelScreen: React.FC = () => {
-  const styles = useStyles();
   return (
     <View style={styles.container}>
       <Text style={styles.textNameRoom}>Phòng kỹ thuật</Text>

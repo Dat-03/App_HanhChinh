@@ -15,9 +15,7 @@ const HomeManage: FunctionComponent = () => {
       <View style={styles.content}>
         <Text style={styles.textContent}>Dịch vụ trưc tuyến </Text>
         <View style={styles.button}>
-          <View style={styles.content}>
-            <ButtonContent />
-          </View>
+          <ButtonContent />
         </View>
       </View>
     </View>

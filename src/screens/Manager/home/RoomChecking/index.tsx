@@ -3,10 +3,9 @@ import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent} from 'react';
 
-import useStyles from './styles';
+import styles from './styles';
 
 const RoomChecking: FunctionComponent = () => {
-  const styles = useStyles();
   return (
     <View style={styles.container}>
       <Text>HI</Text>
