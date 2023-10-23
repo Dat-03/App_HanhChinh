@@ -2,13 +2,24 @@ import React, { FunctionComponent } from 'react';
 
 import { View, Text } from 'react-native';
 
-import styles from './styles';
+import useStyles from './styles';
+import HisList from './component/HisList';
+import InfoHis from './component/InfoHis';
 
-const History: FunctionComponent = () => {
+
+const History: React.FC = () => {
+    const styles = useStyles();
     return (
         <View style={styles.container}>
-            <Text>History</Text>
+            <View>
+                <InfoHis />
+            </View>
+            <View>
+                <HisList />
+            </View>
+
         </View>
+
     );
 };
 

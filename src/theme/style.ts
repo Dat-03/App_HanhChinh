@@ -10,8 +10,18 @@ declare module '@rneui/themed' {
   }
 }
 
+declare module '@rneui/themed' {
+  export interface Colors {
+    redcolor: string;
+    background1: string;
+    textBtnColor: string;
+    itemColor: string;
+  }
+}
 export const theme = createTheme({
   lightColors: {
+    background1: '#ec449c',
+    redcolor: '#FF0000',
     primary: '#F89300',
     secondary: '#FFF7EB',
     greyOutline: '#F9f9f9',
@@ -28,6 +38,7 @@ export const theme = createTheme({
     colorMain: '#ec449c',
     colorBorder: '#CDCDCD',
     blue: '#4169E1',
+    itemColor: '#F1F4F5',
   },
   darkColors: {
     primary: '#F89300',
@@ -44,17 +55,5 @@ export const theme = createTheme({
     background: '#181A20',
 
     red: '#FF0000',
-  },
-  components: {
-    Button: (props, theme) => ({
-      containerStyle: {
-        backgroundColor: theme.colors.background,
-        height: 100,
-        width: 100,
-      },
-      titleStyle: {
-        fontSize: 20,
-      },
-    }),
   },
 });

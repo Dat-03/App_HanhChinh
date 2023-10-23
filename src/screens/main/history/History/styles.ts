@@ -1,11 +1,17 @@
-import { StyleSheet } from 'react-native';
+import {makeStyles, normalize} from '@rneui/themed';
+import { Device } from '../../../../utils';
 
-const styles = StyleSheet.create({
+
+const WIDTH = Device.getDeviceWidth();
+const HEIGHT = Device.getDeviceHeight(); //cho hinh`
+
+const useStyles = makeStyles(({colors}) => ({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+      flex: normalize(2), 
+      height: normalize(HEIGHT * 0.058),
+      backgroundColor:colors.background1
     },
-});
+  }));
+  
 
-export default styles;
+export default useStyles;
