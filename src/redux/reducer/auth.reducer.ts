@@ -1,6 +1,6 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 import {Redux} from '../types/redux.type';
-import {AuthState} from '../types';
+import {AuthState, RefreshToken} from '../types';
 
 const initialState: AuthState = {
   user: {},
@@ -25,6 +25,14 @@ const reducer = createSlice({
       return {
         ...state,
         ...action.payload,
+      };
+    },
+
+    refreshToken: (state: AuthState, action: PayloadAction<RefreshToken>) => {
+      return {
+        ...state,
+        token: action.payload.token,
+        refreshToken: action.payload.refreshToken,
       };
     },
 

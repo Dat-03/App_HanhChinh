@@ -6,7 +6,7 @@ import {AuthActions} from '../reducer';
 import {AuthService} from '../services';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import {signOut} from '../../utils/google';
+import {LogOut} from '../../utils/google';
 
 function* loginSaga(action: PayloadAction<number>): Generator {
   try {
@@ -16,7 +16,7 @@ function* loginSaga(action: PayloadAction<number>): Generator {
       console.log('run push tookit');
       yield put(AuthActions.handleLoginSuccess(data.data));
     } else {
-      signOut();
+      LogOut();
       console.log('Server errol !!!');
     }
   } catch (error) {

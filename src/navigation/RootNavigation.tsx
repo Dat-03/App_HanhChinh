@@ -7,6 +7,7 @@ import AuthNavigator from './navigators/AuthNavigator';
 import {useAppSelector} from '../hooks';
 import {getAuthRoleUser} from '../redux/selectors/authen.selector';
 import AppNavigator from './navigators/AppNavigator';
+import ManagerNavigator from './navigators/ManagerNavigator';
 
 const RootNavigation = () => {
   const dataRoleApi = useAppSelector(getAuthRoleUser);
@@ -16,7 +17,15 @@ const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      {dataRoleApi === 'TEACHER' ? <AppNavigator /> : <AuthNavigator />}
+      {dataRoleApi === 'TEACHER' ? (
+        <AppNavigator />
+      ) : dataRoleApi === 'ADMIN' ? (
+        <NVHCNavigator />
+      ) : dataRoleApi == 'MANAGER' ? (
+        <ManagerNavigator />
+      ) : (
+        <AuthNavigator />
+      )}
     </NavigationContainer>
   );
 };

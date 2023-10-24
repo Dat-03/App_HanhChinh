@@ -6,19 +6,14 @@ import {NavigationService} from '../../../../navigation';
 import {routes} from '../../../../constants';
 import {useAppDispatch} from '../../../../hooks';
 import {AuthActions} from '../../../../redux';
+import {LogOut} from '../../../../utils/google';
 
 const Setting = () => {
   const dispatch = useAppDispatch();
 
-  const signOut = async () => {
-    try {
-      dispatch(AuthActions.Logout());
-      await GoogleSignin.revokeAccess();
-      await GoogleSignin.signOut();
-      await auth().signOut();
-    } catch (error) {
-      Alert.alert('Logout failed');
-    }
+  const signOut = () => {
+    dispatch(AuthActions.Logout());
+    LogOut();
   };
   return (
     <View>

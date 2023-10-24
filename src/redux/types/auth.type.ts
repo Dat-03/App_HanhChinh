@@ -4,6 +4,11 @@ export type AppStatus = {
   isReady: boolean;
 };
 
+export type RefreshToken = {
+  token: string;
+  refreshToken: string;
+};
+
 export type AuthState = {
   user: Partial<User>;
   token: string;
