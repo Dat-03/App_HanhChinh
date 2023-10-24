@@ -3,4 +3,5 @@ export enum Redux {
   app = 'app',
   theme = 'theme',
   auth = 'auth',
+  report = 'report',
 }

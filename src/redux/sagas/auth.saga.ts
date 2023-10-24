@@ -1,11 +1,10 @@
 import {PayloadAction} from '@reduxjs/toolkit';
 import {call, put, takeLatest} from 'redux-saga/effects';
-import {routes} from '../../constants';
+
 import {NavigationService} from '../../navigation';
 import {AuthActions} from '../reducer';
 import {AuthService} from '../services';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
+
 import {LogOut} from '../../utils/google';
 
 function* loginSaga(action: PayloadAction<number>): Generator {

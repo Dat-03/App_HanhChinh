@@ -36,6 +36,7 @@ const SignIn = () => {
       // Check if your device supports Google Play
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
       const {idToken} = await GoogleSignin.signIn();
+      console.log(idToken);
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       const userSignIn = await auth().signInWithCredential(googleCredential);
       dispatch(
