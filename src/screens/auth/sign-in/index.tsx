@@ -3,7 +3,6 @@ import React, {useEffect} from 'react';
 import {
   GoogleSignin,
   statusCodes,
-  GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import {NavigationService} from '../../../navigation';
@@ -17,45 +16,25 @@ import {
   getAuthRoleUser,
   getAuthUser,
 } from '../../../redux/selectors/authen.selector';
+import {signInWithGoogleAsync} from '../../../utils/google';
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
   const dataUserApi = useAppSelector(getAuthUser);
   const dataRoleApi = useAppSelector(getAuthRoleUser);
-  console.log('user api :', dataUserApi);
-  console.log('user api role :', dataRoleApi);
 
-  useEffect(() => {
-    GoogleSignin.configure({
-      webClientId:
-        '71174207638-f592bchep4n26turj77r886pagt8197a.apps.googleusercontent.com',
-    });
-  }, []);
-  const signInWithGoogleAsync = async () => {
-    try {
-      // Check if your device supports Google Play
-      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-      const {idToken} = await GoogleSignin.signIn();
-      console.log(idToken);
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      const userSignIn = await auth().signInWithCredential(googleCredential);
+  const signIn = async () => {
+    const userSignIn = await signInWithGoogleAsync();
+    if (userSignIn) {
+      const email = userSignIn.user.email;
       dispatch(
         AuthActions.handleLogin({
-          email: userSignIn.user.email,
+          email: email,
           device_token: 'thao',
         }),
       );
-    } catch (error: any) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log('Google Sign-In canceled.');
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log('Google Sign-In already in progress.');
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log('Google Play Services not available.');
-      } else {
-        console.error('Google Sign-In Error:', error);
-        Alert.alert('Login failed 1', error.code);
-      }
+    } else {
+      console.log('login fail');
     }
   };
   return (
@@ -72,9 +51,7 @@ const SignIn = () => {
           style={styles.imageBeeStyle}
           source={images.bee}
         />
-        <TouchableOpacity
-          style={styles.btnGoogle}
-          onPress={signInWithGoogleAsync}>
+        <TouchableOpacity style={styles.btnGoogle} onPress={signIn}>
           <Image
             resizeMode="cover"
             style={styles.imageGoogle}

@@ -1,21 +1,20 @@
 export enum routes {
-    //auth
-    ONBOARD = 'ONBOARD',
-    SIGN_IN = 'SIGN_IN',
-    CREATE_ACCOUNT = 'CREATE_ACCOUNT',
-    LOBBY = 'LOBBY',
-    UPDATE_PROFILE = 'UPDATE_PROFILE',
+  //auth
+  ONBOARD = 'ONBOARD',
+  SIGN_IN = 'SIGN_IN',
+  CREATE_ACCOUNT = 'CREATE_ACCOUNT',
+  LOBBY = 'LOBBY',
+  UPDATE_PROFILE = 'UPDATE_PROFILE',
 
-    BOTTOM_TAB = 'BOTTOM_TAB',
-    HOME = 'HOME',
-    HISTORY = 'HISTORY',
-    CONTACT = 'CONTACT',
-    SETTING = 'SETTING',
-    DETAIL ='DETAIL',
-    SUPPORT='SUPPORT',
-   
-    
-  
+  BOTTOM_TAB = 'BOTTOM_TAB',
+  HOME = 'HOME',
+  HISTORY = 'HISTORY',
+  CONTACT = 'CONTACT',
+  SETTING = 'SETTING',
+  DETAIL = 'DETAIL',
+  SUPPORT = 'SUPPORT',
+  CREATE_REPORT = 'CREATE_REPORT',
+
   // Bottom tab Manager
   BOTTOMMANAGER = 'BOTTOMMANAGER',
   HOMEMANAGER = 'HOME',
@@ -38,5 +37,4 @@ export enum routes {
   SETTINGNVHC = 'SETTING',
 
   // Screen NVHC
-
 }

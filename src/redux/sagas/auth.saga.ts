@@ -6,6 +6,7 @@ import {AuthActions} from '../reducer';
 import {AuthService} from '../services';
 
 import {LogOut} from '../../utils/google';
+import {showToastError, showToastSuccess} from '../../utils';
 
 function* loginSaga(action: PayloadAction<number>): Generator {
   try {
@@ -14,7 +15,9 @@ function* loginSaga(action: PayloadAction<number>): Generator {
     if (data.status == 200) {
       console.log('run push tookit');
       yield put(AuthActions.handleLoginSuccess(data.data));
+      showToastSuccess(data.message);
     } else {
+      showToastError(data.message);
       LogOut();
       console.log('Server errol !!!');
     }
