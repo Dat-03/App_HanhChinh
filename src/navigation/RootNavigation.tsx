@@ -2,15 +2,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {navigationRef} from './NavigationService';
 
-import NVHCNavigator from './navigators/NVHCNavigator';
-import AppNavigator from './navigators/AppNavigator';
-import ManagerNavigator from './navigators/ManagerNavigator';
+import Timelineitem from '../screens/main/home/Support/components/Timeline';
+import Support from '../screens/main/home/Support';
+import Notification_Suport from '../screens/main/home/Support/components/Notification';
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <ManagerNavigator />
+      <Support />
     </NavigationContainer>
   );
 };

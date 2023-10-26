@@ -7,4 +7,5 @@ export default {
   black0: '#000000',
   grey5: '#B0B3B8', // ||
   grey3: '#667085',
+  line: '#D9D9D9',
 };

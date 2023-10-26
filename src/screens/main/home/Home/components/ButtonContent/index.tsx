@@ -9,7 +9,7 @@ const ButtonContent: React.FC = () => {
   return (
     <ScrollView style={styles.scrollView}>
       <ButtonCustom
-        textButton="Nhân sự"
+        textButton="Báo cáo sự cố"
         textTitle="asdasdasdasd"
         name="users"
         type="font-awesome"
@@ -18,7 +18,7 @@ const ButtonContent: React.FC = () => {
         onPressButton={() => NavigationService.navigate(routes.PERSONNEL)}
       />
       <ButtonCustom
-        textButton="Thống kê sự cố trong ngày"
+        textButton="Yêu cầu hỗ trợ CNTT"
         name="areachart"
         type="antdesign"
         color="#ec449c"
@@ -26,12 +26,12 @@ const ButtonContent: React.FC = () => {
         onPressButton={() => NavigationService.navigate(routes.STATISTICAL)}
       />
       <ButtonCustom
-        textButton="Sự cố chưa hoàn thành"
+        textButton="Quản lý mượn phòng học, hội trường"
         name="history"
         type="font-awesome"
         color="#ec449c"
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.INCIDENT)}
+        onPressButton={() => NavigationService.navigate(routes.SUPPORT)}
       />
      
     </ScrollView>

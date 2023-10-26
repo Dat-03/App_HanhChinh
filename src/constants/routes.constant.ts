@@ -11,8 +11,10 @@ export enum routes {
     HISTORY = 'HISTORY',
     CONTACT = 'CONTACT',
     SETTING = 'SETTING',
+    // Screen home GV
     DETAIL ='DETAIL',
     SUPPORT='SUPPORT',
+    NOTIFICATION_SUPPORT = 'NOTIFICATION_SUPPORT',
    
     
   
