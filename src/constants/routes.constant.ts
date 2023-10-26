@@ -14,6 +14,7 @@ export enum routes {
   DETAIL = 'DETAIL',
   SUPPORT = 'SUPPORT',
   CREATE_REPORT = 'CREATE_REPORT',
+  UP_IMAGE = 'UP_IMAGE',
 
   // Bottom tab Manager
   BOTTOMMANAGER = 'BOTTOMMANAGER',

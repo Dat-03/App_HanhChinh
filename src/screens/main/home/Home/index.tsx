@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {Button, Text} from '@rneui/base';
 import React, {FunctionComponent} from 'react';
 import useStyles from './styles';
@@ -21,6 +21,9 @@ const Home: FunctionComponent = () => {
       <Text>{JSON.stringify(dataTeacher)}</Text> */}
       <Button onPress={() => NavigationService.navigate(routes.CREATE_REPORT)}>
         Hello
+      </Button>
+      <Button onPress={() => NavigationService.navigate(routes.UP_IMAGE)}>
+        Hello1
       </Button>
     </View>
   );

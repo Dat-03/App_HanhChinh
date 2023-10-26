@@ -5,6 +5,7 @@ import SelectDropDown from '../../../../components/customs/SelectList';
 import styles from './styles';
 import {HeaderCustom, HeaderMain} from '../../../../components';
 import InputCustom from '../../../../components/customs/InputCustom';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const CreateReport = () => {
   const [selected, setSelected] = React.useState('');
