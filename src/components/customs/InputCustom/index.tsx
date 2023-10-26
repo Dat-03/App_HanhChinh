@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Keyboard, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Input, InputProps} from '@rneui/base';
 import styles from './styles';

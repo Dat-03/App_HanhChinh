@@ -22,10 +22,11 @@ const styles = StyleSheet.create({
     borderWidth: normalize(0.5),
   },
   inputStyle: {
-    fontSize: normalize(16),
+    fontSize: normalize(14),
     fontWeight: '400',
     lineHeight: normalize(24),
   },
+
   inputContainer: {
     gap: normalize(20),
   },

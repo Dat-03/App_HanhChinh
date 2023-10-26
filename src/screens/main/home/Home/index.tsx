@@ -22,9 +22,6 @@ const Home: FunctionComponent = () => {
       <Button onPress={() => NavigationService.navigate(routes.CREATE_REPORT)}>
         Hello
       </Button>
-      <Button onPress={() => NavigationService.navigate(routes.UP_IMAGE)}>
-        Hello1
-      </Button>
     </View>
   );
 };

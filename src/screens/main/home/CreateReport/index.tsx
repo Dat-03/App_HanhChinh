@@ -3,9 +3,11 @@ import React, {useState} from 'react';
 import {SelectList} from 'react-native-dropdown-select-list';
 import SelectDropDown from '../../../../components/customs/SelectList';
 import styles from './styles';
-import {HeaderCustom, HeaderMain} from '../../../../components';
+import {BigButton, HeaderCustom, HeaderMain} from '../../../../components';
 import InputCustom from '../../../../components/customs/InputCustom';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import UpImage from './components/UpImage';
+import {backScreen} from '../../../../utils';
 
 const CreateReport = () => {
   const [selected, setSelected] = React.useState('');
@@ -22,6 +24,7 @@ const CreateReport = () => {
   return (
     <View style={styles.container}>
       <HeaderMain
+        onPressLeftIcon={() => backScreen()}
         leftIcon={{name: 'chevron-back-outline', type: 'ionicon'}}
         title="Báo cáo sự cố"
       />
@@ -44,8 +47,10 @@ const CreateReport = () => {
           searchPlaceholder="Search"
           placeholder="Sự cố đang gặp phải"
         />
-        <InputCustom placeholder="Mô tả sự cố" />
+        <InputCustom multiline placeholder="Mô tả sự cố" />
+        <UpImage />
       </View>
+      <BigButton textButton="Gửi yêu cầu" />
     </View>
   );
 };

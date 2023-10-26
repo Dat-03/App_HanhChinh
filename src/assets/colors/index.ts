@@ -4,4 +4,5 @@ export default {
   backgroundLogin: '#F0F0F0',
   colorInput: '#F1F4F5',
   black: '#000',
+  borderButtonCamera: '#CACACA',
 };

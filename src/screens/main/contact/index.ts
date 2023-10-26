@@ -1,5 +1,5 @@
-import { Screen } from '../../../types';
+import {Screen} from '../../../types';
 
-export { default as Contact } from './Contact';
+export {default as Contact} from './Contact';
 
 export const contactScreens: Screen[] = [];
