@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Alert, Text, View} from 'react-native';
 import {Notification_Suport, Timelineitem} from './components';
 import styles from './styles';
 import {BigButton, HeaderCustom} from '../../../../components';
@@ -10,6 +10,23 @@ const Support: React.FC = () => {
   const handleGoback = () => {
     NavigationService.goBack();
   };
+
+  const [timelineStatus, setTimelineStatus] = useState('Yêu cầu');
+  const [feedbackText, setFeedbackText] = useState('Phản hồi');
+
+  const handleFeedback = () => {
+    if (feedbackText === 'Phản hồi') {
+      if (timelineStatus === 'Yêu cầu đã hoàn thành') {
+      } else {
+      }
+    } else if (feedbackText === 'Đánh giá') {
+    }
+  };
+
+  const handleReview = () => {
+    Alert.alert('Thông báo', 'Đã hoàn thành');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -21,10 +38,22 @@ const Support: React.FC = () => {
       </View>
       <View style={styles.viewTimeline}>
         <Text style={styles.textTimeline}>Trạng thái yêu cầu</Text>
-        <Timelineitem />
+        <Timelineitem
+          onStatusChange={newStatus => {
+            setTimelineStatus(newStatus);
+            // Check if all three requests have timestamps
+            if (newStatus === 'Yêu cầu đã hoàn thành') {
+              setFeedbackText('Đánh giá');
+            }
+          }}
+        />
       </View>
       <View>
-        <BigButton textButton="Phản hồi" />
+        {timelineStatus === 'Yêu cầu đã hoàn thành' ? (
+          <BigButton textButton="Đánh giá" onPressButton={handleReview} />
+        ) : (
+          <BigButton textButton={feedbackText} onPressButton={handleFeedback} />
+        )}
       </View>
     </View>
   );

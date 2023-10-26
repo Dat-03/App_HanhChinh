@@ -1,15 +1,17 @@
 import {Icon} from '@rneui/themed';
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import colors from '../../../../../../assets/colors';
 import styles from './styles';
 
-const Timelineitem: React.FC = () => {
+const Timelineitem: React.FC<{onStatusChange: (newStatus: string) => void}> = ({
+  onStatusChange,
+}) => {
   const customData = [
     {
       title: 'Yêu cầu',
-      description: '__:__',
+      description: '09:10',
       status: 'history',
     },
     {
@@ -19,21 +21,24 @@ const Timelineitem: React.FC = () => {
     },
     {
       title: 'Yêu cầu đã hoàn thành',
-      description: '10:00',
-      status: 'check',
+      description: '',
+      status: 'history',
     },
   ];
+
   const [timelineData, setTimelineData] = useState(customData);
   useEffect(() => {
     const updatedData = timelineData.map(item => {
-      if (item.description === '__:__') {
+      if (item.description === '') {
         item.status = 'history';
       } else {
         item.status = 'check';
       }
       return item;
     });
+    const currentStatus = 'Yêu cầu đã hoàn thành';
     setTimelineData(updatedData);
+    onStatusChange(currentStatus);
   }, []);
 
   return (
@@ -69,20 +74,5 @@ const Timelineitem: React.FC = () => {
     />
   );
 };
-
-const localStyles = StyleSheet.create({
-  circleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  circleStyle: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default Timelineitem;
