@@ -1,11 +1,18 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import useStyles from './styles'
 import { Icon } from '@rneui/base';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { normalize } from 'path';
+import AcceptRequire from '../AcceptRequire';
 
 const StatusRequire: React.FC = () => {
+    const [loaing,setloading]=useState();
+    const handlerClick=() =>{
+        <AcceptRequire/>
+    }
+
+
     const styles = useStyles();
     return (
         <View style={styles.container}>
@@ -29,7 +36,7 @@ const StatusRequire: React.FC = () => {
                     </View>
                 </View>
                 <View style={styles.itemStatus}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={handlerClick}>
                         <View style={{ alignItems: 'center' }}>
                             <View style={styles.icon}>
                                 <Icon name='check' type='font-awesome' color={'white'} />

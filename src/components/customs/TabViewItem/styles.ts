@@ -18,7 +18,7 @@ const useStyles = makeStyles(({colors}) => ({
   },
   indicatorStyle: {
     height: 3,
-    backgroundColor: colors.grey5,
+    backgroundColor: 'blue',
   },
 }));
 

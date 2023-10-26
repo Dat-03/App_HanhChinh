@@ -25,6 +25,5 @@ export type CustomHeaderProps = {
   imageUri?: HeaderImage;
   fullName?: string;
   userStatus?: string;
-
   leftIconStyle?: ViewStyle;
 };

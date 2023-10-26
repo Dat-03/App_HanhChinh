@@ -15,7 +15,7 @@ const ButtonContent: React.FC = () => {
         type="font-awesome-5"
         color="#ec449c"
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.PERSONNEL)}
+        onPressButton={() => NavigationService.navigate(routes.PROBLEM)}
       />
       <ButtonCustom
         textButton="Tính sẵn sàng phòng học"

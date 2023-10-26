@@ -32,7 +32,7 @@ const TabViewItem: React.FunctionComponent<CustomTabViewItemProps> = props => {
         </TabView.Item>
         <TabView.Item style={styles.containerTabView}>
           {props.screen2}
-        </TabView.Item>
+        </TabView.Item> 
       </TabView>
     </View>
   );

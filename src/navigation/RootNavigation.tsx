@@ -3,12 +3,16 @@ import React from 'react';
 import {navigationRef} from './NavigationService';
 
 import NVHCNavigator from './navigators/NVHCNavigator';
+import ManagerNavigator from './navigators/ManagerNavigator';
+import AppNavigator from './navigators/AppNavigator';
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <NVHCNavigator />
+      {/* <AppNavigator/> */}
+      <NVHCNavigator/>
+      {/* <ManagerNavigator/> */}
     </NavigationContainer>
   );
 };

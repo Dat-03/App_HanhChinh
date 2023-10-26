@@ -1,12 +1,13 @@
 import {makeStyles, normalize} from '@rneui/themed';
 import { Device } from '../../../../../utils';
-
+import colors from '../../../../../assets/colors';
+import { StyleSheet } from 'react-native';
 
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight(); //cho hinh`
 
-const useStyle = makeStyles(({colors}) => ({
+const styles = StyleSheet.create({
   container: {
     flex: normalize(1),
     
@@ -24,8 +25,11 @@ const useStyle = makeStyles(({colors}) => ({
     marginHorizontal:normalize(20),
     backgroundColor:colors.itemColor,
     marginVertical:normalize(20)
+  },
+  iconLeftStyle:{
+    color: colors.white
   }
-}));
+});
 
-export default useStyle;
+export default styles;
 
