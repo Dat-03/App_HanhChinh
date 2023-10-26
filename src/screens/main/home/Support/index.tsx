@@ -16,10 +16,9 @@ const Support: React.FC = () => {
 
   const handleFeedback = () => {
     if (feedbackText === 'Phản hồi') {
-      if (timelineStatus === 'Yêu cầu đã hoàn thành') {
-      } else {
-      }
+      Alert.alert('Thông báo', 'Vui lòng đợi phản hồi');
     } else if (feedbackText === 'Đánh giá') {
+      // Gọi Alert đã custom ở đây
     }
   };
 
@@ -41,7 +40,6 @@ const Support: React.FC = () => {
         <Timelineitem
           onStatusChange={newStatus => {
             setTimelineStatus(newStatus);
-            // Check if all three requests have timestamps
             if (newStatus === 'Yêu cầu đã hoàn thành') {
               setFeedbackText('Đánh giá');
             }

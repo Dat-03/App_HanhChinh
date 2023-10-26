@@ -1,10 +1,7 @@
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {navigationRef} from './NavigationService';
+import { navigationRef } from './NavigationService';
 
-import Timelineitem from '../screens/main/home/Support/components/Timeline';
-import Support from '../screens/main/home/Support';
-import Notification_Suport from '../screens/main/home/Support/components/Notification';
 import AppNavigator from './navigators/AppNavigator';
 
 const RootNavigation = () => {
