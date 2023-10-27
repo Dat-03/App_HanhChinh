@@ -14,21 +14,24 @@ import styles from './styles';
 import {images} from '../../../../../../assets';
 import * as ImagePicker from 'react-native-image-picker';
 
-const UpImage = () => {
+type UpImageProps = {
+  formdata: FormData;
+};
+
+const UpImage: React.FC<UpImageProps> = ({formdata}) => {
   const [imgUrl, setImgUrl] = useState('');
   const [imglibrary, setImglibrary] = useState('');
   const [number, setNumber] = useState<number>(1);
-  const formdata = new FormData();
 
   const optionsCamera: ImagePicker.CameraOptions = {
-    quality: 1,
     mediaType: 'photo',
     saveToPhotos: true,
+    includeBase64: false,
   };
   const optionLibrary: ImagePicker.ImageLibraryOptions = {
     mediaType: 'photo',
-    quality: 1,
     selectionLimit: 0,
+    includeBase64: false,
   };
 
   const openCamera = async () => {
@@ -60,12 +63,11 @@ const UpImage = () => {
         const result = await launchCamera(optionsCamera);
         if (result?.assets && result.assets[0].uri) {
           setImgUrl(result.assets[0].uri);
-          formdata.append('file', {
+          formdata.append('images', {
             uri: result.assets[0].uri,
             name: result.assets[0].fileName,
             type: result.assets[0].type,
           });
-          console.log(formdata);
         } else {
           console.log('No assets or uri in result:', result);
         }
@@ -81,8 +83,8 @@ const UpImage = () => {
     const result = await launchImageLibrary(optionLibrary);
     if (result?.assets && result.assets[0].uri) {
       setImglibrary(result.assets[0].uri);
-      result.assets.forEach((asset, index) => {
-        formdata.append(`file${index}`, {
+      result.assets.forEach(asset => {
+        formdata.append(`images`, {
           uri: asset.uri,
           name: asset.fileName,
           type: asset.type,

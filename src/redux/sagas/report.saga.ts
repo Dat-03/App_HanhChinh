@@ -41,6 +41,26 @@ function* getCreateReportTeacherSaga(): Generator {
   }
 }
 
+function* getReportTeacherSaga(action: any): Generator {
+  try {
+    console.log('run');
+    const {data}: any = yield call(
+      ReportService.postDataReport,
+      action.payload,
+    );
+    console.log();
+    if (data && data.status === 200) {
+      console.log('run push tookit');
+      yield put(ReportActions.setReport(data));
+    } else {
+      console.log('Server error !!!');
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+  }
+}
+
 export default function* watchReportSaga() {
   yield takeLatest(
     ReportActions.getListHistoryTeacher.type,
@@ -50,4 +70,5 @@ export default function* watchReportSaga() {
     ReportActions.getListCreateReport.type,
     getCreateReportTeacherSaga,
   );
+  yield takeLatest(ReportActions.postReport.type, getReportTeacherSaga);
 }

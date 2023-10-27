@@ -44,4 +44,5 @@ export type HistoryReportType = _id &
 export type ReportState = Partial<{
   historyReportData: PayloadHttpList<HistoryReportType>;
   createReportData: PayloadHttpListCreateReport;
+  dataReport: PayloadHttpList<HistoryReportType>;
 }>;

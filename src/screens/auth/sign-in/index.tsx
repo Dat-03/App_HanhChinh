@@ -20,7 +20,7 @@ import {images} from '../../../assets';
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
-  const dataUserApi = useAppSelector(getAuthUser);
+
   const dataRoleApi = useAppSelector(getAuthRoleUser);
 
   const signIn = async () => {

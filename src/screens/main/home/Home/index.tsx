@@ -9,7 +9,7 @@ import {
   getListRoom,
   getListTypeReport,
 } from '../../../../redux';
-import CreateReport from '../CreateReport/CreateReport';
+import CreateReport from '../CreateReport';
 import {NavigationService} from '../../../../navigation';
 import {routes} from '../../../../constants';
 

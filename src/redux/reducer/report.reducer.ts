@@ -50,6 +50,23 @@ const reducer = createSlice({
         },
       };
     },
+
+    postReport: (state: ReportState, _: PayloadAction<any>) => {
+      return {
+        ...state,
+      };
+    },
+    setReport: (
+      state: ReportState,
+      action: PayloadAction<PayloadHttpList<HistoryReportType>>,
+    ) => {
+      return {
+        ...state,
+        dataReport: {
+          data: action.payload.data,
+        },
+      };
+    },
   },
 });
 

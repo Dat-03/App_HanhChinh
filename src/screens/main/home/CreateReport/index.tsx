@@ -2,21 +2,44 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import SelectDropDown from '../../../../components/customs/SelectList';
 import styles from './styles';
-import {BigButton, HeaderCustom, HeaderMain} from '../../../../components';
+import {
+  BigButton,
+  ButtonCustom,
+  HeaderCustom,
+  HeaderMain,
+} from '../../../../components';
 import InputCustom from '../../../../components/customs/InputCustom';
 import UpImage from './components/UpImage';
 import {backScreen} from '../../../../utils';
-import {useAppSelector} from '../../../../hooks';
-import {getListRoom, getListTypeReport} from '../../../../redux';
+import {useAppDispatch, useAppSelector} from '../../../../hooks';
+import {
+  ReportActions,
+  getAuthIdUser,
+  getAuthUser,
+  getListRoom,
+  getListTypeReport,
+} from '../../../../redux';
 
 const CreateReport = () => {
   const listRoom = useAppSelector(getListRoom);
   const listTypeReport = useAppSelector(getListTypeReport);
-
+  const dataUserApi = useAppSelector(getAuthUser);
+  const idUser = useAppSelector(getAuthIdUser);
   const [selected, setSelected] = React.useState('');
+  const [selectedType, setSelectedType] = React.useState('');
   const [valueInput, setValueInput] = React.useState('');
 
-  console.log(valueInput);
+  const formdata = new FormData();
+  const dispatch = useAppDispatch();
+
+  formdata.append('user_create', idUser);
+  formdata.append('room', selected);
+  formdata.append('type', selectedType);
+  formdata.append('description', valueInput);
+
+  const handlePostReport = () => {
+    dispatch(ReportActions.postReport(formdata));
+  };
 
   const dataRoom =
     listRoom?.map(room => ({
@@ -51,7 +74,7 @@ const CreateReport = () => {
           boxStyles={styles.selectStyle}
           inputStyles={styles.inputStyle}
           search={false}
-          setSelected={setSelected}
+          setSelected={setSelectedType}
           data={dataTypeReport}
           searchPlaceholder="Search"
           placeholder="Sự cố đang gặp phải"
@@ -62,9 +85,11 @@ const CreateReport = () => {
           multiline
           placeholder="Mô tả sự cố"
         />
-        <UpImage />
+        <UpImage formdata={formdata} />
       </View>
-      <BigButton textButton="Gửi yêu cầu" />
+      <View style={{marginTop: 40}}>
+        <ButtonCustom onPress={handlePostReport} title={'Gửi yêu cầu'} />
+      </View>
     </View>
   );
 };
