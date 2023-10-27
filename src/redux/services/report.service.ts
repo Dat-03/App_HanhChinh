@@ -8,4 +8,9 @@ export class ReportService {
       `${Endpoints.HISTORY_REPORT_TEACHER}?page=${payload}`,
     );
   }
+
+  static async getCreactReport() {
+    console.log(Endpoints.CREAT_REPORT_TEACHER);
+    return await apiService.get(`${Endpoints.CREAT_REPORT_TEACHER}`);
+  }
 }

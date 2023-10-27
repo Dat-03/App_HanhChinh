@@ -10,7 +10,7 @@ const SelectDropDown: React.FunctionComponent<SelectListProps> = props => {
           props.setSelected(val)
         }
         data={props.data}
-        save="value"
+        save="key"
         onSelect={props.onSelect}
         search={props.search}
         boxStyles={props.boxStyles}

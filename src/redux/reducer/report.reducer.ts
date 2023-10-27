@@ -1,6 +1,14 @@
-import {PayloadAction, createSlice} from '@reduxjs/toolkit';
+import {
+  PayloadAction,
+  PayloadActionCreator,
+  createSlice,
+} from '@reduxjs/toolkit';
 import {PayloadHttpList} from '../../types';
-import {HistoryReportType, ReportState} from '../types/report.type';
+import {
+  HistoryReportType,
+  PayloadHttpListCreateReport,
+  ReportState,
+} from '../types/report.type';
 import {Redux} from '../types';
 
 const initialState: ReportState = {};
@@ -21,6 +29,23 @@ const reducer = createSlice({
       return {
         ...state,
         historyReportData: {
+          data: action.payload.data,
+        },
+      };
+    },
+
+    getListCreateReport: (state: ReportState) => {
+      return {
+        ...state,
+      };
+    },
+    setListCreateReport: (
+      state: ReportState,
+      action: PayloadAction<PayloadHttpListCreateReport>,
+    ) => {
+      return {
+        ...state,
+        createReportData: {
           data: action.payload.data,
         },
       };
