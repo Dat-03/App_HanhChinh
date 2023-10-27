@@ -18,12 +18,12 @@ const Support: React.FC = () => {
     if (feedbackText === 'Phản hồi') {
       Alert.alert('Thông báo', 'Vui lòng đợi phản hồi');
     } else if (feedbackText === 'Đánh giá') {
-      // Gọi Alert đã custom ở đây
+      
     }
   };
 
   const handleReview = () => {
-    Alert.alert('Thông báo', 'Đã hoàn thành');
+    Alert.alert('Thông báo', 'Vui lòng đánh giá');
   };
 
   return (
