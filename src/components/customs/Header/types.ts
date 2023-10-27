@@ -15,6 +15,7 @@ export type CustomHeaderProps = {
   viewStyle?: ViewStyle;
   title?: string;
   titleStyle?: TextStyle;
+  textFullName?:ViewStyle;
   leftIcon?: HeaderIcon;
   onPressLeftIcon?: () => void;
   onPressRightIconLeft?: () => void;
