@@ -9,7 +9,6 @@ import {NavigationService} from '../../../navigation';
 import {routes} from '../../../constants';
 import styles from './styles';
 import {Image} from '@rneui/themed';
-import images from '../../../assets/images';
 import {useAppDispatch, useAppSelector} from '../../../hooks';
 import {AuthActions} from '../../../redux';
 import {
@@ -17,6 +16,7 @@ import {
   getAuthUser,
 } from '../../../redux/selectors/authen.selector';
 import {signInWithGoogleAsync} from '../../../utils/google';
+import {images} from '../../../assets';
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
