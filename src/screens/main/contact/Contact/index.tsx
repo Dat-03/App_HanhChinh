@@ -4,11 +4,29 @@ import {View} from 'react-native';
 
 import styles from './styles';
 import {Text} from '@rneui/base';
+import {HeaderCustom} from '../../../../components';
+import {Icon} from '@rneui/themed';
+import {ItemContact} from './components';
 
 const Contact: FunctionComponent = () => {
   return (
     <View style={styles.container}>
-      <Text>Contact</Text>
+      <View style={styles.viewheader}>
+        <Icon name="left" type="antdesign" />
+        <Text style={styles.textHeader}>Liên hệ</Text>
+      </View>
+      <View style={{paddingHorizontal: 24}}>
+        <Text style={styles.textRoom}>Phòng kỹ thuật</Text>
+        <View>
+          <ItemContact />
+        </View>
+      </View>
+      <View style={{paddingHorizontal: 24}}>
+        <Text style={styles.textRoom}>Phòng hành chính</Text>
+        <View>
+          <ItemContact />
+        </View>
+      </View>
     </View>
   );
 };

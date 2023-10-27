@@ -1,8 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import colors from '../../../../../../assets/colors';
 import {normalize} from '@rneui/themed';
 import {color} from '@rneui/base';
-import colors from '../../../../assets/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,38 +11,38 @@ const styles = StyleSheet.create({
   },
   viewHeader: {
     flexDirection: 'row',
-    padding: normalize(24),
+    padding: 24,
     alignItems: 'center',
   },
   textHeader: {
-    fontSize: normalize(18),
+    fontSize: 18,
     fontWeight: 'bold',
     color: colors.white0,
-    marginStart: normalize(20),
+    marginStart: 20,
   },
 
   image: {
-    width: normalize(64),
-    height: normalize(64),
-    borderRadius: normalize(30),
+    width: 64,
+    height: 64,
+    borderRadius: 30,
   },
   viewUser: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: normalize(15),
+    paddingVertical: 15,
   },
   viewText: {
-    marginTop: normalize(10),
+    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
   textUser: {
-    fontSize: normalize(24),
+    fontSize: 24,
     fontWeight: '600',
     color: 'white',
   },
-  textphone: {
-    fontSize: normalize(18),
+  textRole: {
+    fontSize: 18,
     fontWeight: '400',
     color: 'white',
   },
@@ -52,6 +52,29 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white0,
     flex: 1,
     marginTop: normalize(30),
+  },
+  viewtextContent: {
+    flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: 24,
+  },
+  textphone: {
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  textnumber: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: 'black',
+  },
+  btn: {
+    backgroundColor: colors.line,
+    width: 47,
+    height: 47,
+    borderRadius: 99,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 export default styles;
