@@ -11,4 +11,5 @@ export default {
   colorInput: '#F1F4F5',
   black: '#000',
   borderButtonCamera: '#CACACA',
+  buttonGray: '#F1F4F5',
 };

@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: normalize(64),
-    height: normalize(64),
-    borderRadius: normalize(30),
+    width: normalize(81),
+    height: normalize(81),
+    borderRadius: normalize(80),
   },
   viewUser: {
     alignItems: 'center',

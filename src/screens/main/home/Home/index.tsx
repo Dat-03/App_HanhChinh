@@ -1,4 +1,4 @@
-import {TouchableOpacity, View} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent, useEffect} from 'react';
@@ -15,6 +15,8 @@ import {
   getListRoom,
   getListTypeReport,
 } from '../../../../redux';
+import {images} from '../../../../assets';
+import {Icon} from '@rneui/themed';
 
 const Home: FunctionComponent = () => {
   const dispatch = useAppDispatch();
@@ -26,13 +28,13 @@ const Home: FunctionComponent = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <View style={{paddingHorizontal: 24}}>
-        <HeaderCustom
-          leftIcon={{name: 'user', type: 'font-awesome'}}
-          title="Nguyễn Văn A"
-          titleStyle={styles.textHeader}
-          rightIcon={{name: 'bell', type: 'font-awesome', color: 'white'}}
-        />
+      <View style={styles.header}>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image style={styles.image} source={images.avatar} />
+          <Text style={styles.textName}>Nguyễn Văn A</Text>
+        </View>
+
+        <Icon name="bell" type="simple-line-icon" color={'white'} size={20} />
       </View>
 
       <View style={styles.content}>
