@@ -12,7 +12,7 @@ import ItemList from './components/itemlist';
 
 const CheckingRoom: React.FC = () => {
   const [check, setcheck] = useState(false)
-  const handleGoback = () => {
+  const handlenGoback = () => {
     NavigationService.goBack();
   }
   const render = ({ item }: { item: (typeof DATA)[0] }) => (
@@ -23,11 +23,11 @@ const CheckingRoom: React.FC = () => {
 
     <View style={styles.container}>
       {/* HEADER */}
-      <HeaderCustom 
-      leftIcon={{name:'left',type :'antdesign'}}
-      title='F001'
-      rightIcon={{name:'bell',type :'font-awesome',color:'white'}}
-      />
+      <View style={styles.header}>
+        <Icon name='chevron-left' type='font-awesome' onPress={handlenGoback}/>
+        <Text style={styles.text}>Tòa F</Text>
+        <Icon name='notifications-outline' type='ionicon' />
+      </View>
       <Text style={styles.title}>Danh mục tài sản</Text>
       {/* FLTLIST */}
       <FlatList

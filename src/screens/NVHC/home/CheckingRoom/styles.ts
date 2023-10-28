@@ -17,9 +17,18 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     color:'black'
   },
-  btn:{
-  
-  }
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    
+  },
+  text: {
+    fontSize: normalize(23),
+    paddingVertical: normalize(30),
+    paddingHorizontal: normalize(100),
+    fontWeight: 'bold',
+  },
 
   
 });

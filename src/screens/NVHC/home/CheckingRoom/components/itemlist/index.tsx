@@ -23,7 +23,8 @@ const ItemList:React.FC<Item> = (props) => {
         onPress={() => setCheck1(!check1)}
         containerStyle={styles.checkbox}
         size={40} 
-     />
+        checkedColor='#EBEBEB'
+        />
       <View style={styles.item1}>
         <TextInput placeholder='Mô tả' />
       </View>

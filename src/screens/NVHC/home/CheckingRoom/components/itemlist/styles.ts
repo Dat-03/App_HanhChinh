@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         marginRight:normalize(5)
 
     },
+    
 })
 
 
