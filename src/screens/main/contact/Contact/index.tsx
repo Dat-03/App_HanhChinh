@@ -1,12 +1,10 @@
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent} from 'react';
 
 import {View} from 'react-native';
 
-import styles from './styles';
 import {Text} from '@rneui/base';
-import {HeaderCustom} from '../../../../components';
-import {Icon} from '@rneui/themed';
 import {ItemContact} from './components';
+import styles from './styles';
 
 const Contact: FunctionComponent = () => {
   return (

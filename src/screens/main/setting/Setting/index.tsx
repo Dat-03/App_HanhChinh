@@ -1,11 +1,20 @@
 import {Icon} from '@rneui/themed';
 import React, {FunctionComponent} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {images} from '../../../../assets';
 import {Content} from './components';
 import styles from './styles';
+import {useAppDispatch} from '../../../../hooks';
+import {AuthActions} from '../../../../redux';
+import {LogOut} from '../../../../utils/google';
 
 const Setting: FunctionComponent = () => {
+  const dispatch = useAppDispatch();
+
+  const signOut = () => {
+    dispatch(AuthActions.Logout());
+    LogOut();
+  };
   return (
     <View style={styles.container}>
       <View style={styles.viewHeader}>
@@ -20,6 +29,7 @@ const Setting: FunctionComponent = () => {
       </View>
       <View style={styles.viewContent}>
         <Content />
+        
       </View>
     </View>
   );

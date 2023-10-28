@@ -5,10 +5,10 @@ import colors from '../../../../assets/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   viewheader: {
     alignItems: 'center',
-    paddingHorizontal: 24,
     paddingVertical: 18,
   },
   textHeader: {
@@ -17,10 +17,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   textRoom: {
-    fontSize: normalize(17),
-    color: colors.grey3,
+    fontSize: normalize(14),
+    color: '#ADADAD',
     padding: normalize(10),
-    marginStart: normalize(10),
+    marginStart: normalize(5),
+    fontWeight: '600',
   },
 });
 

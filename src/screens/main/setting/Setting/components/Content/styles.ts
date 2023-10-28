@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
     color: 'black',
     marginEnd: normalize(115),
   },
+  viewcontent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: normalize(30),
+  },
   viewSwitch: {
     width: normalize(60),
     position: 'absolute',

@@ -29,7 +29,7 @@ const DetailContact: React.FC = () => {
             <Text style={styles.textnumber}>0123456789</Text>
           </View>
           <TouchableOpacity style={styles.btn}>
-            <Icon name="phone" type="entypo" color={'blue'} />
+            <Icon name="phone" type="font-awesome" color={'#2245AC'} />
           </TouchableOpacity>
         </View>
       </View>

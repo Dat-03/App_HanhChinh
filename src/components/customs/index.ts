@@ -5,3 +5,6 @@ export {default as HeaderCustom} from './Header';
 export {default as TabViewItem} from './TabViewItem';
 export {default as ButtonSimple} from './ButtonSimple';
 export {default as ButtonNotification} from './ButtonRoom';
+export {default as SelectList} from './SelectList';
+export {default as HeaderMain} from './HeaderMain';
+export {default as ButtonCustom} from './ButtonCustom';

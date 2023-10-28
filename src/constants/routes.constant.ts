@@ -6,6 +6,7 @@ export enum routes {
   LOBBY = 'LOBBY',
   UPDATE_PROFILE = 'UPDATE_PROFILE',
   
+
   BOTTOM_TAB = 'BOTTOM_TAB',
   HOME = 'HOME',
   HISTORY = 'HISTORY',
@@ -18,6 +19,8 @@ export enum routes {
   // Screen contact GV
   DETAILCONTACT = 'DETAILCONTACT',
   ITEMCONTACT = 'ITEMCONTACT',
+  CREATE_REPORT = 'CREATE_REPORT',
+  UP_IMAGE = 'UP_IMAGE',
 
   // Bottom tab Manager
   BOTTOMMANAGER = 'BOTTOMMANAGER',

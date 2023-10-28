@@ -1,8 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import colors from '../../../../../../assets/colors';
 import {normalize} from '@rneui/themed';
-import {color} from '@rneui/base';
+import {StyleSheet} from 'react-native';
+import colors from '../../../../../../assets/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,40 +9,40 @@ const styles = StyleSheet.create({
   },
   viewHeader: {
     flexDirection: 'row',
-    padding: 24,
+    padding: normalize(24),
     alignItems: 'center',
   },
   textHeader: {
-    fontSize: 18,
+    fontSize: normalize(18),
     fontWeight: 'bold',
     color: colors.white0,
-    marginStart: 20,
+    marginStart: normalize(20),
   },
 
   image: {
-    width: 64,
-    height: 64,
+    width: normalize(64),
+    height: normalize(64),
     borderRadius: 30,
   },
   viewUser: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 15,
+    paddingVertical: normalize(15),
   },
   viewText: {
-    marginTop: 10,
+    marginTop: normalize(10),
     alignItems: 'center',
     justifyContent: 'center',
   },
   textUser: {
-    fontSize: 24,
+    fontSize: normalize(24),
     fontWeight: '600',
-    color: 'white',
+    color: '#FEFEFE',
   },
   textRole: {
-    fontSize: 18,
+    fontSize: normalize(18),
     fontWeight: '400',
-    color: 'white',
+    color: '#FFFFFF',
   },
   viewContent: {
     borderTopLeftRadius: normalize(24),
@@ -55,23 +53,24 @@ const styles = StyleSheet.create({
   },
   viewtextContent: {
     flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: 24,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: normalize(24),
   },
   textphone: {
-    fontSize: 18,
+    fontSize: normalize(18),
     fontWeight: '400',
+    color: '#999999',
   },
   textnumber: {
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: normalize(18),
+    fontWeight: '400',
     color: 'black',
   },
   btn: {
-    backgroundColor: colors.line,
-    width: 47,
-    height: 47,
+    backgroundColor: '#E9ECEF',
+    width: normalize(47),
+    height: normalize(47),
     borderRadius: 99,
     alignItems: 'center',
     justifyContent: 'center',

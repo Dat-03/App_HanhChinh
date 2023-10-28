@@ -1,10 +1,8 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import ButtonCustom from '../../../../../../components/customs/Button';
-import { NavigationService } from '../../../../../../navigation';
-import { routes } from '../../../../../../constants';
-
-
+import {NavigationService} from '../../../../../../navigation';
+import {routes} from '../../../../../../constants';
 
 const ItemContact: React.FC = () => {
   const handlePressGoDetail = () => {
@@ -21,6 +19,8 @@ const ItemContact: React.FC = () => {
         color="red"
         iconRight
         onPressButton={handlePressGoDetail}
+        isTitle
+        style={{backgroundColor: '#f1f4f5'}}
       />
       <ButtonCustom
         textButton="Nguyễn Văn B"
@@ -30,7 +30,9 @@ const ItemContact: React.FC = () => {
         size={30}
         color="blue"
         iconRight
+        isTitle
         onPressButton={handlePressGoDetail}
+        style={{backgroundColor: '#f1f4f5'}}
       />
       <ButtonCustom
         textButton="Nguyễn Văn C"
@@ -40,7 +42,9 @@ const ItemContact: React.FC = () => {
         size={30}
         color="green"
         iconRight
+        isTitle
         onPressButton={handlePressGoDetail}
+        style={{backgroundColor: '#f1f4f5'}}
       />
     </View>
   );

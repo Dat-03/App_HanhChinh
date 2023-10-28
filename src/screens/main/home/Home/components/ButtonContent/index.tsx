@@ -14,7 +14,7 @@ const ButtonContent: React.FC = () => {
         type="font-awesome"
         color="#ec449c"
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.PERSONNEL)}
+        onPressButton={() => NavigationService.navigate(routes.CREATE_REPORT)}
       />
       <ButtonCustom
         textButton="Yêu cầu hỗ trợ CNTT"
