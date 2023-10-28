@@ -7,4 +7,6 @@ export default {
   itemColor: '#F1F4F5',
   colorMain: '#ec449c',
   grey0: '#FFFFFF',
+  timeOut:'#D8CC54',
+  btnPhoneCall:'#2245AC'
 };

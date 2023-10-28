@@ -72,6 +72,9 @@ const useStyles = makeStyles(({colors}) => ({
   button: {
     color: colors.primary,
   },
+  leftIcon:{
+    color: colors.black,
+  }
 }));
 
 export default useStyles;

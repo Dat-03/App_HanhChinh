@@ -14,8 +14,8 @@ const Problem:React.FC = () => {
     <View style={styles.container}>
       <HeaderCustom 
   
-      leftIcon={{name: 'left', type: 'antdesign', color: 'white'}}
-      rightIcon={{name:'bell',type:'font-awesome',color:'white'}}
+      leftIcon={{name: 'chevron-left', type: 'feather', color: 'white'}}
+      rightIcon={{name:'bell',type:'fontisto',color:'white'}}
       onPressLeftIcon={handlePressGoback}
       />
       <View style={styles.content}>

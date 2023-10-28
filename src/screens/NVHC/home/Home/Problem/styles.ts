@@ -22,8 +22,10 @@ const styles = StyleSheet.create({
         },
         tabStyle: {},
         titleStyle: {
-          color: 'blue',
-          
+          color: colors.colorMain,
+          fontSize:normalize(12),
+          fontWeight:'700',
+  
         },
       
   });

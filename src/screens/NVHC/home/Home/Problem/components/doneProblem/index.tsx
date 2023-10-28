@@ -7,6 +7,7 @@ import { images } from '../../../../../../../assets'
 import { Icon } from '@rneui/base'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import { SelectList } from 'react-native-dropdown-select-list'
+import colors from '../../../../../../../assets/colors'
 
 const DoneProblem: React.FC = () => {
     const [value, onChangeText] = React.useState('');
@@ -34,41 +35,43 @@ const DoneProblem: React.FC = () => {
 
     return (
         <View style={styles.container}>
-            <HeaderCustom
-                leftIcon={{ name: 'left', type: 'antdesign', color: 'white' }}
-                title='Sự cố về cơ sở vật chất'
-                titleStyle={styles.title}
-                onPressLeftIcon={handlePressGoback} />
+            <View style={styles.header}>
+                <TouchableOpacity onPress={handlePressGoback}>
+                    <Icon name='chevron-left' type='feather' />
+                </TouchableOpacity>
+                <Text style={styles.title}>Sự cố về cơ sở vật chất</Text>
+                <Text style={styles.can}>.</Text>
+            </View>
             <View style={styles.content}>
                 <Text style={styles.text}>Tên người yêu cầu:</Text>
                 <View style={styles.info}>
                     <Image source={images.avatar} style={styles.avatar} />
-                    <View style={{ marginEnd: 100 }}>
-                        <Text style={{ color: 'black', fontSize: 20 }}>Lê Văn Hiếu</Text>
-                        <Text style={{ color: 'black', fontSize: 15 }}>0797151033</Text>
+                    <View style={{ marginEnd: 120 }}>
+                        <Text style={styles.name}>Lê Văn Hiếu</Text>
+                        <Text style={styles.infomation1}>0797151033</Text>
                     </View>
                     <TouchableOpacity>
                         <View style={styles.call}>
-                            <Icon name='phone' type='font-awesome' />
+                            <Icon name='phone' type='font-awesome' color={colors.btnPhoneCall} />
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{ flexDirection: 'row', marginVertical: 10 }}>
+                <View style={styles.itemChild}>
                     <Text style={styles.text}>Thời gian:</Text>
-                    <Text style={{ color: 'black', fontSize: 18, marginStart: 10 }}> 09:05 am</Text>
+                    <Text style={styles.infomation}> 09:05 am</Text>
                 </View>
-                <View style={{ flexDirection: 'row', marginVertical: 10 }}>
+                <View style={styles.itemChild}>
                     <Text style={styles.text}>Phòng:</Text>
-                    <Text style={{ color: 'black', fontSize: 18, marginStart: 10 }}> T1101</Text>
+                    <Text style={styles.infomation}> T1101</Text>
                 </View>
-                <View style={{ flexDirection: 'row', marginVertical: 10, width: '70%' }}>
+                <View style={styles.itemLastChild}>
                     <Text style={styles.text}>Mô tả sự cố:</Text>
-                    <Text style={{ color: 'black', fontSize: 18, marginStart: 10 }}>Bóng đèn cháy, lỗi ti vi, lỗi điều hòa</Text>
+                    <Text style={styles.infomation}>Bóng đèn cháy, lỗi ti vi, lỗi điều hòa</Text>
                 </View>
             </View>
 
             <View style={styles.dropdown}>
-                <View style={{width:'60%'}}>
+                <View style={{ width: '60%' }}>
                     <SelectList
                         setSelected={(val: any) => setSelected(val)}
                         data={data}
@@ -76,7 +79,7 @@ const DoneProblem: React.FC = () => {
                         placeholder='Lỗi sự cố từ'
                     />
                 </View>
-                <View style={{width:'35%',marginHorizontal:10}}>
+                <View style={{ width: '35%', marginHorizontal: 10 }}>
                     <SelectList
                         setSelected={(val: any) => setSelectedTime(val)}
                         data={dataTime}
@@ -99,7 +102,7 @@ const DoneProblem: React.FC = () => {
                 />
             </View>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 10 }}>
+            <View style={styles.containerBtn}>
                 <BigButton textButton='Hoàn thành' style={styles.btn} />
                 <BigButton textButton='Chưa xử lý được' style={styles.btn1} />
             </View>

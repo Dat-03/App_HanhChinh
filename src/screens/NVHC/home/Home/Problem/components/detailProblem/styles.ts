@@ -13,18 +13,21 @@ const styles = StyleSheet.create({
     flex:1
   },
   title:{
-    fontWeight:'bold',
+    fontWeight:'700',
     color:'black',
-    fontSize:18,
-    alignSelf:'center'
+    fontSize:normalize(16),
+    textAlign:'center'
+  },
+  can:{
+    color:colors.white
   },
   content:{
     paddingHorizontal:normalize(20),
-    marginVertical:normalize(20),
- 
+    marginBottom:normalize(10)
   },
   text:{
-    fontSize:18
+    fontSize:normalize(14),
+    fontWeight:'500'
   },
   avatar:{
     width:normalize(50),
@@ -45,7 +48,40 @@ const styles = StyleSheet.create({
   },
   btn:{
     alignSelf:'center',
-    
+  },
+
+  header:{
+    flexDirection:'row',
+    marginHorizontal:normalize(10),
+    marginVertical:normalize(20),
+
+    justifyContent:'space-between'
+  },
+  name:{
+    color:colors.black,
+    fontSize:normalize(18),
+    fontWeight:'500'
+  },
+  infomation1:{
+    color:colors.black,
+    fontSize:normalize(14),
+    fontWeight:'500',
+   
+  },
+  infomation:{
+    color:colors.black,
+    fontSize:normalize(14),
+    fontWeight:'500',
+    marginStart:normalize(10)
+  },
+  itemChild:{
+    flexDirection:'row',
+    marginVertical:normalize(10)
+  },
+  itemLastChild:{
+    flexDirection:'row',
+    marginVertical:normalize(10),
+    width:'70%'
   }
   });
   

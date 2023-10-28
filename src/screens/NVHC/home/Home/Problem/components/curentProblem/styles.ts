@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     nameProblem:{
       paddingHorizontal:normalize(10),
       flexDirection:'row',
-      justifyContent:'space-between'
+      justifyContent:'space-between',
+      
     },
     info:{
       paddingHorizontal:normalize(10),
@@ -37,6 +38,25 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       justifyContent:'flex-start',
       marginVertical:normalize(5),
+    },
+    problem:{
+      fontSize:normalize(16),
+      fontWeight:'500',
+      color:colors.black
+      
+    },
+    timeOut:{
+      color:colors.timeOut,
+      fontWeight:'500',
+      fontSize:normalize(12),
+    },
+    name:{
+      color:colors.black,
+      fontSize:normalize(12),
+      fontWeight:'500',
+    },
+    marginItem:{
+      marginLeft:normalize(10)
     }
   });
   
