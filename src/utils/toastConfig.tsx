@@ -7,7 +7,6 @@ export const toastConfig = {
     by modifying the existing `BaseToast` component
   */
 
-
   success: (props: any) => (
     <BaseToast
       {...props}
@@ -41,10 +40,4 @@ export const toastConfig = {
     I can consume any custom `props` I want.
     They will be passed when calling the `show` method (see below)
   */
-  tomatoToast: ({text1, props}: any) => (
-    <View style={{height: 60, width: '100%', backgroundColor: 'grey'}}>
-      <Text>{text1}</Text>
-      <Text>{props.uuid}</Text>
-    </View>
-  ),
 };

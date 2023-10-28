@@ -3,50 +3,38 @@ import React, {useEffect} from 'react';
 import {
   GoogleSignin,
   statusCodes,
-  GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import {NavigationService} from '../../../navigation';
 import {routes} from '../../../constants';
 import styles from './styles';
 import {Image} from '@rneui/themed';
-import images from '../../../assets/images';
+import {useAppDispatch, useAppSelector} from '../../../hooks';
+import {AuthActions} from '../../../redux';
+import {
+  getAuthRoleUser,
+  getAuthUser,
+} from '../../../redux/selectors/authen.selector';
+import {signInWithGoogleAsync} from '../../../utils/google';
+import {images} from '../../../assets';
 
 const SignIn = () => {
-  useEffect(() => {
-    GoogleSignin.configure({
-      webClientId:
-        '71174207638-f592bchep4n26turj77r886pagt8197a.apps.googleusercontent.com',
-    });
-  }, []);
-  const signInWithGoogleAsync = async () => {
-    try {
-      // Check if your device supports Google Play
-      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+  const dispatch = useAppDispatch();
 
-      // Get the user's ID token
-      const {idToken} = await GoogleSignin.signIn();
+  const dataRoleApi = useAppSelector(getAuthRoleUser);
 
-      // Create a Google credential with the token
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-      // Sign-in the user with the credential
-      const userSignIn = await auth().signInWithCredential(googleCredential);
-
-      console.log('User signed in:', userSignIn.user);
-      Alert.alert('Logged in successfully');
-      NavigationService.navigate(routes.MYPROFILE);
-    } catch (error: any) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log('Google Sign-In canceled.');
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log('Google Sign-In already in progress.');
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log('Google Play Services not available.');
-      } else {
-        console.error('Google Sign-In Error:', error);
-        Alert.alert('Login failed 1', error.code);
-      }
+  const signIn = async () => {
+    const userSignIn = await signInWithGoogleAsync();
+    if (userSignIn) {
+      const email = userSignIn.user.email;
+      dispatch(
+        AuthActions.handleLogin({
+          email: email,
+          device_token: 'thao',
+        }),
+      );
+    } else {
+      console.log('login fail');
     }
   };
   return (
@@ -63,9 +51,7 @@ const SignIn = () => {
           style={styles.imageBeeStyle}
           source={images.bee}
         />
-        <TouchableOpacity
-          style={styles.btnGoogle}
-          onPress={signInWithGoogleAsync}>
+        <TouchableOpacity style={styles.btnGoogle} onPress={signIn}>
           <Image
             resizeMode="cover"
             style={styles.imageGoogle}

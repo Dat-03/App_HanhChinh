@@ -1,11 +1,29 @@
-import React, {FunctionComponent, useState} from 'react';
-import {View} from 'react-native';
-import styles from './styles';
-import {Button, Switch} from '@rneui/base';
-import {useAppDispatch, useAppSelector} from '../../../../hooks';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import React from 'react';
+import {Alert, Text, TouchableOpacity, View, Image} from 'react-native';
+import {NavigationService} from '../../../../navigation';
+import {routes} from '../../../../constants';
+import {useAppDispatch} from '../../../../hooks';
+import {AuthActions} from '../../../../redux';
+import {LogOut} from '../../../../utils/google';
 
-const Setting: FunctionComponent = () => {
-  return <View style={styles.container}></View>;
+const Setting = () => {
+  const dispatch = useAppDispatch();
+
+  const signOut = () => {
+    dispatch(AuthActions.Logout());
+    LogOut();
+  };
+  return (
+    <View>
+      <TouchableOpacity
+        style={{height: 100, width: 100, backgroundColor: 'yellow'}}
+        onPress={signOut}>
+        <Text>Log out</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 export default Setting;
