@@ -13,16 +13,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.colorMain,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     paddingHorizontal: normalize(24),
-    paddingVertical: normalize(24),
+    paddingVertical: normalize(10),
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: normalize(43),
   },
   textName: {
-    fontSize: normalize(20),
-    fontWeight: 'bold',
-    color: colors.white0,
+    fontSize: normalize(16),
+    fontWeight: '600',
+    color: '#FEFEFE',
+    marginStart: normalize(12),
   },
   content: {
     borderTopLeftRadius: normalize(24),
@@ -33,17 +35,19 @@ const styles = StyleSheet.create({
   textContent: {
     textAlign: 'center',
     paddingTop: normalize(20),
-    fontSize: normalize(20),
-    fontWeight: 'bold',
-    color: colors.black0,
+    fontSize: normalize(18),
+    fontWeight: '700',
+    color: '#212121',
   },
   button: {
     paddingHorizontal: normalize(24),
+    paddingVertical: normalize(24),
   },
-  textHeader:{
-    marginStart:20,
-    color:colors.white0,
-  }
+  image: {
+    width: normalize(48),
+    height: normalize(48),
+    borderRadius: 48,
+  },
 });
 
 export default styles;

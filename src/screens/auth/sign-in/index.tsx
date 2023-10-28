@@ -15,6 +15,9 @@ const SignIn = () => {
 
   const signIn = async () => {
     const userSignIn = await signInWithGoogleAsync();
+    if (userSignIn?.user.photoURL) {
+      dispatch(AuthActions.setImage(userSignIn.user.photoURL));
+    }
     if (userSignIn) {
       const email = userSignIn.user.email;
       dispatch(

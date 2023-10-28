@@ -6,3 +6,5 @@ export const getAuthRoleUser = (state: RootState) => state.auth.user.role?.name;
 export const getAuthToken = (state: RootState) => state.auth.token;
 export const getAuthRefreshToken = (state: RootState) =>
   state.auth.refreshToken;
+
+export const getImageUser = (state: RootState) => state.auth.imageUser;
