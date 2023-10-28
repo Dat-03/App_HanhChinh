@@ -1,15 +1,17 @@
 import {makeStyles, normalize} from '@rneui/themed';
 import {Device} from '../../../utils';
 import {color} from '@rneui/base';
+import { StyleSheet } from 'react-native';
+import colors from '../../../assets/colors';
 
-const useStyles = makeStyles(({colors}) => ({
+const styles = StyleSheet.create ({
   container: {},
   tabStyle: {
-    backgroundColor: colors.grey1,
+    backgroundColor: colors.grey0,
   },
   containerTabView: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.white,
   },
   titleStyle: {
     color: colors.black,
@@ -18,8 +20,8 @@ const useStyles = makeStyles(({colors}) => ({
   },
   indicatorStyle: {
     height: 3,
-    backgroundColor: 'blue',
+    backgroundColor: colors.colorMain ,
   },
-}));
+});
 
-export default useStyles;
+export default styles;

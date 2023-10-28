@@ -10,8 +10,8 @@ const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <AppNavigator/>
-      {/* <NVHCNavigator/> */}
+      {/* <AppNavigator/> */}
+      <NVHCNavigator/>
       {/* <ManagerNavigator/> */}
     </NavigationContainer>
   );

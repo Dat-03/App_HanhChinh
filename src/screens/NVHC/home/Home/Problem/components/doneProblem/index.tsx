@@ -91,11 +91,11 @@ const DoneProblem: React.FC = () => {
                     editable
                     multiline
                     numberOfLines={4}
-                    maxLength={5000}
                     onChangeText={text => onChangeText(text)}
                     placeholder='Ghi chú'
                     value={value}
                     style={{ padding: 10 }}
+                    textAlignVertical='top'
                 />
             </View>
 
