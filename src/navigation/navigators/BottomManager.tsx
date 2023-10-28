@@ -36,9 +36,9 @@ const choseIcon = (route: routes) => {
     case routes.HOMEMANAGER:
       return 'home';
     case routes.HISTORYMANAGER:
-      return 'id-card';
+      return 'book';
     case routes.SETTINGMANAGER:
-      return 'person';
+      return 'settings';
     default:
       return 'home';
   }

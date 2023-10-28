@@ -4,16 +4,17 @@ import { Home } from '../screens/main';
 import Report from '../screens/main/home/Report';
 import {navigationRef} from './NavigationService';
 
-import Personnel from '../screens/Manager/home/Personnel';
-import {HomeManager} from '../screens/Manager';
-import AppNavigator from './navigators/AppNavigator';
-import { Button } from 'react-native';
+import NVHCNavigator from './navigators/NVHCNavigator';
+import FloorRoom from '../screens/NVHC/home/FloorRoom';
+import DetailFloor from '../screens/NVHC/home/DetailFloor';
+import CheckingRoom from '../screens/NVHC/home/CheckingRoom';
+import ItemList from '../screens/NVHC/home/CheckingRoom/components/itemlist';
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <AppNavigator />
+      <CheckingRoom/>
     </NavigationContainer>
   );
 };

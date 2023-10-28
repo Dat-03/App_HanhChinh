@@ -11,7 +11,7 @@ import {routes} from '../../../../constants';
 const Personnel: FunctionComponent = () => {
   const styles = useStyles();
   const handlePressGoback = () => {
-    NavigationService.navigate(routes.HOMEMANAGER);
+    NavigationService.goBack();
   };
   return (
     <View style={styles.container}>

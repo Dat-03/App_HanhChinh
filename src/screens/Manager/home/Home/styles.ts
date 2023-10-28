@@ -23,9 +23,8 @@ const useStyles = makeStyles(({colors}) => ({
     color: colors.grey0,
   },
   content: {
-    borderTopLeftRadius: normalize(30),
-    borderTopRightRadius: normalize(50),
-
+    borderTopLeftRadius: normalize(24),
+    borderTopRightRadius: normalize(24),
     backgroundColor: theme.lightColors?.grey0,
   },
   textContent: {

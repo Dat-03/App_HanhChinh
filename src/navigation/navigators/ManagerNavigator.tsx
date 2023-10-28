@@ -5,40 +5,49 @@ import {
   StackNavigationOptions,
   createStackNavigator,
 } from '@react-navigation/stack';
+
 import {routes} from '../../constants';
-import {authScreen} from '../../screens/auth';
+import {
+  historyManagerScreens,
+  homeManagerScreens,
+  settingManagerScreens,
+} from '../../screens/Manager';
 import {Screen} from '../../types';
+import BottomManager from './BottomManager';
 
-import {useAppSelector} from '../../hooks';
-import {getAppIsReady} from '../../redux/selectors/app.selector';
-import {managerScreen} from '../../screens/Manager';
+const AppStack = createStackNavigator();
 
-const isReady: boolean = useAppSelector(getAppIsReady);
-const ManagerStack = createStackNavigator();
-
-const managerScreenapp: Screen[] = [...managerScreen];
-
-const screenOptions: StackNavigationOptions = {
+const screenOption: StackNavigationOptions = {
   headerShown: false,
   cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 };
 
-const AuthNavigator = () => {
+const managerScreens: Screen[] = [
+  {
+    name: routes.BOTTOMMANAGER,
+    component: BottomManager,
+  },
+  ...homeManagerScreens,
+  ...historyManagerScreens,
+  ...settingManagerScreens,
+];
+
+const ManagerNavigator = () => {
   return (
-    <ManagerStack.Navigator
-      screenOptions={screenOptions}
-      initialRouteName={routes.LOBBY}>
-      {managerScreenapp.map(screen => {
+    <AppStack.Navigator
+      screenOptions={screenOption}
+      initialRouteName={routes.BOTTOMMANAGER}>
+      {managerScreens.map((screen: Screen) => {
         return (
-          <ManagerStack.Screen
+          <AppStack.Screen
             key={screen.name}
             name={screen.name}
             component={screen.component}
           />
         );
       })}
-    </ManagerStack.Navigator>
+    </AppStack.Navigator>
   );
 };
 
-export default AuthNavigator;
+export default ManagerNavigator;

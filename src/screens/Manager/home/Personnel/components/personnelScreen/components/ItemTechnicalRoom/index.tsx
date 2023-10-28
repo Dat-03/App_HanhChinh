@@ -1,8 +1,13 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import ButtonCustom from '../../../../../../../../components/customs/Button';
+import {NavigationService} from '../../../../../../../../navigation';
+import {routes} from '../../../../../../../../constants';
 
 const ItemTechnicalRoom: React.FC = () => {
+  const handlePressGoDetail = () => {
+    NavigationService.navigate(routes.DETAILPERSONAL);
+  };
   return (
     <View>
       <ButtonCustom
@@ -13,6 +18,7 @@ const ItemTechnicalRoom: React.FC = () => {
         size={30}
         color="red"
         iconRight
+        onPressButton={handlePressGoDetail}
       />
       <ButtonCustom
         textButton="Nguyễn Văn B"
@@ -22,6 +28,7 @@ const ItemTechnicalRoom: React.FC = () => {
         size={30}
         color="blue"
         iconRight
+        onPressButton={handlePressGoDetail}
       />
       <ButtonCustom
         textButton="Nguyễn Văn C"
@@ -31,6 +38,7 @@ const ItemTechnicalRoom: React.FC = () => {
         size={30}
         color="green"
         iconRight
+        onPressButton={handlePressGoDetail}
       />
     </View>
   );

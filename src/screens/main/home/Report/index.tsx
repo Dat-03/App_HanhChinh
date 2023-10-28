@@ -10,7 +10,7 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { TouchableOpacity } from 'react-native';
 import Button from './Components/Button';
 import { Dropdown } from 'react-native-element-dropdown';
-import { NavigationService, handlenPressGoback } from '../../../../navigation';
+import { NavigationService } from '../../../../navigation';
 import { routes } from '../../../../constants';
 
 const data = [
@@ -28,6 +28,9 @@ const Report: React.FC = () => {
     const [value, setValue] = useState(String);
     const styles = useStyles();
     const [selectImage, setSelectImage] = useState('');
+    const handlenPressGoback =() => {
+        NavigationService.goBack();
+    }
     const renderItem = (item: any) => {
         return (
             <View style={styles.item}>
