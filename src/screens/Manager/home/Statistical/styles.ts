@@ -1,20 +1,22 @@
 import {makeStyles, normalize} from '@rneui/themed';
 import {Device} from '../../../../utils';
 import {theme} from '../../../../theme';
+import {StyleSheet} from 'react-native';
+import colors from '../../../../assets/colors';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
-const usestyles = makeStyles(({colors}) => ({
+const styles = StyleSheet.create({
   container: {
-    flex: normalize(1),
-    backgroundColor: theme.lightColors?.colorMain,
+    flex: 1,
+    backgroundColor: colors.colorMain,
   },
   content: {
-    flex: normalize(1),
+    flex: 1,
     borderTopLeftRadius: normalize(30),
     borderTopRightRadius: normalize(30),
-    backgroundColor: theme.lightColors?.grey0,
+    backgroundColor: colors.white0,
   },
   viewHeadercontent: {
     flexDirection: 'row',
@@ -27,11 +29,11 @@ const usestyles = makeStyles(({colors}) => ({
   },
   textName: {
     fontSize: normalize(18),
-    color: colors.black,
+    color: colors.black0,
     padding: normalize(10),
     marginStart: normalize(2),
     fontWeight: 'bold',
   },
-}));
+});
 
-export default usestyles;
+export default styles;

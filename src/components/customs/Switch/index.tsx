@@ -23,7 +23,7 @@ export const Switch_custom: React.FunctionComponent<
         ios_backgroundColor="#3e3e3e"
         value={checked}
         onValueChange={value => setChecked(value)}
-        style={{transform: [{scaleX: 1.5}, {scaleY: 1.5}]}} // size adjustment
+        style={{transform: [{scaleX: 1.2}, {scaleY: 1.2}]}} // size adjustment
       />
     </View>
   );

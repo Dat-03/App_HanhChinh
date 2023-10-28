@@ -4,7 +4,7 @@ import Achievement from './Achievement';
 import Event from './Event';
 import Incident from './Incident';
 import Personnel from './Personnel';
-import {DetailPersonal} from './Personnel/components/personnelScreen/components';
+import { DetailPersonal } from './Personnel/personnelScreen/components';
 import RoomChecking from './RoomChecking';
 import Statistical from './Statistical';
 
