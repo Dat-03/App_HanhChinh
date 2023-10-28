@@ -48,7 +48,7 @@ function* getReportTeacherSaga(action: any): Generator {
       ReportService.postDataReport,
       action.payload,
     );
-    console.log();
+    console.log(data);
     if (data && data.status === 200) {
       console.log('run push tookit');
       yield put(ReportActions.setReport(data));

@@ -30,6 +30,7 @@ const CreateReport = () => {
   const [valueInput, setValueInput] = React.useState('');
 
   const formdata = new FormData();
+  console.log('========>', formdata);
   const dispatch = useAppDispatch();
 
   formdata.append('user_create', idUser);
