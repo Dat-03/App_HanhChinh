@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   avatar: {
-    width: normalize(40),
-    height: normalize(40),
-    borderRadius: normalize(20),
+    width: normalize(49),
+    height: normalize(49),
+    borderRadius: normalize(50),
   },
   viewDate: {
     flexDirection: 'row',

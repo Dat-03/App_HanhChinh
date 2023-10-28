@@ -7,14 +7,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   viewheader: {
-    flexDirection: 'row',
-    padding: 24,
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 18,
   },
   textHeader: {
-    fontSize: normalize(20),
+    fontSize: normalize(30),
     color: colors.black0,
     fontWeight: 'bold',
-    marginStart: normalize(100),
   },
   textRoom: {
     fontSize: normalize(17),

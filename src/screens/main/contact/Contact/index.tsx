@@ -12,7 +12,6 @@ const Contact: FunctionComponent = () => {
   return (
     <View style={styles.container}>
       <View style={styles.viewheader}>
-        <Icon name="left" type="antdesign" />
         <Text style={styles.textHeader}>Liên hệ</Text>
       </View>
       <View style={{paddingHorizontal: 24}}>

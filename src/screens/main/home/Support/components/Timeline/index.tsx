@@ -16,12 +16,12 @@ const Timelineitem: React.FC<{onStatusChange: (newStatus: string) => void}> = ({
     },
     {
       title: 'Yêu cầu đã được tiếp nhận',
-      description: '09:00',
+      description: '',
       status: 'check',
     },
     {
       title: 'Yêu cầu đã hoàn thành',
-      description: '09:00',
+      description: '',
       status: 'history',
     },
   ];
@@ -60,9 +60,9 @@ const Timelineitem: React.FC<{onStatusChange: (newStatus: string) => void}> = ({
               },
             ]}>
             {rowData.status === 'check' ? (
-              <Icon name="check" type="font-awesome" color={'white'} />
+              <Icon name="checkmark-outline" type="ionicon" color={'white'} />
             ) : (
-              <Icon name="history" type="font-awesome" color={'white'} />
+              <Icon name="history" type="material" color={'white'} size={24}/>
             )}
           </View>
         </View>
