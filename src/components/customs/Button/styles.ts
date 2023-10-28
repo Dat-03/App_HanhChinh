@@ -19,24 +19,19 @@ const useStyles = makeStyles(({colors}) => ({
     justifyContent: 'space-between',
   },
   buttonText: {
-    fontSize: normalize(15),
-    fontWeight: '700',
+    fontSize: normalize(14),
+    fontWeight: '500',
     letterSpacing: normalize(0.2),
-    fontStyle: 'normal',
-    fontFamily: 'Urbanist-Regular',
-    color: colors.black,
-
+    color: 'black',
   },
   textTitle: {
-    fontSize: normalize(13),
+    fontSize: normalize(12),
     fontWeight: '400',
     letterSpacing: normalize(0.2),
-    fontStyle: 'normal',
-    fontFamily: 'Urbanist-Regular',
-    color: colors.grey3,
+    color: '#919293',
   },
   viewText: {
-    width: normalize(190)
+    width: normalize(190),
   },
 }));
 

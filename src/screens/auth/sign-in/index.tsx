@@ -1,22 +1,12 @@
-import {StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
-import React, {useEffect} from 'react';
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
-import {NavigationService} from '../../../navigation';
-import {routes} from '../../../constants';
-import styles from './styles';
 import {Image} from '@rneui/themed';
+import React from 'react';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {images} from '../../../assets';
 import {useAppDispatch, useAppSelector} from '../../../hooks';
 import {AuthActions} from '../../../redux';
-import {
-  getAuthRoleUser,
-  getAuthUser,
-} from '../../../redux/selectors/authen.selector';
+import {getAuthRoleUser} from '../../../redux/selectors/authen.selector';
 import {signInWithGoogleAsync} from '../../../utils/google';
-import {images} from '../../../assets';
+import styles from './styles';
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
@@ -30,7 +20,7 @@ const SignIn = () => {
       dispatch(
         AuthActions.handleLogin({
           email: email,
-          device_token: 'thao',
+          device_token: 'dat',
         }),
       );
     } else {

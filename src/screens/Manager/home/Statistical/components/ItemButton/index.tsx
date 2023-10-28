@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, FlatList} from 'react-native';
 import {ButtonSimple} from '../../../../../../components';
-import useStyles from './styles';
+import styles from './styles';
 
 interface ButtonData {
   textButton: string;
@@ -50,7 +50,6 @@ const data: ButtonData[] = [
 ];
 
 const ItemButton: React.FC = () => {
-  const styles = useStyles();
   const renderItem = ({item}: {item: ButtonData}) => (
     <ButtonSimple
       textButton={item.textButton}

@@ -3,7 +3,7 @@ import {Button, Text} from '@rneui/base';
 
 import React, {FunctionComponent} from 'react';
 
-import useStyles from './styles';
+import styles from './styles';
 import {HeaderCustom, TabViewItem} from '../../../../components';
 import Acceptance from './Acceptance';
 import Resolution from './Resolution';
@@ -11,7 +11,6 @@ import {NavigationService} from '../../../../navigation';
 import {routes} from '../../../../constants';
 
 const Incident: FunctionComponent = () => {
-  const styles = useStyles();
   const handlePressGoback = () => {
     NavigationService.navigate(routes.HOMEMANAGER);
   };

@@ -13,7 +13,7 @@ const useStyles = makeStyles(({colors}) => ({
     backgroundColor: colors.colorMain,
     flexDirection: 'row',
     marginVertical: normalize(HEIGHT * 0.01),
-    width: '95%',
+    width: '100%',
     height: normalize(40),
   },
   buttonText: {
