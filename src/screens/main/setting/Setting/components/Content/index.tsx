@@ -17,7 +17,7 @@ const Content: React.FC = () => {
           <Icon name="right" type="antdesign" />
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
+      <View style={styles.btn}>
         <View style={styles.viewIcon}>
           <Icon name="bell" type="feather" />
         </View>
@@ -25,7 +25,7 @@ const Content: React.FC = () => {
         <View style={styles.viewSwitch}>
           <Switch_custom />
         </View>
-      </TouchableOpacity>
+      </View>
       <TouchableOpacity style={styles.btn}>
         <View style={styles.viewIcon}>
           <Icon name={isLoggedIn ? 'log-out' : 'log-in'} type="feather" />

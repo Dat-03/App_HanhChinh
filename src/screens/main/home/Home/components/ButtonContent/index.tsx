@@ -10,7 +10,6 @@ const ButtonContent: React.FC = () => {
     <ScrollView style={styles.scrollView}>
       <ButtonCustom
         textButton="Báo cáo sự cố"
-        textTitle="asdasdasdasd"
         name="users"
         type="font-awesome"
         color="#ec449c"
@@ -33,7 +32,6 @@ const ButtonContent: React.FC = () => {
         size={25}
         onPressButton={() => NavigationService.navigate(routes.SUPPORT)}
       />
-     
     </ScrollView>
   );
 };

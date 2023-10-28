@@ -40,6 +40,10 @@ const styles = StyleSheet.create({
   button: {
     paddingHorizontal: normalize(24),
   },
+  textHeader:{
+    marginStart:20,
+    color:colors.white0,
+  }
 });
 
 export default styles;

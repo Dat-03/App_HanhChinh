@@ -18,7 +18,6 @@ const Support: React.FC = () => {
     if (feedbackText === 'Phản hồi') {
       Alert.alert('Thông báo', 'Vui lòng đợi phản hồi');
     } else if (feedbackText === 'Đánh giá') {
-      
     }
   };
 
