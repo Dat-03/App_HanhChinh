@@ -1,11 +1,10 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import useStyles from './styles';
+import styles from './styles';
 import ButtonNotification from '../../../../../components/customs/ButtonRoom';
 import {ItemButton} from './components';
 
 const Acceptance: React.FC = () => {
-  const styles = useStyles();
   return (
     <View>
       <View style={{padding: 10}}>

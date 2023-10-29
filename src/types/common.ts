@@ -12,25 +12,22 @@ export type ToastType = {
   text2: string;
 };
 
-export type uuid = {
-  uuid: string;
+export type _id = {
+  _id: string;
+};
+
+export type RoomType = _id & {
+  name: string;
 };
 
 export type Timestamp = {
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type Screen = {
   name: routes;
   component: FunctionComponent<any>;
-};
-
-export type Pagination = {
-  page: number;
-  pageSize: number;
-  totalPage: number;
-  totalRecord: number;
 };
 
 export type BaseResponse<T> = {
@@ -40,53 +37,7 @@ export type BaseResponse<T> = {
   data: T;
 };
 
-export type BaseResponseList<T> = {
-  statusCode: number;
-  responseTimestamp: Date;
-  errorMessage: string;
-  data: T[];
+export type TypeReportHistory = _id & {
+  name: string;
+  time_handle: string;
 };
-export type Avatar = uuid &
-  Timestamp & {
-    public_id: string;
-    url: string;
-    secure_url: string;
-  };
-
-export enum Role {
-  ADMIN = 'ADMIN',
-  USER = 'USER',
-  VIP = 'VIP',
-}
-
-export enum Gender {
-  FAMALE = 'famale',
-  MALE = 'male',
-}
-
-export type Onboard = {
-  id: string;
-  title: string;
-  subtitle: string;
-  image: any;
-};
-
-interface Action {
-  title: string;
-  type: 'capture' | 'library';
-  options: ImagePicker.CameraOptions | ImagePicker.ImageLibraryOptions;
-}
-interface PayloadHttp {
-  code: number;
-  message: string;
-  data?: any | undefined;
-}
-
-export class Http {
-  code: number;
-  message: string;
-  constructor({code, message}: PayloadHttp) {
-    this.code = code;
-    this.message = message;
-  }
-}

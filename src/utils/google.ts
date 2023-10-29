@@ -1,59 +1,32 @@
-// import {GoogleSignin, User} from '@react-native-google-signin/google-signin';
-// GoogleSignin.configure({
-//   webClientId:
-//     '714500529188-7uvkmcu3p8c0vton19fq53fnev2rpn6h.apps.googleusercontent.com',
-// });
+import {
+  GoogleSignin,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 
-// export class GoogleService {
-//   static async login(): Promise<User> {
-//     try {
-//       await GoogleSignin.hasPlayServices();
-//       const userInfo = await GoogleSignin.signIn();
-//       return userInfo;
-//     } catch (error) {
-//       console.log(error);
-//     }
-//     return {} as User;
-//   }
+GoogleSignin.configure({
+  webClientId:
+    '71174207638-f592bchep4n26turj77r886pagt8197a.apps.googleusercontent.com',
+});
 
-//   static async currentUser(): Promise<User> {
-//     try {
-//       const userInfo = await GoogleSignin.getCurrentUser();
-//       if (!userInfo) {
-//         return {} as User;
-//       }
-//       return userInfo;
-//     } catch (error) {
-//       console.log(error);
-//     }
-//     return {} as User;
-//   }
+export const signInWithGoogleAsync = async () => {
+  try {
+    await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+    const {idToken} = await GoogleSignin.signIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    const userSignIn = await auth().signInWithCredential(googleCredential);
+    return userSignIn;
+  } catch (error: any) {
+    console.error('Google Sign-In Error:', error);
+  }
+};
 
-//   static async checkSignIn(): Promise<boolean> {
-//     try {
-//       const isSignedIn = await GoogleSignin.isSignedIn();
-//       return isSignedIn;
-//     } catch (err) {
-//       console.log(err);
-//     }
-//     return false;
-//   }
-
-//   static async getToken(): Promise<string | null> {
-//     try {
-//       const token = await GoogleSignin.getTokens();
-//       return token.accessToken;
-//     } catch (err) {
-//       console.log(err);
-//     }
-//     return null;
-//   }
-
-//   static async logout(): Promise<void> {
-//     try {
-//       await GoogleSignin.signOut();
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
-// }
+export const LogOut = async () => {
+  try {
+    await GoogleSignin.revokeAccess();
+    await GoogleSignin.signOut();
+    await auth().signOut();
+  } catch (error) {
+    console.log(error);
+  }
+};

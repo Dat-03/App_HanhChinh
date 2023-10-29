@@ -1,9 +1,10 @@
 import {makeStyles, normalize} from '@rneui/themed';
+import {StyleSheet} from 'react-native';
 
-const useStyles = makeStyles(() => ({
+const styles = StyleSheet.create({
   container: {
     gap: normalize(20),
   },
-}));
+});
 
-export default useStyles;
+export default styles;

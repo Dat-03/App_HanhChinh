@@ -8,14 +8,14 @@ import {
 
 import BottomNavigator from './BottomNavigator';
 
-import { routes } from '../../constants';
+import {routes} from '../../constants';
 import {
   contactScreens,
   historyScreens,
   homeScreens,
   settingScreens,
 } from '../../screens/main';
-import { Screen } from '../../types';
+import {Screen} from '../../types';
 
 const AppStack = createStackNavigator();
 

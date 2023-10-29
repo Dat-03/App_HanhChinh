@@ -32,11 +32,11 @@ const choseIcon = (route: routes) => {
     case routes.HOME:
       return 'home';
     case routes.HISTORY:
-      return 'id-card';
+      return 'book';
     case routes.CONTACT:
-      return 'bookmarks';
+      return 'call';
     case routes.SETTING:
-      return 'person';
+      return 'settings';
     default:
       return 'home';
   }

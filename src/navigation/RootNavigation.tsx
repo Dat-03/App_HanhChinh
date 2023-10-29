@@ -2,17 +2,31 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {navigationRef} from './NavigationService';
 
-import NVHCNavigator from './navigators/NVHCNavigator';
-import ManagerNavigator from './navigators/ManagerNavigator';
 import AppNavigator from './navigators/AppNavigator';
+import NVHCNavigator from './navigators/NVHCNavigator';
+import AuthNavigator from './navigators/AuthNavigator';
+import {useAppSelector} from '../hooks';
+import {getAuthRoleUser} from '../redux/selectors/authen.selector';
+import ManagerNavigator from './navigators/ManagerNavigator';
 
 const RootNavigation = () => {
+  const dataRoleApi = useAppSelector(getAuthRoleUser);
+
+  console.log('user api role :', dataRoleApi);
+
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      {/* <AppNavigator/> */}
-      <NVHCNavigator/>
-      {/* <ManagerNavigator/> */}
+
+      {dataRoleApi === 'TEACHER' ? (
+        <AppNavigator />
+      ) : dataRoleApi === 'ADMIN' ? (
+        <NVHCNavigator />
+      ) : dataRoleApi == 'MANAGER' ? (
+        <ManagerNavigator />
+      ) : (
+        <AuthNavigator />
+      )}
     </NavigationContainer>
   );
 };
