@@ -1,12 +1,13 @@
-import { Tab, TabView } from '@rneui/themed';
+import {Tab, TabView} from '@rneui/themed';
 import React from 'react';
-import { View } from 'react-native';
-import useStyles from './styles';
-import { CustomTabViewItemProps } from './types';
+import {CustomTabViewItemProps} from './types';
+import styles from './styles';
+import {ScrollView} from 'react-native-gesture-handler';
+import {View} from 'react-native';
 
 const TabViewItem: React.FunctionComponent<CustomTabViewItemProps> = props => {
   const [index, setIndex] = React.useState(0);
-  const styles = useStyles();
+
   return (
     <View style={{flex: 1}}>
       <Tab
