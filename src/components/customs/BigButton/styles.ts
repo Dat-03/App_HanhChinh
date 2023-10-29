@@ -23,6 +23,7 @@ const useStyles = makeStyles(({colors}) => ({
     fontStyle: 'normal',
     fontFamily: 'Urbanist-Regular',
     color: colors.grey0,
+   
   },
 }));
 

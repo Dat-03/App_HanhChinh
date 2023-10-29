@@ -1,55 +1,109 @@
-import {View, Text, FlatList, Image, Touchable} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import useStyles from './styles';
-import {images} from '../../../../../../assets';
-import {NavigationService} from '../../../../../../navigation';
-import {routes} from '../../../../../../constants';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import ItemHisList from './itemHisList';
+
 const HisList: React.FC = () => {
   const styles = useStyles();
-  const clickDetail = () => {
-    NavigationService.navigate(routes.DETAIL);
-  };
+  const render = ({item}: {item: (typeof DATA)[0]}) => (
+    <ItemHisList {...item} />
+  );
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Lịch Sử</Text>
       {/* Flat List */}
-      <TouchableOpacity onPress={clickDetail}>
-        <View style={styles.hislist}>
-          <View>
-            <Text style={styles.title1}>Sự cố về cơ sở vật chất</Text>
-            <Text style={{color: 'black'}}>
-              Người tiếp nhận: Nguyễn Trung Hải
-            </Text>
-            <View style={styles.info}>
-              <Text style={{color: 'black'}}>8-2-2023</Text>
-              <Text style={styles.text}>09:05am</Text>
-              <Text style={styles.text}>Phòng: T1011</Text>
-            </View>
-          </View>
-          <View style={styles.avatar}>
-            <Image source={images.avatar} style={styles.img} />
-          </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={clickDetail}>
-        <View style={styles.hislist}>
-          <View>
-            <Text style={styles.title1}>Sự cố về thiết bị mạng</Text>
-            <Text style={{color: 'black'}}>Người tiếp nhận: Trần Thị Nga</Text>
-            <View style={styles.info}>
-              <Text style={{color: 'black'}}>8-2-2023</Text>
-              <Text style={styles.text}>09:05am</Text>
-              <Text style={styles.text}>Phòng: T1011</Text>
-            </View>
-          </View>
-          <View style={styles.avatar}>
-            <Image source={images.avatar} style={styles.img} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <FlatList
+        data={DATA}
+        renderItem={render}
+        keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 };
 
 export default HisList;
+
+const DATA = [
+  {
+    id: '1',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '2',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '3',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '4',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '5',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '6',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '7',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '8',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '9',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+  {
+    id: '10',
+    problemFrom: 'Sự cố máy chiếu hỏng',
+    name: 'Lê Văn Hiếu',
+    room: '1101',
+    time: '09h45',
+    date: '17/02/2023',
+  },
+];

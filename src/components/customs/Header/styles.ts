@@ -59,9 +59,10 @@ const useStyles = makeStyles(({colors}) => ({
     left: normalize(20),
   },
   textFullName: {
-    color: colors.black,
-    fontSize: normalize(14),
+    color: colors.white,
+    fontSize: normalize(18),
     left: normalize(28),
+    top:normalize(10)
   },
   textUserStatus: {
     color: colors.grey4,
@@ -71,6 +72,9 @@ const useStyles = makeStyles(({colors}) => ({
   button: {
     color: colors.primary,
   },
+  leftIcon:{
+    color: colors.black,
+  }
 }));
 
 export default useStyles;
