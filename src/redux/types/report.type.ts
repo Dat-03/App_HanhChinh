@@ -2,9 +2,11 @@ import {Role} from 'react-native';
 import {
   _id,
   PayloadHttpList,
+  PayloadHttpListPage,
   RoomType,
   Timestamp,
   TypeReportHistory,
+  User_CreateType,
 } from '../../types';
 import {User} from './auth.type';
 
@@ -45,6 +47,16 @@ export type HistoryReportType = _id &
     user_handle: UserHandle;
   };
 
+export type ListReportAdmType = _id &
+  Timestamp & {
+    room: RoomType;
+    type: TypeReportHistory;
+    user_create: User_CreateType;
+    description: string;
+    status: number;
+    images: string[];
+  };
+
 type UserHandle = User &
   Timestamp & {
     __v: number;
@@ -56,4 +68,5 @@ export type ReportState = Partial<{
   historyReportData: PayloadHttpList<HistoryReportType>;
   createReportData: PayloadHttpListCreateReport;
   dataReport: PayloadHttpList<HistoryReportType>;
+  listReportAdm: PayloadHttpListPage<ListReportAdmType>;
 }>;

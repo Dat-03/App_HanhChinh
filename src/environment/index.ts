@@ -6,4 +6,5 @@ export enum Endpoints {
   REFRESH_TOKEN = '/api/refresh-token',
   HISTORY_REPORT_TEACHER = '/api/get-teacher-history-reports',
   CREAT_REPORT_TEACHER = '/api/create-report',
+  LIST_REPORT_BY_TEACHER = '/api/get-list-report',
 }

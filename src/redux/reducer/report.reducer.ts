@@ -3,9 +3,10 @@ import {
   PayloadActionCreator,
   createSlice,
 } from '@reduxjs/toolkit';
-import {PayloadHttpList} from '../../types';
+import {PayloadHttpList, PayloadHttpListPage} from '../../types';
 import {
   HistoryReportType,
+  ListReportAdmType,
   PayloadHttpListCreateReport,
   ReportState,
 } from '../types/report.type';
@@ -66,6 +67,25 @@ const reducer = createSlice({
         ...state,
         dataReport: {
           data: action.payload.data,
+        },
+      };
+    },
+
+    getListReportAdm: (state: ReportState, _: PayloadAction<any>) => {
+      return {
+        ...state,
+      };
+    },
+    setListReportAdm: (
+      state: ReportState,
+      action: PayloadAction<PayloadHttpListPage<ListReportAdmType>>,
+    ) => {
+      return {
+        listReportAdm: {
+          ...state,
+          data: action.payload.data,
+          currentPage: action.payload.currentPage,
+          totalPage: action.payload.totalPage,
         },
       };
     },

@@ -7,6 +7,12 @@ export interface PayloadHttpList<T> {
   data?: T[];
 }
 
+export interface PayloadHttpListPage<T> {
+  currentPage?: string;
+  totalPage?: number;
+  data?: T[];
+}
+
 export type ToastType = {
   text2: string;
 };
@@ -37,7 +43,13 @@ export type BaseResponse<T> = {
   data: T;
 };
 
-export type TypeReportHistory = _id & {
+export type TypeReportHistory = _id &
+  Timestamp & {
+    name: string;
+    time_handle: string;
+  };
+
+export type User_CreateType = _id & {
   name: string;
-  time_handle: string;
+  phone: string;
 };

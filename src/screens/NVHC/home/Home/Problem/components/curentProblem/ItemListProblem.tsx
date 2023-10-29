@@ -4,17 +4,24 @@ import {NavigationService} from '../../../../../../../navigation';
 import {routes} from '../../../../../../../constants';
 import styles from './styles';
 import {images} from '../../../../../../../assets';
+import {ListReportAdmType} from '../../../../../../../redux/types/report.type';
+import {useAppSelector} from '../../../../../../../hooks';
+import {getImageUser} from '../../../../../../../redux';
 
-interface Item {
-  problem: string;
-  name: string;
-  time: string;
-  building: string;
-  room: string;
-  date: string;
-}
-const ItemListProblem: React.FC<Item> = (props: any) => {
-  const {problem, name, time, building, room, date} = props;
+const ItemListProblem: React.FC<ListReportAdmType> = props => {
+  const {
+    _id,
+    createdAt,
+    deleteAt,
+    description,
+    images,
+    room,
+    status,
+    type,
+    updatedAt,
+    user_create,
+  } = props;
+  const imageUser = useAppSelector(getImageUser);
   const GotoDetail = () => {
     NavigationService.navigate(routes.DETAILPROBLEM);
   };
@@ -23,18 +30,18 @@ const ItemListProblem: React.FC<Item> = (props: any) => {
       <TouchableOpacity onPress={GotoDetail}>
         <View style={styles.itemProlem}>
           <View style={styles.nameProblem}>
-            <Text style={styles.problem}>{problem}</Text>
+            <Text style={styles.problem}>{type.name}</Text>
             <Text style={styles.timeOut}>10':02"</Text>
           </View>
           <View style={styles.info}>
-            <Image source={images.avatar} style={styles.img} />
+            <Image source={{uri: imageUser}} style={styles.img} />
             <View style={{marginStart: 10}}>
-              <Text style={styles.name}>{name}</Text>
+              <Text style={styles.name}>{user_create.name}</Text>
               <View style={styles.location}>
-                <Text>Tòa: {building}</Text>
-                <Text style={styles.marginItem}>Phòng: {room}</Text>
-                <Text style={styles.marginItem}>{time}</Text>
-                <Text style={styles.marginItem}>{date}</Text>
+                <Text>Tòa:T</Text>
+                <Text style={styles.marginItem}>Phòng: {room.name}</Text>
+                {/* <Text style={styles.marginItem}>{time}</Text> */}
+                <Text style={styles.marginItem}>{createdAt}</Text>
               </View>
             </View>
           </View>
