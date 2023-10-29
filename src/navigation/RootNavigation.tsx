@@ -16,8 +16,6 @@ const RootNavigation = () => {
 
   return (
     <NavigationContainer ref={navigationRef}>
-      {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-
       {dataRoleApi === 'TEACHER' ? (
         <AppNavigator />
       ) : dataRoleApi === 'ADMIN' ? (

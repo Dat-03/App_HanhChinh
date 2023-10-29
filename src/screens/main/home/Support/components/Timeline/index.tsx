@@ -62,7 +62,7 @@ const Timelineitem: React.FC<{onStatusChange: (newStatus: string) => void}> = ({
             {rowData.status === 'check' ? (
               <Icon name="checkmark-outline" type="ionicon" color={'white'} />
             ) : (
-              <Icon name="history" type="material" color={'white'} size={24}/>
+              <Icon name="history" type="material" color={'white'} size={24} />
             )}
           </View>
         </View>

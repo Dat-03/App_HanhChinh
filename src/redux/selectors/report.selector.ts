@@ -8,3 +8,6 @@ export const getListRoom = (state: RootState) =>
 
 export const getListTypeReport = (state: RootState) =>
   state.report.createReportData?.data?.listTypeReport;
+
+export const getDataReportTeacher = (state: RootState) =>
+  state.report.dataReport?.data;

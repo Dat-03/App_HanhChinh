@@ -10,11 +10,10 @@ import styles from './styles';
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
-
   const dataRoleApi = useAppSelector(getAuthRoleUser);
-
   const signIn = async () => {
     const userSignIn = await signInWithGoogleAsync();
+
     if (userSignIn?.user.photoURL) {
       dispatch(AuthActions.setImage(userSignIn.user.photoURL));
     }
