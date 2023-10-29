@@ -12,7 +12,6 @@ function* getHistoryReportTeacherSaga(
       ReportService.getHistoryTeacher,
       action.payload,
     );
-    console.log('data saga :', data);
     if (data.status == 200) {
       console.log('run push tookit');
       yield put(ReportActions.setListHistoryTeacher(data.data));

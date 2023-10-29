@@ -1,6 +1,5 @@
 import {FunctionComponent} from 'react';
 import {routes} from '../constants';
-import * as ImagePicker from 'react-native-image-picker';
 
 export interface PayloadHttpList<T> {
   code?: number;
@@ -23,6 +22,7 @@ export type RoomType = _id & {
 export type Timestamp = {
   createdAt: string;
   updatedAt: string;
+  deleteAt: string;
 };
 
 export type Screen = {

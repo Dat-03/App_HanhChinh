@@ -1,11 +1,26 @@
 import {View, Text, FlatList} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import useStyles from './styles';
 import ItemHisList from './itemHisList';
+import {useAppDispatch, useAppSelector} from '../../../../../../hooks';
+import {
+  ReportActions,
+  getDataReportTeacher,
+  getHistoryReportTeacher,
+} from '../../../../../../redux';
+import {HistoryReportType} from '../../../../../../redux/types/report.type';
 
 const HisList: React.FC = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(ReportActions.getListHistoryTeacher(1));
+  }, []);
+
+  const dataHistory = useAppSelector(getHistoryReportTeacher);
+  console.log(dataHistory);
+
   const styles = useStyles();
-  const render = ({item}: {item: (typeof DATA)[0]}) => (
+  const render = ({item}: {item: HistoryReportType}) => (
     <ItemHisList {...item} />
   );
 
@@ -14,9 +29,9 @@ const HisList: React.FC = () => {
       <Text style={styles.title}>Lịch Sử</Text>
       {/* Flat List */}
       <FlatList
-        data={DATA}
+        data={dataHistory}
         renderItem={render}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
         showsVerticalScrollIndicator={false}
       />
     </View>

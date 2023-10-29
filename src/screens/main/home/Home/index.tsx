@@ -12,12 +12,10 @@ import {useAppDispatch, useAppSelector} from '../../../../hooks';
 import {
   ReportActions,
   getAuthUser,
+  getDataReportTeacher,
   getHistoryReportTeacher,
   getImageUser,
-  getListRoom,
-  getListTypeReport,
 } from '../../../../redux';
-import {images} from '../../../../assets';
 
 const Home: FunctionComponent = () => {
   const dispatch = useAppDispatch();

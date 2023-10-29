@@ -30,15 +30,10 @@ const CreateReport = () => {
   const [valueInput, setValueInput] = React.useState('');
 
   const formdata = new FormData();
-  console.log('========>', formdata);
   const dispatch = useAppDispatch();
 
-  formdata.append('user_create', idUser);
-  formdata.append('room', selected);
-  formdata.append('type', selectedType);
-  formdata.append('description', valueInput);
-
   const handlePostReport = () => {
+    console.log('FormData trước khi gửi:', formdata);
     dispatch(ReportActions.postReport(formdata));
   };
 
@@ -53,6 +48,11 @@ const CreateReport = () => {
       key: type._id,
       value: type.name,
     })) || [];
+
+  formdata.append('user_create', idUser);
+  formdata.append('room', selected);
+  formdata.append('type', selectedType);
+  formdata.append('description', valueInput);
 
   return (
     <View style={styles.container}>

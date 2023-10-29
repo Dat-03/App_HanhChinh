@@ -1,3 +1,4 @@
+import {Role} from 'react-native';
 import {
   _id,
   PayloadHttpList,
@@ -5,6 +6,7 @@ import {
   Timestamp,
   TypeReportHistory,
 } from '../../types';
+import {User} from './auth.type';
 
 export interface PayloadHttpListCreateReport {
   code?: number;
@@ -39,6 +41,15 @@ export type HistoryReportType = _id &
     status: number;
     images: string[];
     __v: number;
+    accept_report: string;
+    user_handle: UserHandle;
+  };
+
+type UserHandle = User &
+  Timestamp & {
+    __v: number;
+    available: boolean;
+    device_token: string;
   };
 
 export type ReportState = Partial<{
