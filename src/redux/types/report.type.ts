@@ -6,7 +6,6 @@ import {
   RoomType,
   Timestamp,
   TypeReportHistory,
-  User_CreateType,
 } from '../../types';
 import {User} from './auth.type';
 
@@ -57,6 +56,21 @@ export type ListReportAdmType = _id &
     images: string[];
   };
 
+export type ReportType = _id &
+  Timestamp & {
+    __v: number;
+    room: RoomType;
+    type: TypeReportHistory;
+    user_create: User_CreateType;
+    user_handle: UserHandle;
+    description: string;
+    status: number;
+    images: string[];
+    accept_report: string;
+    done_report: string;
+    mistake: string;
+  };
+
 type UserHandle = User &
   Timestamp & {
     __v: number;
@@ -64,9 +78,16 @@ type UserHandle = User &
     device_token: string;
   };
 
+type User_CreateType = User &
+  Timestamp & {
+    __v: number;
+    available: boolean;
+    device_token: string;
+  };
+
 export type ReportState = Partial<{
-  historyReportData: PayloadHttpList<HistoryReportType>;
+  historyReportData: PayloadHttpList<ReportType>;
   createReportData: PayloadHttpListCreateReport;
-  dataReport: PayloadHttpList<HistoryReportType>;
-  listReportAdm: PayloadHttpListPage<ListReportAdmType>;
+  dataReport: PayloadHttpList<ReportType>;
+  listReportAdm: PayloadHttpListPage<ReportType>;
 }>;

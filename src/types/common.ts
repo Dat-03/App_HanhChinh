@@ -48,8 +48,3 @@ export type TypeReportHistory = _id &
     name: string;
     time_handle: string;
   };
-
-export type User_CreateType = _id & {
-  name: string;
-  phone: string;
-};

@@ -8,7 +8,7 @@ import {
   getDataReportTeacher,
   getHistoryReportTeacher,
 } from '../../../../../../redux';
-import {HistoryReportType} from '../../../../../../redux/types/report.type';
+import {HistoryReportType, ReportType} from '../../../../../../redux/types/report.type';
 
 const HisList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -20,7 +20,7 @@ const HisList: React.FC = () => {
   console.log('data===>', dataHistory);
 
   const styles = useStyles();
-  const render = ({item}: {item: HistoryReportType}) => (
+  const render = ({item}: {item: ReportType}) => (
     <ItemHisList {...item} />
   );
 

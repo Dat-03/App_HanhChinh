@@ -9,6 +9,7 @@ import {
   ListReportAdmType,
   PayloadHttpListCreateReport,
   ReportState,
+  ReportType,
 } from '../types/report.type';
 import {Redux} from '../types';
 
@@ -25,7 +26,7 @@ const reducer = createSlice({
     },
     setListHistoryTeacher: (
       state: ReportState,
-      action: PayloadAction<PayloadHttpList<HistoryReportType>>,
+      action: PayloadAction<PayloadHttpList<ReportType>>,
     ) => {
       return {
         ...state,
@@ -61,7 +62,7 @@ const reducer = createSlice({
     },
     setReport: (
       state: ReportState,
-      action: PayloadAction<PayloadHttpList<HistoryReportType>>,
+      action: PayloadAction<PayloadHttpList<ReportType>>,
     ) => {
       return {
         ...state,
@@ -78,7 +79,7 @@ const reducer = createSlice({
     },
     setListReportAdm: (
       state: ReportState,
-      action: PayloadAction<PayloadHttpListPage<ListReportAdmType>>,
+      action: PayloadAction<PayloadHttpListPage<ReportType>>,
     ) => {
       return {
         listReportAdm: {

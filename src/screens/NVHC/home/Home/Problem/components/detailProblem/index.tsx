@@ -13,8 +13,17 @@ import {Icon} from '@rneui/base';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {routes} from '../../../../../../../constants';
 import colors from '../../../../../../../assets/colors';
+import {ListReportAdmType} from '../../../../../../../redux/types/report.type';
+import {useRoute} from '@react-navigation/native';
+interface RouteParamsIdReport {
+  _id: string;
+}
 
 const DetailProblem: React.FC = () => {
+  const route = useRoute();
+  const _idReport = (route.params as RouteParamsIdReport)._id;
+  console.log('===============>', _idReport);
+
   const handlePressGoback = () => {
     NavigationService.goBack();
   };
@@ -36,7 +45,7 @@ const DetailProblem: React.FC = () => {
         <View style={styles.info}>
           <Image source={images.avatar} style={styles.avatar} />
           <View style={{marginEnd: 120}}>
-            <Text style={styles.name}>Lê Văn Hiếu</Text>
+            <Text style={styles.name}>A</Text>
             <Text style={styles.infomation1}>0797151033</Text>
           </View>
           <TouchableOpacity>

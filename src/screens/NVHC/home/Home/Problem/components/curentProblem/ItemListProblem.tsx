@@ -4,11 +4,14 @@ import {NavigationService} from '../../../../../../../navigation';
 import {routes} from '../../../../../../../constants';
 import styles from './styles';
 import {images} from '../../../../../../../assets';
-import {ListReportAdmType} from '../../../../../../../redux/types/report.type';
+import {
+  ListReportAdmType,
+  ReportType,
+} from '../../../../../../../redux/types/report.type';
 import {useAppSelector} from '../../../../../../../hooks';
 import {getImageUser} from '../../../../../../../redux';
 
-const ItemListProblem: React.FC<ListReportAdmType> = props => {
+const ItemListProblem: React.FC<ReportType> = props => {
   const {
     _id,
     createdAt,
@@ -23,7 +26,7 @@ const ItemListProblem: React.FC<ListReportAdmType> = props => {
   } = props;
   const imageUser = useAppSelector(getImageUser);
   const GotoDetail = () => {
-    NavigationService.navigate(routes.DETAILPROBLEM);
+    NavigationService.navigate(routes.DETAILPROBLEM, {_id: _id});
   };
   return (
     <View>

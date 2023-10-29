@@ -10,16 +10,17 @@ import {routes} from '../../../../../../../constants';
 import ItemListProblem from './ItemListProblem';
 import {useAppSelector} from '../../../../../../../hooks';
 import {getListReportAdm} from '../../../../../../../redux';
-import {ListReportAdmType} from '../../../../../../../redux/types/report.type';
+import {
+  ListReportAdmType,
+  ReportType,
+} from '../../../../../../../redux/types/report.type';
 
 const CurrentProblem: React.FC = () => {
   const dataListReport = useAppSelector(getListReportAdm);
 
   console.log('datamain+==========>', dataListReport);
 
-  const render = ({item}: {item: ListReportAdmType}) => (
-    <ItemListProblem {...item} />
-  );
+  const render = ({item}: {item: ReportType}) => <ItemListProblem {...item} />;
 
   return (
     <View style={styles.container}>

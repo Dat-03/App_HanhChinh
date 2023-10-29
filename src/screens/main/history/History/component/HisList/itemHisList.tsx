@@ -5,11 +5,14 @@ import {NavigationService} from '../../../../../../navigation';
 import {routes} from '../../../../../../constants';
 import {images} from '../../../../../../assets';
 import colors from '../../../../../../assets/colors';
-import {HistoryReportType} from '../../../../../../redux/types/report.type';
+import {
+  HistoryReportType,
+  ReportType,
+} from '../../../../../../redux/types/report.type';
 import {useAppSelector} from '../../../../../../hooks';
 import {getImageUser} from '../../../../../../redux';
 
-const ItemHisList: React.FC<HistoryReportType> = props => {
+const ItemHisList: React.FC<ReportType> = props => {
   const {
     __v,
     _id,
