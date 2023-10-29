@@ -5,9 +5,9 @@ import styles from './styles';
 
 const TimelineItem: React.FC = () => {
   const DATA = {
-    createdAt: '',
-    accept_report: '',
-    done_report: '',
+    createdAt: 'a',
+    accept_report: 'a',
+    done_report: 'a',
     status: -1,
   };
   return (

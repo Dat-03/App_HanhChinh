@@ -1,9 +1,9 @@
-import { Icon } from '@rneui/themed';
+import {Icon} from '@rneui/themed';
 import React from 'react';
-import { Alert, Text, View } from 'react-native';
-import { BigButton } from '../../../../components';
-import { NavigationService } from '../../../../navigation';
-import { Notification_Suport } from './components';
+import {Alert, Text, View} from 'react-native';
+import {BigButton} from '../../../../components';
+import {NavigationService} from '../../../../navigation';
+import {Notification_Suport} from './components';
 import TimelineItem from './components/Timeline';
 import styles from './styles';
 
@@ -19,17 +19,17 @@ const Support: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Icon name="left" type="antdesign" onPress={handleGoback} />
+        <Icon name="left" type="antdesign" size={24} onPress={handleGoback} />
         <Text style={styles.textHeader}>Yêu cầu hỗ trợ CNTT</Text>
       </View>
-      <View style={{paddingVertical: 20}}>
+      <View style={styles.viewNotification}>
         <Notification_Suport />
       </View>
       <View style={styles.viewTimeline}>
         <Text style={styles.textTimeline}>Trạng thái yêu cầu</Text>
         <TimelineItem />
       </View>
-      <View>
+      <View style={styles.button}>
         <BigButton textButton="Đánh giá" onPressButton={handleReview} />
       </View>
     </View>
