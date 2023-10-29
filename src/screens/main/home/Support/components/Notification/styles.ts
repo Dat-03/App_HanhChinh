@@ -7,10 +7,12 @@ const styles = StyleSheet.create({
   viewbig: {
     width: '100%',
     height: normalize(101),
-    backgroundColor: colors.line,
+    backgroundColor: '#F1F4F5',
     borderRadius: normalize(10),
     paddingHorizontal: normalize(18),
     paddingVertical: normalize(10),
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   textTitle: {
     fontSize: normalize(14),
@@ -19,8 +21,8 @@ const styles = StyleSheet.create({
     paddingVertical: normalize(7),
   },
   textContent: {
-    fontSize: normalize(14),
-    color: colors.grey3,
+    fontSize: normalize(12),
+    color: colors.black0,
     fontWeight: '400',
   },
   avatar: {

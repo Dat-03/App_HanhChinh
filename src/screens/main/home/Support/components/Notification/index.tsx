@@ -10,18 +10,21 @@ const Notification_Suport: React.FC = () => {
       keyExtractor={(item, index) => index.toString()}
       renderItem={({item}) => (
         <View style={styles.viewbig}>
-          <View style={styles.viewTitle}>
-            <Text style={styles.textTitle}>{item.title}</Text>
-            <Image style={styles.avatar} source={item.avatar} />
+          <View>
+            <View style={styles.viewTitle}>
+              <Text style={styles.textTitle}>{item.title}</Text>
+            </View>
+            <Text style={styles.textContent}>
+              Người tiếp nhận: {item.recipient}
+            </Text>
+            <View style={styles.viewDate}>
+              <Text style={styles.textContent}>{item.date}</Text>
+              <Text style={styles.textContent}>{item.time}</Text>
+              <Text style={styles.textContent}>SĐT: {item.phone}</Text>
+            </View>
           </View>
-          <Text style={styles.textContent}>
-            Người tiếp nhận: {item.recipient}
-          </Text>
-          <View style={styles.viewDate}>
-            <Text style={styles.textContent}>{item.date}</Text>
-            <Text style={styles.textContent}>{item.time}</Text>
-            <Text style={styles.textContent}>SĐT: {item.phone}</Text>
-          </View>
+
+          <Image style={styles.avatar} source={item.avatar} />
         </View>
       )}
     />
