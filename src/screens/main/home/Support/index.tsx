@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
-import {Alert, Text, View} from 'react-native';
-import {Notification_Suport, Timelineitem} from './components';
-import styles from './styles';
-import {BigButton, HeaderCustom} from '../../../../components';
-import {Icon} from '@rneui/themed';
-import {NavigationService} from '../../../../navigation';
+import { Icon } from '@rneui/themed';
+import React from 'react';
+import { Alert, Text, View } from 'react-native';
+import { BigButton } from '../../../../components';
+import { NavigationService } from '../../../../navigation';
+import { Notification_Suport } from './components';
 import TimelineItem from './components/Timeline';
+import styles from './styles';
 
 const Support: React.FC = () => {
   const handleGoback = () => {
     NavigationService.goBack();
   };
-
-  const [timelineStatus, setTimelineStatus] = useState('Yêu cầu');
-  const [feedbackText, setFeedbackText] = useState('Phản hồi');
 
   const handleReview = () => {
     Alert.alert('Thông báo', 'Vui lòng đánh giá');
@@ -30,7 +27,7 @@ const Support: React.FC = () => {
       </View>
       <View style={styles.viewTimeline}>
         <Text style={styles.textTimeline}>Trạng thái yêu cầu</Text>
-          <TimelineItem/>
+        <TimelineItem />
       </View>
       <View>
         <BigButton textButton="Đánh giá" onPressButton={handleReview} />

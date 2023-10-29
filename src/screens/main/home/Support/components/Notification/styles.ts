@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   viewDate: {
     flexDirection: 'row',
-    gap: normalize(15),
+    gap: normalize(12),
   },
   viewTitle: {
     flexDirection: 'row',

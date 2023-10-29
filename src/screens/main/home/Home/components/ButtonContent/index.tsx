@@ -1,9 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
+import {View} from 'react-native';
 import colors from '../../../../../../assets/colors';
 import ButtonCustom from '../../../../../../components/customs/Button';
-import { routes } from '../../../../../../constants';
-import { NavigationService } from '../../../../../../navigation';
+import {routes} from '../../../../../../constants';
+import {NavigationService} from '../../../../../../navigation';
 
 const ButtonContent: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const ButtonContent: React.FC = () => {
         color="#ec449c"
         size={25}
         style={{backgroundColor: colors.buttonGray}}
-        onPressButton={() => NavigationService.navigate(routes.STATISTICAL)}
+        onPressButton={() => NavigationService.navigate(routes.SUPPORT)}
       />
       <ButtonCustom
         textButton="Quản lý mượn phòng học, hội trường"

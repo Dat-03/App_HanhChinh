@@ -1,31 +1,15 @@
-import {Image, TouchableOpacity, View} from 'react-native';
-import {Button, Text} from '@rneui/base';
+import { Text } from '@rneui/base';
+import { Image, View } from 'react-native';
 
-import React, {FunctionComponent, useEffect} from 'react';
+import React, { FunctionComponent } from 'react';
 
+import { Icon } from '@rneui/themed';
+import { images } from '../../../../assets';
+import { ButtonContent } from './components';
 import styles from './styles';
-import {HeaderCustom} from '../../../../components';
-import {ButtonContent} from './components';
-import {NavigationService} from '../../../../navigation';
-import {routes} from '../../../../constants';
-import {useAppDispatch, useAppSelector} from '../../../../hooks';
-import {
-  ReportActions,
-  getHistoryReportTeacher,
-  getListRoom,
-  getListTypeReport,
-} from '../../../../redux';
-import {images} from '../../../../assets';
-import {Icon} from '@rneui/themed';
 
 const Home: FunctionComponent = () => {
-  const dispatch = useAppDispatch();
-  const dataTeacher = useAppSelector(getHistoryReportTeacher);
-  const listRoom = useAppSelector(getListRoom);
-  const listTypeReport = useAppSelector(getListTypeReport);
-  useEffect(() => {
-    dispatch(ReportActions.getListCreateReport());
-  }, []);
+ 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
