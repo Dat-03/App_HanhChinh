@@ -30,6 +30,8 @@ const reducer = createSlice({
         ...state,
         historyReportData: {
           data: action.payload.data,
+          message: action.payload.message,
+          code: action.payload.code,
         },
       };
     },

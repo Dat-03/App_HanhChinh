@@ -3,7 +3,6 @@ import {normalize} from '@rneui/themed';
 import colors from '../../../../../../assets/colors';
 import {Device} from '../../../../../../utils';
 const WIDTH = Device.getDeviceWidth();
-const HEIGHT = Device.getDeviceHeight();
 const styles = StyleSheet.create({
   container: {
     width: '100%',

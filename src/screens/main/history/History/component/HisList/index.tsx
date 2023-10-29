@@ -17,7 +17,7 @@ const HisList: React.FC = () => {
   }, []);
 
   const dataHistory = useAppSelector(getHistoryReportTeacher);
-  console.log(dataHistory);
+  console.log('data===>', dataHistory);
 
   const styles = useStyles();
   const render = ({item}: {item: HistoryReportType}) => (
