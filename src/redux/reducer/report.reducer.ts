@@ -7,6 +7,7 @@ import {PayloadHttpList, PayloadHttpListPage} from '../../types';
 import {
   HistoryReportType,
   ListReportAdmType,
+  PayloadHttp,
   PayloadHttpListCreateReport,
   ReportState,
   ReportType,
@@ -32,8 +33,6 @@ const reducer = createSlice({
         ...state,
         historyReportData: {
           data: action.payload.data,
-          message: action.payload.message,
-          code: action.payload.code,
         },
       };
     },
@@ -62,7 +61,7 @@ const reducer = createSlice({
     },
     setReport: (
       state: ReportState,
-      action: PayloadAction<PayloadHttpList<ReportType>>,
+      action: PayloadAction<PayloadHttp<ReportType>>,
     ) => {
       return {
         ...state,
@@ -85,9 +84,30 @@ const reducer = createSlice({
         listReportAdm: {
           ...state,
           data: action.payload.data,
-          currentPage: action.payload.currentPage,
-          totalPage: action.payload.totalPage,
         },
+      };
+    },
+
+    getDetailReport: (state: ReportState, _: PayloadAction<string>) => {
+      return {
+        ...state,
+      };
+    },
+    setDetailReport: (
+      state: ReportState,
+      action: PayloadAction<PayloadHttp<ReportType>>,
+    ) => {
+      return {
+        detailData: {
+          ...state,
+          data: action.payload.data,
+        },
+      };
+    },
+
+    getDetailAccept: (state: ReportState, action: PayloadAction<string>) => {
+      return {
+        ...state,
       };
     },
   },

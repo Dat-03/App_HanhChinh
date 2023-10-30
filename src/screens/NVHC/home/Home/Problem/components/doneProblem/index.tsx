@@ -1,5 +1,5 @@
 import {View, Text, Image, Touchable, SectionList} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import {BigButton, HeaderCustom} from '../../../../../../../components';
 import {NavigationService} from '../../../../../../../navigation';
@@ -8,12 +8,28 @@ import {Icon} from '@rneui/base';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import {SelectList} from 'react-native-dropdown-select-list';
 import colors from '../../../../../../../assets/colors';
-
+import {useAppDispatch, useAppSelector} from '../../../../../../../hooks';
+import {ReportActions, getDetail} from '../../../../../../../redux';
+import {useRoute} from '@react-navigation/native';
+import {routes} from '../../../../../../../constants';
+interface RouteParamsIdReport {
+  _id: string;
+}
 const DoneProblem: React.FC = () => {
+  const route = useRoute();
+  const _idReport = (route.params as RouteParamsIdReport)._id;
   const [value, onChangeText] = React.useState('');
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(ReportActions.getDetailReport(_idReport));
+  }, []);
+  const dataAccept = useAppSelector(getDetail);
+
   const handlePressGoback = () => {
-    NavigationService.goBack();
+    NavigationService.navigate(routes.PROBLEM);
   };
+
   const [selected, setSelected] = useState();
   const [selectedTime, setSelectedTime] = useState();
   const [problemFr, setProblemFr] = useState('');
@@ -24,11 +40,7 @@ const DoneProblem: React.FC = () => {
     {key: '3', value: 'Khác'},
   ];
   const dataTime = [
-    {key: '1', value: '15 phút'},
-    {key: '2', value: '30 phút'},
-    {key: '3', value: '1 tiếng'},
-    {key: '4', value: '2 tiếng'},
-    {key: '5', value: '1 ngày'},
+    {key: dataAccept?.type._id, value: dataAccept?.type.time_handle},
   ];
 
   return (
@@ -37,7 +49,7 @@ const DoneProblem: React.FC = () => {
         <TouchableOpacity onPress={handlePressGoback}>
           <Icon name="chevron-left" type="feather" />
         </TouchableOpacity>
-        <Text style={styles.title}>Sự cố về cơ sở vật chất</Text>
+        <Text style={styles.title}>{dataAccept?.type.name}</Text>
         <Text style={styles.can}>.</Text>
       </View>
       <View style={styles.content}>
@@ -45,8 +57,10 @@ const DoneProblem: React.FC = () => {
         <View style={styles.info}>
           <Image source={images.avatar} style={styles.avatar} />
           <View style={{marginEnd: 120}}>
-            <Text style={styles.name}>Lê Văn Hiếu</Text>
-            <Text style={styles.infomation1}>0797151033</Text>
+            <Text style={styles.name}>{dataAccept?.user_create.name}</Text>
+            <Text style={styles.infomation1}>
+              {dataAccept?.user_create.phone}
+            </Text>
           </View>
           <TouchableOpacity>
             <View style={styles.call}>
@@ -60,17 +74,15 @@ const DoneProblem: React.FC = () => {
         </View>
         <View style={styles.itemChild}>
           <Text style={styles.text}>Thời gian:</Text>
-          <Text style={styles.infomation}> 09:05 am</Text>
+          <Text style={styles.infomation}>{dataAccept?.createdAt}</Text>
         </View>
         <View style={styles.itemChild}>
           <Text style={styles.text}>Phòng:</Text>
-          <Text style={styles.infomation}> T1101</Text>
+          <Text style={styles.infomation}>{dataAccept?.room.name}</Text>
         </View>
         <View style={styles.itemLastChild}>
           <Text style={styles.text}>Mô tả sự cố:</Text>
-          <Text style={styles.infomation}>
-            Bóng đèn cháy, lỗi ti vi, lỗi điều hòa
-          </Text>
+          <Text style={styles.infomation}>{dataAccept?.description}</Text>
         </View>
       </View>
 
@@ -81,6 +93,8 @@ const DoneProblem: React.FC = () => {
             data={data}
             save="value"
             placeholder="Lỗi sự cố từ"
+            search={false}
+            maxHeight={100}
           />
         </View>
         <View style={{width: '35%', marginHorizontal: 10}}>
@@ -89,6 +103,12 @@ const DoneProblem: React.FC = () => {
             data={dataTime}
             save="value"
             placeholder="Thời gian"
+            search={false}
+            maxHeight={100}
+            defaultOption={{
+              key: dataAccept?.type._id,
+              value: dataAccept?.type.time_handle,
+            }}
           />
         </View>
       </View>
@@ -109,6 +129,8 @@ const DoneProblem: React.FC = () => {
         <BigButton textButton="Hoàn thành" style={styles.btn} />
         <BigButton textButton="Chưa xử lý được" style={styles.btn1} />
       </View>
+
+      <Text>{JSON.stringify(dataAccept)}</Text>
     </View>
   );
 };

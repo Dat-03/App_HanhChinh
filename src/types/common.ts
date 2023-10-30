@@ -2,8 +2,6 @@ import {FunctionComponent} from 'react';
 import {routes} from '../constants';
 
 export interface PayloadHttpList<T> {
-  code?: number;
-  message?: string;
   data?: T[];
 }
 

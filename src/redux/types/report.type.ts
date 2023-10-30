@@ -85,9 +85,14 @@ type User_CreateType = User &
     device_token: string;
   };
 
+export interface PayloadHttp<T> {
+  data?: T;
+}
+
 export type ReportState = Partial<{
   historyReportData: PayloadHttpList<ReportType>;
   createReportData: PayloadHttpListCreateReport;
-  dataReport: PayloadHttpList<ReportType>;
+  dataReport: PayloadHttp<ReportType>;
   listReportAdm: PayloadHttpListPage<ReportType>;
+  detailData: PayloadHttp<ReportType>;
 }>;

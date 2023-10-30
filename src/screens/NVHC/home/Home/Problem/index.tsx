@@ -9,17 +9,6 @@ import {useAppDispatch} from '../../../../../hooks';
 import {ReportActions} from '../../../../../redux';
 
 const Problem: React.FC = () => {
-  const dipatch = useAppDispatch();
-  useEffect(() => {
-    dipatch(
-      ReportActions.getListReportAdm({
-        myHandle: 0,
-        page: 1,
-        pageSize: 20,
-      }),
-    );
-  }, []);
-
   const handlePressGoback = () => {
     NavigationService.goBack();
   };

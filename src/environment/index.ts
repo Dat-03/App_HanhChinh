@@ -7,4 +7,6 @@ export enum Endpoints {
   HISTORY_REPORT_TEACHER = '/api/get-teacher-history-reports',
   CREAT_REPORT_TEACHER = '/api/create-report',
   LIST_REPORT_BY_TEACHER = '/api/get-list-report',
+  DETAIL_REPORT = '/api/get-detail-report/',
+  DETAIL_ACCEPT = '/api/accept-report/',
 }

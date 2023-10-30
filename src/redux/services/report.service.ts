@@ -24,4 +24,10 @@ export class ReportService {
       configFormData,
     );
   }
+  static async getDataDetatilReport(payload: string) {
+    return await apiService.get(`${Endpoints.DETAIL_REPORT}${payload}`);
+  }
+  static async getDataDetailAccept(payload: string) {
+    return await apiService.post(`${Endpoints.DETAIL_REPORT}${payload}`);
+  }
 }

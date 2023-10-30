@@ -1,19 +1,35 @@
 import {View, Text, Image, FlatList} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './styles';
 import {images} from '../../../../../../../assets';
 import ItemListReceiving from './ItemListReceiving';
+import {useAppDispatch, useAppSelector} from '../../../../../../../hooks';
+import {ReportActions, getListReportAdm} from '../../../../../../../redux';
+import {ReportType} from '../../../../../../../redux/types/report.type';
 
 const Receiving: React.FC = () => {
-  const render = ({item}: {item: (typeof DATA)[0]}) => (
+  const dipatch = useAppDispatch();
+
+  // useEffect(() => {
+  //   dipatch(
+  //     ReportActions.getListReportAdm({
+  //       myHandle: 1,
+  //       page: 1,
+  //       pageSize: 20,
+  //     }),
+  //   );
+  // }, []);
+
+  const dataListReport = useAppSelector(getListReportAdm);
+  const render = ({item}: {item: ReportType}) => (
     <ItemListReceiving {...item} />
   );
   return (
     <View style={styles.container}>
       <FlatList
-        data={DATA}
+        data={dataListReport}
         renderItem={render}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
         showsVerticalScrollIndicator={false}
       />
     </View>

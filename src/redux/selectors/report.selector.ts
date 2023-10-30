@@ -11,3 +11,5 @@ export const getListTypeReport = (state: RootState) =>
 
 export const getDataReportTeacher = (state: RootState) =>
   state.report.dataReport?.data;
+
+export const getDetail = (state: RootState) => state.report.detailData?.data;
