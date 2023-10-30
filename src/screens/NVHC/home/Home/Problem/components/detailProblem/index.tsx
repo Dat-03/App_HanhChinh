@@ -37,6 +37,7 @@ const DetailProblem: React.FC = () => {
     if (dataDetail?._id) {
       dispatch(ReportActions.getDetailAccept(dataDetail?._id));
       NavigationService.navigate(routes.DONEPROBLEM, {_id: dataDetail._id});
+      dispatch(ReportActions.clearDetail());
     }
   };
   return (
@@ -51,12 +52,14 @@ const DetailProblem: React.FC = () => {
       <View style={styles.content}>
         <Text style={styles.text}>Tên người yêu cầu:</Text>
         <View style={styles.info}>
-          <Image source={images.avatar} style={styles.avatar} />
-          <View style={{marginEnd: 120}}>
-            <Text style={styles.name}>{dataDetail?.user_create.name}</Text>
-            <Text style={styles.infomation1}>
-              {dataDetail?.user_create.phone}
-            </Text>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image source={images.avatar} style={styles.avatar} />
+            <View style={{marginLeft: 10}}>
+              <Text style={styles.name}>{dataDetail?.user_create.name}</Text>
+              <Text style={styles.infomation1}>
+                {dataDetail?.user_create.phone}
+              </Text>
+            </View>
           </View>
           <TouchableOpacity>
             <View style={styles.call}>
@@ -81,11 +84,13 @@ const DetailProblem: React.FC = () => {
           <Text style={styles.infomation}>{dataDetail?.description}</Text>
         </View>
       </View>
-      <BigButton
-        onPressButton={handlePressGoDone}
-        textButton="Tiếp nhận"
-        style={styles.btn}
-      />
+      <View style={{marginTop: 20}}>
+        <BigButton
+          onPressButton={handlePressGoDone}
+          textButton="Tiếp nhận"
+          style={styles.btn}
+        />
+      </View>
     </View>
   );
 };

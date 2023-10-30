@@ -20,7 +20,7 @@ const persistConfig: PersistConfig<RootState> = {
   version: 1,
   debug: true,
   stateReconciler: autoMergeLevel2,
-  whitelist: [Redux.auth, Redux.report],
+  whitelist: [Redux.auth],
   blacklist: [Redux.loading],
 };
 

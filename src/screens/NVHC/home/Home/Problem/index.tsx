@@ -5,8 +5,12 @@ import styles from './styles';
 import CurrentProblem from './components/curentProblem';
 import Receiving from './components/receiving';
 import {NavigationService} from '../../../../../navigation';
-import {useAppDispatch} from '../../../../../hooks';
-import {ReportActions} from '../../../../../redux';
+import {
+  ReportActions,
+  getListAccptReportAdm,
+  getListReportAdm,
+} from '../../../../../redux';
+import {useAppDispatch, useAppSelector} from '../../../../../hooks';
 
 const Problem: React.FC = () => {
   const handlePressGoback = () => {

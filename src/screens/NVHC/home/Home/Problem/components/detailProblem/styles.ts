@@ -9,12 +9,14 @@ const HEIGHT = Device.getDeviceHeight(); //cho hinh`
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: normalize(16),
   },
   title: {
     fontWeight: '700',
     color: 'black',
     fontSize: normalize(16),
     textAlign: 'center',
+    lineHeight: normalize(24),
   },
   can: {
     color: colors.white,
@@ -59,11 +61,13 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontSize: normalize(18),
     fontWeight: '500',
+    lineHeight: normalize(26),
   },
   infomation1: {
     color: colors.black,
     fontSize: normalize(14),
-    fontWeight: '500',
+    lineHeight: normalize(21),
+    fontWeight: '400',
   },
   infomation: {
     color: colors.black,

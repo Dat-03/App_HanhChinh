@@ -55,12 +55,14 @@ const DoneProblem: React.FC = () => {
       <View style={styles.content}>
         <Text style={styles.text}>Tên người yêu cầu:</Text>
         <View style={styles.info}>
-          <Image source={images.avatar} style={styles.avatar} />
-          <View style={{marginEnd: 120}}>
-            <Text style={styles.name}>{dataAccept?.user_create.name}</Text>
-            <Text style={styles.infomation1}>
-              {dataAccept?.user_create.phone}
-            </Text>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image source={images.avatar} style={styles.avatar} />
+            <View style={{marginLeft: 10}}>
+              <Text style={styles.name}>{dataAccept?.user_create.name}</Text>
+              <Text style={styles.infomation1}>
+                {dataAccept?.user_create.phone}
+              </Text>
+            </View>
           </View>
           <TouchableOpacity>
             <View style={styles.call}>

@@ -38,10 +38,10 @@ const ItemListProblem: React.FC<ReportType> = props => {
           </View>
           <View style={styles.info}>
             <Image source={{uri: imageUser}} style={styles.img} />
-            <View style={{marginStart: 10}}>
+            <View style={{paddingStart: 10}}>
               <Text style={styles.name}>{user_create.name}</Text>
               <View style={styles.location}>
-                <Text>Tòa:T</Text>
+                <Text style={styles.marginItem}>Tòa:T</Text>
                 <Text style={styles.marginItem}>Phòng: {room.name}</Text>
                 {/* <Text style={styles.marginItem}>{time}</Text> */}
                 <Text style={styles.marginItem}>{createdAt}</Text>

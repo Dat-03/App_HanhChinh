@@ -44,7 +44,7 @@ const ItemListReceiving: React.FC<ReportType> = props => {
             <View style={{marginStart: 10}}>
               <Text style={styles.name}>{user_create.name}</Text>
               <View style={styles.location}>
-                <Text>Tòa: P</Text>
+                <Text style={styles.marginItem}>Tòa: P</Text>
                 <Text style={styles.marginItem}>Phòng: {room.name}</Text>
                 <Text style={styles.marginItem}>{createdAt}</Text>
                 {/* <Text style={styles.marginItem}>{date}</Text> */}

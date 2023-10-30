@@ -4,6 +4,18 @@ import {configFormData} from './config.service';
 
 export class ReportAdmService {
   static async getReportByTeacher(payload: any) {
+    console.log(
+      `${Endpoints.LIST_REPORT_BY_TEACHER}?myHandle=${payload.myHandle}&pageSize=${payload.pageSize}&page=${payload.page}`,
+    );
+    return await apiService.get(
+      `${Endpoints.LIST_REPORT_BY_TEACHER}?myHandle=${payload.myHandle}&pageSize=${payload.pageSize}&page=${payload.page}`,
+    );
+  }
+
+  static async getReportAccptByTeacher(payload: any) {
+    console.log(
+      `${Endpoints.LIST_REPORT_BY_TEACHER}?myHandle=${payload.myHandle}&pageSize=${payload.pageSize}&page=${payload.page}`,
+    );
     return await apiService.get(
       `${Endpoints.LIST_REPORT_BY_TEACHER}?myHandle=${payload.myHandle}&pageSize=${payload.pageSize}&page=${payload.page}`,
     );

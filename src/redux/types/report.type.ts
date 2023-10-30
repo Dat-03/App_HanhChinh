@@ -94,5 +94,6 @@ export type ReportState = Partial<{
   createReportData: PayloadHttpListCreateReport;
   dataReport: PayloadHttp<ReportType>;
   listReportAdm: PayloadHttpListPage<ReportType>;
+  listAccptReportAdm: PayloadHttpListPage<ReportType>;
   detailData: PayloadHttp<ReportType>;
 }>;

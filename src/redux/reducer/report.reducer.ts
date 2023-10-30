@@ -81,8 +81,25 @@ const reducer = createSlice({
       action: PayloadAction<PayloadHttpListPage<ReportType>>,
     ) => {
       return {
+        ...state,
         listReportAdm: {
-          ...state,
+          data: action.payload.data,
+        },
+      };
+    },
+
+    getListAccptReportAdm: (state: ReportState, _: PayloadAction<any>) => {
+      return {
+        ...state,
+      };
+    },
+    setListAccptReportAdm: (
+      state: ReportState,
+      action: PayloadAction<PayloadHttpListPage<ReportType>>,
+    ) => {
+      return {
+        ...state,
+        listAccptReportAdm: {
           data: action.payload.data,
         },
       };
@@ -98,8 +115,8 @@ const reducer = createSlice({
       action: PayloadAction<PayloadHttp<ReportType>>,
     ) => {
       return {
+        ...state,
         detailData: {
-          ...state,
           data: action.payload.data,
         },
       };
@@ -108,6 +125,11 @@ const reducer = createSlice({
     getDetailAccept: (state: ReportState, action: PayloadAction<string>) => {
       return {
         ...state,
+      };
+    },
+    clearDetail: (state: ReportState) => {
+      return {
+        detailData: {},
       };
     },
   },

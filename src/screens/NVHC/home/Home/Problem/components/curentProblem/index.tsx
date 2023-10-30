@@ -13,9 +13,8 @@ import {ReportActions, getListReportAdm} from '../../../../../../../redux';
 import {ReportType} from '../../../../../../../redux/types/report.type';
 
 const CurrentProblem: React.FC = () => {
-  const dipatch = useAppDispatch();
   const dataListReport = useAppSelector(getListReportAdm);
-
+  const dipatch = useAppDispatch();
   useEffect(() => {
     dipatch(
       ReportActions.getListReportAdm({
