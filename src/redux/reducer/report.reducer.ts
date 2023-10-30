@@ -3,10 +3,8 @@ import {
   PayloadActionCreator,
   createSlice,
 } from '@reduxjs/toolkit';
-import {PayloadHttpList, PayloadHttpListPage} from '../../types';
+import {PayloadHttpListPage} from '../../types';
 import {
-  HistoryReportType,
-  ListReportAdmType,
   PayloadHttp,
   PayloadHttpListCreateReport,
   ReportState,
@@ -137,6 +135,11 @@ const reducer = createSlice({
     clearDetail: (state: ReportState) => {
       return {
         detailData: {},
+      };
+    },
+    postDoneReport: (state: ReportState, action: PayloadAction<any>) => {
+      return {
+        ...state,
       };
     },
   },

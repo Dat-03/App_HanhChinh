@@ -24,4 +24,12 @@ export class ReportAdmService {
   static async getDataDetailAccept(payload: string) {
     return await apiService.post(`${Endpoints.DETAIL_ACCEPT}${payload}`);
   }
+
+  static async postDoneReport(payload: any) {
+    console.log(`${Endpoints.DONE_REPORT}${payload.key}`, payload);
+    return await apiService.post(`${Endpoints.DONE_REPORT}${payload.key}`, {
+      from: payload.from,
+      description: payload.description,
+    });
+  }
 }

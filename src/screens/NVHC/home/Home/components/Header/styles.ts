@@ -18,8 +18,8 @@ const useStyles = makeStyles(({colors}) => ({
     alignItems: 'center',
   },
   textName: {
-    fontSize: normalize(20),
-    fontWeight: 'bold',
+    fontSize: normalize(16),
+    fontWeight: '600',
     color: colors.grey0,
   },
 }));

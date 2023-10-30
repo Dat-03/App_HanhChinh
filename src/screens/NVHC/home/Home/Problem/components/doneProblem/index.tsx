@@ -30,6 +30,16 @@ const DoneProblem: React.FC = () => {
     NavigationService.navigate(routes.PROBLEM);
   };
 
+  const handlePressDone = () => {
+    dispatch(
+      ReportActions.postDoneReport({
+        from: selected,
+        description: value,
+        key: dataAccept?._id,
+      }),
+    );
+  };
+
   const [selected, setSelected] = useState();
   const [selectedTime, setSelectedTime] = useState();
   const [problemFr, setProblemFr] = useState('');
@@ -128,11 +138,13 @@ const DoneProblem: React.FC = () => {
       </View>
 
       <View style={styles.containerBtn}>
-        <BigButton textButton="Hoàn thành" style={styles.btn} />
+        <BigButton
+          textButton="Hoàn thành"
+          onPressButton={handlePressDone}
+          style={styles.btn}
+        />
         <BigButton textButton="Chưa xử lý được" style={styles.btn1} />
       </View>
-
-      <Text>{JSON.stringify(dataAccept)}</Text>
     </View>
   );
 };
