@@ -3,9 +3,11 @@ import {Button, Icon, Text} from '@rneui/base';
 
 import React, {FunctionComponent, useEffect} from 'react';
 
+import {images} from '../../../../assets';
+import {ButtonContent} from './components';
 import styles from './styles';
 import {HeaderCustom} from '../../../../components';
-import {ButtonContent} from './components';
+
 import {NavigationService} from '../../../../navigation';
 import {routes} from '../../../../constants';
 import {useAppDispatch, useAppSelector} from '../../../../hooks';
