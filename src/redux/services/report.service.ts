@@ -3,10 +3,12 @@ import apiService from './api.service';
 import {configFormData} from './config.service';
 
 export class ReportService {
-  static async getHistoryTeacher(payload: number) {
-    console.log(Endpoints.HISTORY_REPORT_TEACHER, payload);
+  static async getHistoryTeacher(payload: any) {
+    console.log(
+      `${Endpoints.HISTORY_REPORT_TEACHER}?pageSize=${payload.pageSize}&page=${payload.page}`,
+    );
     return await apiService.get(
-      `${Endpoints.HISTORY_REPORT_TEACHER}?page=${payload}`,
+      `${Endpoints.HISTORY_REPORT_TEACHER}?pageSize=${payload.pageSize}&page=${payload.page}`,
     );
   }
 
@@ -29,5 +31,10 @@ export class ReportService {
   }
   static async getDataDetailAccept(payload: string) {
     return await apiService.post(`${Endpoints.DETAIL_REPORT}${payload}`);
+  }
+
+  static async getDetailTeacher(payload: string) {
+    console.log();
+    return await apiService.get(`${Endpoints.DETAIL_TEACHER}${payload}`);
   }
 }

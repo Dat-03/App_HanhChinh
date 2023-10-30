@@ -66,9 +66,9 @@ export type ReportType = _id &
     description: string;
     status: number;
     images: string[];
-    accept_report: string;
-    done_report: string;
-    mistake: string;
+    accept_report: string | undefined;
+    done_report: string | undefined;
+    mistake: string | undefined;
   };
 
 type UserHandle = User &
@@ -90,7 +90,7 @@ export interface PayloadHttp<T> {
 }
 
 export type ReportState = Partial<{
-  historyReportData: PayloadHttpList<ReportType>;
+  historyReportData: PayloadHttpListPage<ReportType>;
   createReportData: PayloadHttpListCreateReport;
   dataReport: PayloadHttp<ReportType>;
   listReportAdm: PayloadHttpListPage<ReportType>;

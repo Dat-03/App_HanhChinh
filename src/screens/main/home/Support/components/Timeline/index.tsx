@@ -2,30 +2,29 @@ import {Icon} from '@rneui/themed';
 import React from 'react';
 import {Text, View} from 'react-native';
 import styles from './styles';
+import {useAppSelector} from '../../../../../../hooks';
+import {getDataReportTeacher, getDetail} from '../../../../../../redux';
 
 const TimelineItem: React.FC = () => {
-  const DATA = {
-    createdAt: 'a',
-    accept_report: 'a',
-    done_report: 'a',
-    status: -1,
-  };
+  const data = useAppSelector(getDetail);
+  console.log('timeline', data);
+
   return (
     <View style={styles.container}>
       <View style={styles.createdAt}>
         <View style={styles.viewRow1}>
-          <View style={DATA.createdAt ? styles.circle : styles.circle2}>
+          <View style={data?.createdAt ? styles.circle : styles.circle2}>
             <Icon
-              name={DATA.createdAt ? 'check' : 'history'}
+              name={data?.createdAt ? 'check' : 'history'}
               type="material"
-              color={DATA.createdAt ? 'white' : '#2D5381'}
+              color={data?.createdAt ? 'white' : '#2D5381'}
               size={24}
             />
           </View>
           <View style={styles.viewText}>
             <Text style={styles.status}>Yêu cầu</Text>
             <Text style={styles.createAt}>
-              {DATA.createdAt ? DATA.createdAt : '__:__'}
+              {data?.createdAt ? data.createdAt : '__:__'}
             </Text>
           </View>
         </View>
@@ -33,18 +32,18 @@ const TimelineItem: React.FC = () => {
       </View>
       <View style={styles.accept_report}>
         <View style={styles.viewRow1}>
-          <View style={DATA.accept_report ? styles.circle : styles.circle2}>
+          <View style={data?.accept_report ? styles.circle : styles.circle2}>
             <Icon
-              name={DATA.accept_report ? 'check' : 'history'}
+              name={data?.accept_report ? 'check' : 'history'}
               type="material"
-              color={DATA.accept_report ? 'white' : '#2D5381'}
+              color={data?.accept_report ? 'white' : '#2D5381'}
               size={24}
             />
           </View>
           <View style={styles.viewText}>
             <Text style={styles.status}>Yêu cầu đã được tiếp nhận</Text>
             <Text style={styles.createAt}>
-              {DATA.accept_report ? DATA.accept_report : '__:__'}
+              {data?.accept_report ? data?.accept_report : '__:__'}
             </Text>
           </View>
         </View>
@@ -54,33 +53,33 @@ const TimelineItem: React.FC = () => {
         <View style={styles.viewRow1}>
           <View
             style={
-              DATA.done_report && DATA.status == -1
+              data?.done_report && data.status == -1
                 ? styles.circle3
-                : DATA.done_report
+                : data?.done_report
                 ? styles.circle
                 : styles.circle2
             }>
             <Icon
               name={
-                DATA.done_report && DATA.status == -1
+                data?.done_report && data.status == -1
                   ? 'close'
-                  : DATA.done_report
+                  : data?.done_report
                   ? 'check'
                   : 'history'
               }
               type="material"
-              color={DATA.done_report ? 'white' : '#2D5381'}
+              color={data?.done_report ? 'white' : '#2D5381'}
               size={24}
             />
           </View>
           <View style={styles.viewText}>
             <Text style={styles.status}>
-              {DATA.status == -1
+              {data?.status == -1
                 ? 'Yêu cầu không hoàn thành'
                 : 'Yêu cầu đã hoàn thành'}
             </Text>
             <Text style={styles.createAt}>
-              {DATA.done_report ? DATA.done_report : '__:__'}
+              {data?.done_report ? data?.done_report : '__:__'}
             </Text>
           </View>
         </View>

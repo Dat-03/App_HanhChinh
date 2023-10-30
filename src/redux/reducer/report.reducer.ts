@@ -20,14 +20,14 @@ const reducer = createSlice({
   name: Redux.report,
   initialState: initialState,
   reducers: {
-    getListHistoryTeacher: (state: ReportState, _: PayloadAction<number>) => {
+    getListHistoryTeacher: (state: ReportState, _: PayloadAction<any>) => {
       return {
         ...state,
       };
     },
     setListHistoryTeacher: (
       state: ReportState,
-      action: PayloadAction<PayloadHttpList<ReportType>>,
+      action: PayloadAction<PayloadHttpListPage<ReportType>>,
     ) => {
       return {
         ...state,
@@ -127,6 +127,13 @@ const reducer = createSlice({
         ...state,
       };
     },
+
+    getDetailTeacher: (state: ReportState, action: PayloadAction<string>) => {
+      return {
+        ...state,
+      };
+    },
+
     clearDetail: (state: ReportState) => {
       return {
         detailData: {},

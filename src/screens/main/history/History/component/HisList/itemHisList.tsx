@@ -29,10 +29,10 @@ const ItemHisList: React.FC<ReportType> = props => {
     accept_report,
   } = props;
   const clickDetail = () => {
-    NavigationService.navigate(routes.DETAIL);
+    NavigationService.navigate(routes.SUPPORT, {_id: _id});
   };
   // console.log(user_handle.name);
-  console.log(new Date(createdAt.toString()).getDay());
+  // console.log(new Date(createdAt.toString()).getDay());
 
   const imagesUser = useAppSelector(getImageUser);
   return (

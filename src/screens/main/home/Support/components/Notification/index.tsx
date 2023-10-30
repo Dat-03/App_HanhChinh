@@ -2,43 +2,37 @@ import {View, Text, Image, FlatList} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {images} from '../../../../../../assets';
+import {useAppSelector} from '../../../../../../hooks';
+import {
+  getDataReportTeacher,
+  getDetail,
+  getImageUser,
+} from '../../../../../../redux';
 
 const Notification_Suport: React.FC = () => {
-  return (
-    <FlatList
-      data={data}
-      keyExtractor={(item, index) => index.toString()}
-      renderItem={({item}) => (
-        <View style={styles.viewbig}>
-          <View>
-            <View style={styles.viewTitle}>
-              <Text style={styles.textTitle}>{item.title}</Text>
-            </View>
-            <Text style={styles.textContent}>
-              Người tiếp nhận: {item.recipient}
-            </Text>
-            <View style={styles.viewDate}>
-              <Text style={styles.textContent}>{item.date}</Text>
-              <Text style={styles.textContent}>{item.time}</Text>
-              <Text style={styles.textContent}>SĐT: {item.phone}</Text>
-            </View>
-          </View>
+  const data = useAppSelector(getDetail);
+  const imageUser = useAppSelector(getImageUser);
 
-          <Image style={styles.avatar} source={item.avatar} />
+  return data && data.user_handle ? (
+    <View style={styles.viewbig}>
+      <View>
+        <View style={styles.viewTitle}>
+          <Text style={styles.textTitle}>{data?.type.name}</Text>
         </View>
-      )}
-    />
+        <Text style={styles.textContent}>
+          Người tiếp nhận: {data?.user_handle.name}
+        </Text>
+        <View style={styles.viewDate}>
+          <Text style={styles.textContent}>{data?.accept_report}</Text>
+          <Text style={styles.textContent}>Phòng: {data?.room.name}</Text>
+        </View>
+      </View>
+
+      <Image style={styles.avatar} source={{uri: imageUser}} />
+    </View>
+  ) : (
+    <View style={{height: 50}}></View>
   );
 };
 
 export default Notification_Suport;
-const data = [
-  {
-    title: 'Sự cố về cơ sở vật chất',
-    avatar: images.avatar,
-    recipient: 'Nguyễn Văn A',
-    date: '8-2-2023',
-    time: '09:05 am',
-    phone: '0797151033',
-  },
-];

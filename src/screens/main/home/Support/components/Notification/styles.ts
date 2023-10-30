@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
     paddingVertical: normalize(10),
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-around',
   },
   textTitle: {
     fontSize: normalize(14),
     color: colors.black0,
     fontWeight: '600',
-    paddingVertical: normalize(7),
   },
   textContent: {
     fontSize: normalize(12),
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   viewTitle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingBottom: normalize(10),
   },
 });
 export default styles;

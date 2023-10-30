@@ -24,7 +24,6 @@ const ButtonContent: React.FC = () => {
         color="#ec449c"
         size={25}
         style={{backgroundColor: colors.buttonGray}}
-        onPressButton={() => NavigationService.navigate(routes.SUPPORT)}
       />
       <ButtonCustom
         textButton="Quản lý mượn phòng học, hội trường"
@@ -33,7 +32,6 @@ const ButtonContent: React.FC = () => {
         color="#ec449c"
         style={{backgroundColor: colors.buttonGray}}
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.SUPPORT)}
       />
     </View>
   );
