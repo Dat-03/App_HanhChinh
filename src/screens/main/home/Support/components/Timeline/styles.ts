@@ -1,39 +1,71 @@
 import {normalize} from '@rneui/themed';
 import {StyleSheet} from 'react-native';
+import colors from '../../../../../../assets/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: normalize(24),
   },
-  descriptionStyle: {
-    fontSize: normalize(15),
-    fontWeight: 'bold',
+  text: {
+    fontSize: normalize(14),
+    fontWeight: '700',
     color: 'black',
-    marginStart: normalize(20),
   },
-  titleStyle: {
-    marginStart: normalize(20),
-  },
-  circleStyle: {
-    width: normalize(50),
-    height: normalize(50),
+  createdAt: {},
+  accept_report: {},
+  done_report: {},
+  circle: {
+    width: normalize(48),
+    height: normalize(48),
+    borderRadius: 99,
+    backgroundColor: colors.colorMain,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: normalize(25),
-    backgroundColor: 'gray',
   },
-  itemContainer: {
-    flexDirection: 'row',
+  circle2: {
+    width: normalize(48),
+    height: normalize(48),
+    borderRadius: 99,
+    backgroundColor: colors.white0,
     alignItems: 'center',
-    marginLeft: normalize(20),
-    marginBottom: normalize(20),
+    justifyContent: 'center',
+    borderWidth: 0.5,
+    borderColor: 'gray',
   },
-  circleContainer: {
+  circle3: {
+    width: normalize(48),
+    height: normalize(48),
+    borderRadius: 99,
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  status: {
+    fontSize: normalize(14),
+    fontWeight: '600',
+    color: 'black',
+  },
+  createAt: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: 'black',
+  },
+  viewText: {
+    marginStart: normalize(28),
+    justifyContent: 'center',
+  },
+  viewRow1: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    position: 'absolute',
-    left: normalize(40),
-    top: normalize(10),
+  },
+  line: {
+    height: normalize(50),
+    width: normalize(2),
+    backgroundColor: '#D9D9D9',
+    marginStart: normalize(22),
+  },
+  button: {
+    paddingVertical: normalize(30),
   },
 });
 export default styles;

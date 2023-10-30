@@ -5,28 +5,38 @@ import colors from '../../../../assets/colors';
 
 const styles = StyleSheet.create({
   container: {
-    padding: normalize(24),
     flex: 1,
+    backgroundColor: 'white',
   },
   header: {
     flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: normalize(24),
+    paddingVertical: normalize(16),
   },
   textHeader: {
-    fontSize: normalize(18),
+    fontSize: normalize(24),
     color: colors.black0,
-    marginStart: normalize(55),
-    fontWeight: 'bold',
+    fontWeight: '700',
+    marginStart: normalize(17),
   },
   viewTimeline: {
-    flex: 1,
-    marginLeft: normalize(-30),
+    height: normalize(310),
+    width: '100%',
   },
   textTimeline: {
-    marginStart: normalize(35),
-    paddingVertical: normalize(20),
-    fontSize: normalize(18),
+    fontSize: normalize(14),
     color: colors.black0,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    paddingHorizontal: normalize(16),
+  },
+  button: {
+    paddingVertical: normalize(72),
+    paddingHorizontal: normalize(16),
+  },
+  viewNotification: {
+    paddingHorizontal: normalize(16),
+    paddingVertical: normalize(22),
   },
 });
 export default styles;

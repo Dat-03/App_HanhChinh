@@ -16,4 +16,5 @@ export default {
   line: '#D9D9D9',
   colorInput: '#F1F4F5',
   borderButtonCamera: '#CACACA',
+  buttonGray: '#F1F4F5',
 };
