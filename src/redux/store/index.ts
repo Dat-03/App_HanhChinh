@@ -28,6 +28,7 @@ const rootReducers = combineReducers({
   app: AppReducer,
   auth: AuthReducer,
   report: ReportReducer,
+  loading: LoadingReducer,
 });
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducers);
 

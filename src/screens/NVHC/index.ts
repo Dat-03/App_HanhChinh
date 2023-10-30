@@ -4,6 +4,4 @@ import {Screen} from '../../types';
 export * from './home';
 export * from './history';
 export * from './setting';
-export const nvhcScreen: Screen[] = [
-
-];
+export const nvhcScreen: Screen[] = [];

@@ -6,6 +6,7 @@ import {StatusBar} from 'react-native';
 import Toast from 'react-native-toast-message';
 import {RootNavigation, ThemeContext} from './src';
 import {toastConfig} from './src/utils/toastConfig';
+import Loading from './src/components/shared/Loading';
 
 const App: FunctionComponent = () => {
   return (
@@ -16,6 +17,7 @@ const App: FunctionComponent = () => {
       }}>
       <ThemeContext>
         <GestureHandlerRootView style={{flex: 1}}>
+          <Loading />
           <RootNavigation />
           <StatusBar backgroundColor={'#ec449c'} />
           <Toast config={toastConfig} topOffset={20} visibilityTime={2500} />
