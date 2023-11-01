@@ -7,8 +7,8 @@ import {Notification_Suport} from './components';
 import TimelineItem from './components/Timeline';
 import styles from './styles';
 import {useRoute} from '@react-navigation/native';
-import {useAppDispatch} from '../../../../hooks';
-import {ReportActions} from '../../../../redux';
+import {useAppDispatch, useAppSelector} from '../../../../hooks';
+import {ReportActions, getDetail} from '../../../../redux';
 import {routes} from '../../../../constants';
 interface RouteParamsIdReport {
   _id: string;
@@ -24,10 +24,6 @@ const SupportNVHC: React.FC = () => {
 
   const handleGoback = () => {
     NavigationService.navigate(routes.BOTTOMNVHC);
-  };
-
-  const handleReview = () => {
-    Alert.alert('Thông báo', 'Vui lòng đánh giá');
   };
 
   return (

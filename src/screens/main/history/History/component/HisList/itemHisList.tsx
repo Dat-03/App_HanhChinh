@@ -40,7 +40,7 @@ const ItemHisList: React.FC<ReportType> = props => {
       <TouchableOpacity onPress={clickDetail}>
         <View style={styles.hislist}>
           <View>
-            <Text style={styles.title1}>{type.name}</Text>
+            <Text style={styles.title1}>{type ? type.name : 'No type'}</Text>
             {user_handle ? (
               <Text style={{color: 'black'}}>
                 Người tiếp nhận: {user_handle.name}

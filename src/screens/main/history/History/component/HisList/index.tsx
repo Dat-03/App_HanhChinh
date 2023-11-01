@@ -1,5 +1,5 @@
 import {View, Text, FlatList} from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import useStyles from './styles';
 import ItemHisList from './itemHisList';
 import {useAppDispatch, useAppSelector} from '../../../../../../hooks';
@@ -7,6 +7,7 @@ import {
   ReportActions,
   getDataReportTeacher,
   getHistoryReportTeacher,
+  getTotalPageHistoryTeacher,
 } from '../../../../../../redux';
 import {
   HistoryReportType,
@@ -14,13 +15,22 @@ import {
 } from '../../../../../../redux/types/report.type';
 
 const HisList: React.FC = () => {
+  const [page, setPage] = useState(1);
   const dispatch = useAppDispatch();
+  const totalPage = useAppSelector(getTotalPageHistoryTeacher);
+
   useEffect(() => {
-    dispatch(ReportActions.getListHistoryTeacher({page: 1, pageSize: 30}));
-  }, []);
+    dispatch(ReportActions.getListHistoryTeacher({page: page, pageSize: 10}));
+  }, [page]);
+
+  const loadMoreHistory = () => {
+    if (totalPage && page < totalPage) {
+      console.log(totalPage);
+      setPage(page + 1);
+    }
+  };
 
   const dataHistory = useAppSelector(getHistoryReportTeacher);
-  console.log('data===>', dataHistory);
 
   const styles = useStyles();
   const render = ({item}: {item: ReportType}) => <ItemHisList {...item} />;
@@ -34,6 +44,8 @@ const HisList: React.FC = () => {
         renderItem={render}
         keyExtractor={item => item._id}
         showsVerticalScrollIndicator={false}
+        onEndReached={loadMoreHistory}
+        onEndReachedThreshold={0.1}
       />
     </View>
   );

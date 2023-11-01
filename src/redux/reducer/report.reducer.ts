@@ -27,10 +27,16 @@ const reducer = createSlice({
       state: ReportState,
       action: PayloadAction<PayloadHttpListPage<ReportType>>,
     ) => {
+      const currentData: ReportType[] = state.historyReportData?.data || [];
+      const newData = action.payload.data || [];
+      const updatedData = [...currentData, ...newData];
+
       return {
         ...state,
         historyReportData: {
-          data: action.payload.data,
+          data: updatedData,
+          currentPage: action.payload.currentPage,
+          totalPage: action.payload.totalPage,
         },
       };
     },
@@ -78,10 +84,15 @@ const reducer = createSlice({
       state: ReportState,
       action: PayloadAction<PayloadHttpListPage<ReportType>>,
     ) => {
+      const currentData: ReportType[] = state.listReportAdm?.data || [];
+      const newData = action.payload.data || [];
+      const updatedData = [...currentData, ...newData];
       return {
         ...state,
         listReportAdm: {
-          data: action.payload.data,
+          data: updatedData,
+          currentPage: action.payload.currentPage,
+          totalPage: action.payload.totalPage,
         },
       };
     },
@@ -95,11 +106,23 @@ const reducer = createSlice({
       state: ReportState,
       action: PayloadAction<PayloadHttpListPage<ReportType>>,
     ) => {
+      const currentData: ReportType[] = state.listAccptReportAdm?.data || [];
+      const newData = action.payload.data || [];
+      const updatedData = [...currentData, ...newData];
       return {
         ...state,
         listAccptReportAdm: {
-          data: action.payload.data,
+          data: updatedData,
+          currentPage: action.payload.currentPage,
+          totalPage: action.payload.totalPage,
         },
+      };
+    },
+
+    clearReport: (state: ReportState) => {
+      return {
+        listReportAdm: undefined,
+        listAccptReportAdm: undefined,
       };
     },
 

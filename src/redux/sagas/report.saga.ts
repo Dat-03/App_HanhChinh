@@ -7,6 +7,7 @@ import {NavigationService} from '../../navigation';
 import {routes} from '../../constants';
 
 function* getHistoryReportTeacherSaga(action: PayloadAction<any>): Generator {
+  yield put(LoadingActions.showLoading());
   try {
     console.log('run');
     const {data}: any = yield call(
@@ -22,6 +23,7 @@ function* getHistoryReportTeacherSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
+    yield put(LoadingActions.hideLoading());
   }
 }
 

@@ -1,11 +1,12 @@
 import {PayloadAction} from '@reduxjs/toolkit';
 import {call, put, takeEvery, takeLatest} from 'redux-saga/effects';
 import {ReportAdmService, ReportService} from '../services';
-import {ReportActions} from '../reducer';
+import {LoadingActions, ReportActions} from '../reducer';
 import {NavigationService} from '../../navigation';
 import {routes} from '../../constants';
 
 function* getListTeacherSaga(action: PayloadAction<any>): Generator {
+  yield put(LoadingActions.showLoading());
   try {
     const {data}: any = yield call(
       ReportAdmService.getReportByTeacher,
@@ -19,6 +20,7 @@ function* getListTeacherSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
+    yield put(LoadingActions.hideLoading());
   }
 }
 
