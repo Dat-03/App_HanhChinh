@@ -39,6 +39,15 @@ const DoneProblem: React.FC = () => {
       }),
     );
   };
+  const handlePressCancel = () => {
+    dispatch(
+      ReportActions.postCancelReport({
+        from: selected,
+        description: value,
+        key: dataAccept?._id,
+      }),
+    );
+  };
 
   const [selected, setSelected] = useState();
   const [selectedTime, setSelectedTime] = useState();
@@ -143,7 +152,11 @@ const DoneProblem: React.FC = () => {
           onPressButton={handlePressDone}
           style={styles.btn}
         />
-        <BigButton textButton="Chưa xử lý được" style={styles.btn1} />
+        <BigButton
+          onPressButton={handlePressCancel}
+          textButton="Chưa xử lý được"
+          style={styles.btn1}
+        />
       </View>
     </View>
   );

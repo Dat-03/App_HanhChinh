@@ -142,6 +142,11 @@ const reducer = createSlice({
         ...state,
       };
     },
+    postCancelReport: (state: ReportState, action: PayloadAction<any>) => {
+      return {
+        ...state,
+      };
+    },
   },
 });
 

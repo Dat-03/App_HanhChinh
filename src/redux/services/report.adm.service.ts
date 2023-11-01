@@ -32,4 +32,13 @@ export class ReportAdmService {
       description: payload.description,
     });
   }
+  static async postCancelReport(payload: any) {
+    const requestData = {
+      from: payload.from,
+      description: payload.description,
+    };
+    return await apiService.delete(`${Endpoints.CANCEL_REPORT}${payload.key}`, {
+      data: requestData,
+    });
+  }
 }

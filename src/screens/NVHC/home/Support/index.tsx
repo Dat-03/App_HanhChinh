@@ -43,9 +43,6 @@ const SupportNVHC: React.FC = () => {
         <Text style={styles.textTimeline}>Trạng thái yêu cầu</Text>
         <TimelineItem />
       </View>
-      <View style={styles.button}>
-        <BigButton textButton="Đánh giá" onPressButton={handleReview} />
-      </View>
     </View>
   );
 };

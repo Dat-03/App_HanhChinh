@@ -11,4 +11,5 @@ export enum Endpoints {
   DETAIL_ACCEPT = '/api/accept-report/',
   DETAIL_TEACHER = '/api/teacher-get-detail-report/',
   DONE_REPORT = '/api/done-report/',
+  CANCEL_REPORT = '/api/cancel-report/',
 }
