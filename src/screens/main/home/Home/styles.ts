@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   textName: {
     fontSize: normalize(16),
-    fontWeight: '700',
+    fontWeight: '600',
     color: '#FEFEFE',
     marginStart: normalize(12),
   },

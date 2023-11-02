@@ -15,12 +15,12 @@ import {Redux} from '../types';
 
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
-  storage: EncryptedStorage, // storage is now required
-  timeout: 30000, // timeout for storage calls, default is 10000
-  version: 1, // version - defaults to 1
-  debug: true, // enable logs - default is false
+  storage: EncryptedStorage,
+  timeout: 30000,
+  version: 1,
+  debug: true,
   stateReconciler: autoMergeLevel2,
-  whitelist: [Redux.auth, Redux.report],
+  whitelist: [Redux.auth],
   blacklist: [Redux.loading],
 };
 
@@ -28,6 +28,7 @@ const rootReducers = combineReducers({
   app: AppReducer,
   auth: AuthReducer,
   report: ReportReducer,
+  loading: LoadingReducer,
 });
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducers);
 
@@ -38,7 +39,7 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      serializableCheck: false, // to ignore redux-persist
+      serializableCheck: false,
     }).concat(middleware),
 });
 sagaMiddleware.run(RootSaga);

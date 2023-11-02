@@ -1,15 +1,14 @@
-import * as React from "react"
-import Svg, { SvgProps, Path } from "react-native-svg"
+import * as React from 'react';
+import Svg, {SvgProps, Path} from 'react-native-svg';
 const ReloadIcon = (props: SvgProps) => (
   <Svg
-  //@ts-ignore
+    //@ts-ignore
     xmlns="http://www.w3.org/2000/svg"
     width={66.667}
     height={66.667}
     viewBox="0 0 50 50"
-    {...props}
-  >
+    {...props}>
     <Path d="M5 8v6h6c3.3 0 6-.4 6-1s-1.9-1-4.2-1H8.7l1.9-2.1C13.4 6.7 19.9 4 25 4c11.6 0 21 9.7 21 21.5 0 2.8.4 4.4 1 4 3.2-2-1-16.4-6.1-21.2C37.2 4.9 29.9 2 25 2S12.8 4.9 9.3 8.2L7 10.3V6.2C7 3.9 6.6 2 6 2S5 4.7 5 8zM2 26c0 1.1.5 2 1 2 .6 0 1-.9 1-2s-.4-2-1-2c-.5 0-1 .9-1 2zM3.4 32.6c.3.9.6 1.8.6 2 0 .3.4.3 1-.1 1.1-.7.2-3.5-1.2-3.5-.6 0-.7.7-.4 1.6zM43.2 35.5c-1.4 2.9.2 3.4 1.8.6 1.2-2.4 1.3-3.1.2-3.1-.5 0-1.4 1.1-2 2.5zM6 37.9c0 1.3 2.6 3.2 3.3 2.4.8-.7-1.1-3.3-2.4-3.3-.5 0-.9.4-.9.9zM37.5 42c-1.4 1.6-1.5 2-.4 2 1.6 0 3.9-1.9 3.9-3.2 0-1.4-1.6-.9-3.5 1.2zM12 42.9c0 .6.9 1.5 2 2.1 1.3.7 2 .7 2 .1s-.9-1.5-2-2.1c-1.3-.7-2-.7-2-.1zM29 46c-.8.5-1.2 1.1-.9 1.4.7.8 4.9-.5 4.9-1.5 0-1.2-2.1-1.1-4 .1zM19.5 47c.8 1.3 3.2 1.3 4 0 .4-.6-.5-1-2-1s-2.4.4-2 1z" />
   </Svg>
-)
-export default ReloadIcon
+);
+export default ReloadIcon;

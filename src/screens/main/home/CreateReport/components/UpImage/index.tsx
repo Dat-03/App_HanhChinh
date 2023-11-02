@@ -46,28 +46,27 @@ const UpImage: React.FC<UpImageProps> = ({formdata}) => {
           buttonPositive: 'OK',
         },
       );
-      const grantedstorage = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-        {
-          title: 'App Camera Permission',
-          message: 'App needs access to your camera ',
-          buttonNeutral: 'Ask Me Later',
-          buttonNegative: 'Cancel',
-          buttonPositive: 'OK',
-        },
-      );
-      if (
-        granted === PermissionsAndroid.RESULTS.GRANTED &&
-        grantedstorage === PermissionsAndroid.RESULTS.GRANTED
-      ) {
+
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        const grantedstorage = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+          {
+            title: 'App Camera Permission',
+            message: 'App needs access to your camera ',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK',
+          },
+        );
         const result = await launchCamera(optionsCamera);
         if (result?.assets && result.assets[0].uri) {
-          setImgUrl(result.assets[0].uri);
           formdata.append('images', {
             uri: result.assets[0].uri,
             name: result.assets[0].fileName,
             type: result.assets[0].type,
           });
+          console.log('data camera:', formdata);
+          setImgUrl(result.assets[0].uri);
         } else {
           console.log('No assets or uri in result:', result);
         }
@@ -82,7 +81,6 @@ const UpImage: React.FC<UpImageProps> = ({formdata}) => {
   const openGallery = async () => {
     const result = await launchImageLibrary(optionLibrary);
     if (result?.assets && result.assets[0].uri) {
-      setImglibrary(result.assets[0].uri);
       result.assets.forEach(asset => {
         formdata.append(`images`, {
           uri: asset.uri,
@@ -90,6 +88,8 @@ const UpImage: React.FC<UpImageProps> = ({formdata}) => {
           type: asset.type,
         });
       });
+      console.log('data library:', formdata);
+      setImglibrary(result.assets[0].uri);
       setNumber(result.assets.length);
     } else {
       console.log('No assets or uri in result:', result);

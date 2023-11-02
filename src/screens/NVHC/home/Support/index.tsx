@@ -7,27 +7,23 @@ import {Notification_Suport} from './components';
 import TimelineItem from './components/Timeline';
 import styles from './styles';
 import {useRoute} from '@react-navigation/native';
-import {useAppDispatch} from '../../../../hooks';
-import {ReportActions} from '../../../../redux';
+import {useAppDispatch, useAppSelector} from '../../../../hooks';
+import {ReportActions, getDetail} from '../../../../redux';
 import {routes} from '../../../../constants';
 interface RouteParamsIdReport {
   _id: string;
 }
-const Support: React.FC = () => {
+const SupportNVHC: React.FC = () => {
   const route = useRoute();
   const dispatch = useAppDispatch();
   const _idReport = (route.params as RouteParamsIdReport)._id;
 
   useEffect(() => {
-    dispatch(ReportActions.getDetailTeacher(_idReport));
+    dispatch(ReportActions.getDetailReport(_idReport));
   }, []);
 
   const handleGoback = () => {
-    NavigationService.navigate(routes.BOTTOM_TAB);
-  };
-
-  const handleReview = () => {
-    Alert.alert('Thông báo', 'Vui lòng đánh giá');
+    NavigationService.navigate(routes.BOTTOMNVHC);
   };
 
   return (
@@ -43,11 +39,8 @@ const Support: React.FC = () => {
         <Text style={styles.textTimeline}>Trạng thái yêu cầu</Text>
         <TimelineItem />
       </View>
-      <View style={styles.button}>
-        <BigButton textButton="Đánh giá" onPressButton={handleReview} />
-      </View>
     </View>
   );
 };
 
-export default Support;
+export default SupportNVHC;

@@ -6,6 +6,7 @@ const initialState: AuthState = {
   user: {},
   token: '',
   refreshToken: '',
+  imageUser: '',
 };
 
 const reducer = createSlice({
@@ -36,11 +37,19 @@ const reducer = createSlice({
       };
     },
 
+    setImage: (state: AuthState, action: PayloadAction<string>) => {
+      return {
+        ...state,
+        imageUser: action.payload,
+      };
+    },
+
     Logout: (state: AuthState) => {
       return {
         user: {},
         refreshToken: '',
         token: '',
+        imageUser: '',
       };
     },
   },

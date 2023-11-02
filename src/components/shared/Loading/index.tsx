@@ -2,6 +2,7 @@ import React, {FunctionComponent} from 'react';
 
 import {Text} from '@rneui/themed';
 import {View} from 'react-native';
+import LottieView from 'lottie-react-native';
 import Animated, {
   Extrapolate,
   interpolate,
@@ -15,6 +16,7 @@ import {useAppSelector} from '../../../hooks';
 import useStyles from './styles';
 
 import {jsonFiles} from '../../../assets/json';
+import {getIsLoading} from '../../../redux';
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 
@@ -22,6 +24,7 @@ const Loading: FunctionComponent = () => {
   // hooks
   const styles = useStyles();
   const progress = useSharedValue(0.5);
+  const isLoading: boolean = useAppSelector(getIsLoading);
 
   const overlayStyle = useAnimatedStyle(() => {
     const background = interpolateColor(
@@ -50,14 +53,18 @@ const Loading: FunctionComponent = () => {
   }, []);
 
   // if isShow = false => not show anything
-  if ('') {
+  if (!isLoading) {
     return <View />;
   }
 
   return (
     <AnimatedView style={[styles.overlay, overlayStyle]}>
       <AnimatedView style={[styles.container, containerStyle]}>
-        <Text style={styles.titleStyle}>Loading...</Text>
+        <LottieView
+          style={styles.lottieView}
+          source={jsonFiles.loading2}
+          autoPlay
+        />
       </AnimatedView>
     </AnimatedView>
   );
