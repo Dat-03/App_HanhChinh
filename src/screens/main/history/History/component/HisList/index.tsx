@@ -1,10 +1,10 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
-import useStyles from './styles';
+import styles from './styles';
 import ItemHisList from './itemHisList';
 
 const HisList: React.FC = () => {
-  const styles = useStyles();
+
   const render = ({item}: {item: (typeof DATA)[0]}) => (
     <ItemHisList {...item} />
   );
