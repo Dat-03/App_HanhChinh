@@ -1,10 +1,13 @@
 import {FunctionComponent} from 'react';
 import {routes} from '../constants';
-import * as ImagePicker from 'react-native-image-picker';
 
 export interface PayloadHttpList<T> {
-  code?: number;
-  message?: string;
+  data?: T[];
+}
+
+export interface PayloadHttpListPage<T> {
+  currentPage?: string;
+  totalPage?: number;
   data?: T[];
 }
 
@@ -23,6 +26,7 @@ export type RoomType = _id & {
 export type Timestamp = {
   createdAt: string;
   updatedAt: string;
+  deleteAt: string;
 };
 
 export type Screen = {
@@ -37,7 +41,8 @@ export type BaseResponse<T> = {
   data: T;
 };
 
-export type TypeReportHistory = _id & {
-  name: string;
-  time_handle: string;
-};
+export type TypeReportHistory = _id &
+  Timestamp & {
+    name: string;
+    time_handle: string;
+  };

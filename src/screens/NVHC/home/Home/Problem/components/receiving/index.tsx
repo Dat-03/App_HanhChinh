@@ -1,35 +1,51 @@
-import { View, Text,Image,FlatList } from 'react-native'
-import React from 'react'
-import styles from './styles'
-import { images } from '../../../../../../../assets'
-import ItemListReceiving from './ItemListReceiving'
+import {View, Text, Image, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import styles from './styles';
+import {images} from '../../../../../../../assets';
+import ItemListReceiving from './ItemListReceiving';
+import {useAppDispatch, useAppSelector} from '../../../../../../../hooks';
+import {
+  ReportActions,
+  getListAccptReportAdm,
+  getTotalAdmAccpt,
+} from '../../../../../../../redux';
+import {ReportType} from '../../../../../../../redux/types/report.type';
 
-const Receiving:React.FC = () => {
-  const render = ({ item }: { item: (typeof DATA)[0] }) => (
+const Receiving: React.FC = () => {
+  const dataListReport = useAppSelector(getListAccptReportAdm);
+  const dipatch = useAppDispatch();
+  const totalPage = useAppSelector(getTotalAdmAccpt);
+  const [page, setPage] = useState(1);
+  useEffect(() => {
+    dipatch(
+      ReportActions.getListAccptReportAdm({
+        myHandle: 1,
+        page: page,
+        pageSize: 10,
+      }),
+    );
+  }, [page]);
+  const loadMoreReport = () => {
+    if (totalPage && page < totalPage) {
+      setPage(page + 1);
+    }
+  };
+
+  const render = ({item}: {item: ReportType}) => (
     <ItemListReceiving {...item} />
-
-)
+  );
   return (
     <View style={styles.container}>
-      <FlatList 
-                data={DATA}
-                renderItem={render}
-                keyExtractor={item => item.id}
-                showsVerticalScrollIndicator={false}
-                
-                 />
+      <FlatList
+        data={dataListReport}
+        renderItem={render}
+        keyExtractor={item => item._id}
+        showsVerticalScrollIndicator={false}
+        onEndReached={loadMoreReport}
+        onEndReachedThreshold={0.1}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default Receiving
-const DATA = [
-  { id: '1',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-  { id: '2',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-  { id: '3',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-  { id: '4',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-  { id: '5',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-  { id: '6',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-  { id: '7',problem:'Sự cố máy chiếu hỏng', name: "Lê Văn Hiếu", building: "T", room: "1101", time: "09h45", date: "17/02/2023" },
-
-]
+export default Receiving;

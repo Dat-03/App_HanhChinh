@@ -4,9 +4,17 @@ import ButtonCustom from '../../../../../../components/customs/Button';
 import useStyles from './styles';
 import {NavigationService} from '../../../../../../navigation';
 import {routes} from '../../../../../../constants';
+import {useAppDispatch} from '../../../../../../hooks';
+import {ReportActions} from '../../../../../../redux';
 
 const ButtonContent: React.FC = () => {
   const styles = useStyles();
+  const dispatch = useAppDispatch();
+
+  const handleReport = () => {
+    dispatch(ReportActions.clearReport());
+    NavigationService.navigate(routes.PROBLEM);
+  };
   return (
     <ScrollView style={styles.scrollView}>
       <ButtonCustom
@@ -15,7 +23,7 @@ const ButtonContent: React.FC = () => {
         type="font-awesome-5"
         color="#ec449c"
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.PROBLEM)}
+        onPressButton={handleReport}
       />
       <ButtonCustom
         textButton="Tính sẵn sàng phòng học"

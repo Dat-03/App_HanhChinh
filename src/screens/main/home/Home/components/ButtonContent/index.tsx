@@ -1,19 +1,20 @@
-import {View, ScrollView} from 'react-native';
 import React from 'react';
+import {View} from 'react-native';
+import colors from '../../../../../../assets/colors';
 import ButtonCustom from '../../../../../../components/customs/Button';
-import styles from './styles';
-import {NavigationService} from '../../../../../../navigation';
 import {routes} from '../../../../../../constants';
+import {NavigationService} from '../../../../../../navigation';
 
 const ButtonContent: React.FC = () => {
   return (
-    <ScrollView style={styles.scrollView}>
+    <View>
       <ButtonCustom
         textButton="Báo cáo sự cố"
         name="users"
         type="font-awesome"
         color="#ec449c"
         size={25}
+        style={{backgroundColor: colors.buttonGray}}
         onPressButton={() => NavigationService.navigate(routes.CREATE_REPORT)}
       />
       <ButtonCustom
@@ -22,17 +23,17 @@ const ButtonContent: React.FC = () => {
         type="antdesign"
         color="#ec449c"
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.STATISTICAL)}
+        style={{backgroundColor: colors.buttonGray}}
       />
       <ButtonCustom
         textButton="Quản lý mượn phòng học, hội trường"
         name="history"
         type="font-awesome"
         color="#ec449c"
+        style={{backgroundColor: colors.buttonGray}}
         size={25}
-        onPressButton={() => NavigationService.navigate(routes.SUPPORT)}
       />
-    </ScrollView>
+    </View>
   );
 };
 

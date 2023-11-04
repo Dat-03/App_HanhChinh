@@ -1,3 +1,5 @@
 export * from './app.selector';
 export * from './authen.selector';
 export * from './report.selector';
+export * from './report.adm.selector';
+export * from './loading.selector';

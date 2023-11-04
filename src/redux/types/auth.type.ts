@@ -13,6 +13,7 @@ export type AuthState = {
   user: Partial<User>;
   token: string;
   refreshToken: string;
+  imageUser: string;
 };
 
 export type User = _id & {

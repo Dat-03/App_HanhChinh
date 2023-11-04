@@ -7,7 +7,6 @@ import {getDataReportTeacher, getDetail} from '../../../../../../redux';
 
 const TimelineItem: React.FC = () => {
   const data = useAppSelector(getDetail);
-  console.log('timeline', data);
 
   return (
     <View style={styles.container}>

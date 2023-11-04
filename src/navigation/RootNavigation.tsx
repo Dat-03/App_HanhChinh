@@ -2,12 +2,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {navigationRef} from './NavigationService';
 
-import AppNavigator from './navigators/AppNavigator';
-import NVHCNavigator from './navigators/NVHCNavigator';
-import AuthNavigator from './navigators/AuthNavigator';
 import {useAppSelector} from '../hooks';
 import {getAuthRoleUser} from '../redux/selectors/authen.selector';
+import {Timelineitem} from '../screens/main/home/Support/components';
+import AppNavigator from './navigators/AppNavigator';
+import NVHCNavigator from './navigators/NVHCNavigator';
 import ManagerNavigator from './navigators/ManagerNavigator';
+import AuthNavigator from './navigators/AuthNavigator';
 
 const RootNavigation = () => {
   const dataRoleApi = useAppSelector(getAuthRoleUser);
@@ -16,8 +17,6 @@ const RootNavigation = () => {
 
   return (
     <NavigationContainer ref={navigationRef}>
-      {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-
       {dataRoleApi === 'TEACHER' ? (
         <AppNavigator />
       ) : dataRoleApi === 'ADMIN' ? (

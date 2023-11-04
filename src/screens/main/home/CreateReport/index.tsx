@@ -19,6 +19,8 @@ import {
   getListRoom,
   getListTypeReport,
 } from '../../../../redux';
+import {NavigationService} from '../../../../navigation';
+import {routes} from '../../../../constants';
 
 const CreateReport = () => {
   const listRoom = useAppSelector(getListRoom);
@@ -32,12 +34,8 @@ const CreateReport = () => {
   const formdata = new FormData();
   const dispatch = useAppDispatch();
 
-  formdata.append('user_create', idUser);
-  formdata.append('room', selected);
-  formdata.append('type', selectedType);
-  formdata.append('description', valueInput);
-
   const handlePostReport = () => {
+    console.log('FormData trước khi gửi:', formdata);
     dispatch(ReportActions.postReport(formdata));
   };
 
@@ -52,6 +50,11 @@ const CreateReport = () => {
       key: type._id,
       value: type.name,
     })) || [];
+
+  formdata.append('user_create', idUser);
+  formdata.append('room', selected);
+  formdata.append('type', selectedType);
+  formdata.append('description', valueInput);
 
   return (
     <View style={styles.container}>

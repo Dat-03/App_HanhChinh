@@ -1,30 +1,24 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
-import useStyles from './styles'
-
-import { Icon } from '@rneui/base';
-import { images } from '../../../../../../assets';
-import { HeaderCustom } from '../../../../../../components';
+import {View, Text, Image} from 'react-native';
+import React from 'react';
+import useStyles from './styles';
+import {getAuthUser, getImageUser} from '../../../../../../redux';
+import {useAppSelector} from '../../../../../../hooks';
+import {Icon} from '@rneui/base';
 
 const InfoHis = () => {
   const styles = useStyles();
+  const imageUser = useAppSelector(getImageUser);
+  const dataUserApi = useAppSelector(getAuthUser);
+
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        {/* <View style={{flexDirection:'row',alignItems:'center'}}>
-          <Image source={images.avatar} style={styles.img} />
-          <Text style={styles.name}>Nguyễn Trung Hải</Text>
-        </View>
-        <Icon name="bell" type='font-awesome' color={'white'} /> */}
-        <HeaderCustom 
-        imageUri={images.avatar}
-        fullName='Nguyễn Trung Hải' 
-        rightIcon={{name:"bell", type:'font-awesome',color:'white'}}
-        />
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <Image style={styles.image} source={{uri: imageUser}} />
+        <Text style={styles.textName}>{dataUserApi.name}</Text>
       </View>
-
+      <Icon name="bell" type="simple-line-icon" color={'white'} size={20} />
     </View>
-  )
-}
+  );
+};
 
-export default InfoHis
+export default InfoHis;
