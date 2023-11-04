@@ -1,12 +1,12 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import useStyles from './styles';
+import styles from './styles';
 import {getAuthUser, getImageUser} from '../../../../../../redux';
 import {useAppSelector} from '../../../../../../hooks';
 import {Icon} from '@rneui/base';
 
 const InfoHis = () => {
-  const styles = useStyles();
+
   const imageUser = useAppSelector(getImageUser);
   const dataUserApi = useAppSelector(getAuthUser);
 
