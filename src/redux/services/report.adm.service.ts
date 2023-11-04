@@ -41,4 +41,13 @@ export class ReportAdmService {
       data: requestData,
     });
   }
+
+  static async getHistoryAdm(payload: any) {
+    console.log(
+      `${Endpoints.HISTORY_ADM}?pageSize=${payload.pageSize}&page=${payload.page}`,
+    );
+    return await apiService.get(
+      `${Endpoints.HISTORY_ADM}?pageSize=${payload.pageSize}&page=${payload.page}`,
+    );
+  }
 }

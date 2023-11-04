@@ -41,6 +41,29 @@ const reducer = createSlice({
       };
     },
 
+    getListHistoryAdm: (state: ReportState, _: PayloadAction<any>) => {
+      return {
+        ...state,
+      };
+    },
+    setListHistoryAdm: (
+      state: ReportState,
+      action: PayloadAction<PayloadHttpListPage<ReportType>>,
+    ) => {
+      const currentData: ReportType[] = state.listHistoryAdm?.data || [];
+      const newData = action.payload.data || [];
+      const updatedData = [...currentData, ...newData];
+
+      return {
+        ...state,
+        listHistoryAdm: {
+          data: updatedData,
+          currentPage: action.payload.currentPage,
+          totalPage: action.payload.totalPage,
+        },
+      };
+    },
+
     getListCreateReport: (state: ReportState) => {
       return {
         ...state,
