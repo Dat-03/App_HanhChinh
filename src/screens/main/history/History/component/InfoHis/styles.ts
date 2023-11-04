@@ -1,10 +1,12 @@
 import {makeStyles, normalize} from '@rneui/themed';
 import {Device} from '../../../../../../utils';
+import { StyleSheet } from 'react-native';
+import colors from '../../../../../../assets/colors';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight(); //cho hinh`
 
-const useStyles = makeStyles(({colors}) => ({
+const useStyles = StyleSheet.create ({
   container: {
     flexDirection: 'row',
     paddingHorizontal: normalize(24),
@@ -36,6 +38,6 @@ const useStyles = makeStyles(({colors}) => ({
     color: '#FEFEFE',
     marginStart: normalize(12),
   },
-}));
+});
 
 export default useStyles;

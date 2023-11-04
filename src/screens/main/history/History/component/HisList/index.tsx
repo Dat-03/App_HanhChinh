@@ -1,6 +1,6 @@
 import {View, Text, FlatList} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import useStyles from './styles';
+import styles from './styles';
 import ItemHisList from './itemHisList';
 import {useAppDispatch, useAppSelector} from '../../../../../../hooks';
 import {
@@ -32,7 +32,7 @@ const HisList: React.FC = () => {
 
   const dataHistory = useAppSelector(getHistoryReportTeacher);
 
-  const styles = useStyles();
+ 
   const render = ({item}: {item: ReportType}) => <ItemHisList {...item} />;
 
   return (
