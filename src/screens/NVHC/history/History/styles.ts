@@ -9,6 +9,8 @@ const useStyles = makeStyles(({colors}) => ({
   container: {
     flex: normalize(1),
     backgroundColor: theme.lightColors?.colorMain,
+    margin:normalize(10),
+    height:'100%',
   },
 
 }));
