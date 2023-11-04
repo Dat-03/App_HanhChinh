@@ -1,18 +1,19 @@
-import {makeStyles, normalize} from '@rneui/themed';
+import { normalize} from '@rneui/themed';
 import {Device} from '../../../../utils';
-import {theme} from '../../../../theme';
+import { StyleSheet } from 'react-native';
+import colors from '../../../../assets/colors';
 
 const WIDTH = Device.getDeviceWidth();
 const HEIGHT = Device.getDeviceHeight();
 
-const useStyles = makeStyles(({colors}) => ({
+const useStyles =StyleSheet.create ({
   container: {
     flex: normalize(1),
-    backgroundColor: theme.lightColors?.colorMain,
+    backgroundColor: colors.colorMain,
     margin:normalize(10),
     height:'100%',
   },
 
-}));
+});
 
 export default useStyles;
