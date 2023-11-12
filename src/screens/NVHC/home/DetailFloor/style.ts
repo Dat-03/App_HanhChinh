@@ -22,6 +22,10 @@ const useStyles = makeStyles(({colors}) => ({
     paddingHorizontal: normalize(100),
     fontWeight: 'bold',
   },
+  button:{
+    marginStart:10,
+    marginTop:480
+  }
   
 }));
 

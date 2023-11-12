@@ -7,6 +7,7 @@ import styles from './styles';
 import { ItemFlatlistProps } from './types';
 import { BigButton, HeaderCustom } from '../../../../components';
 import ItemList from './components/itemlist';
+import { routes } from '../../../../constants';
 
 
 
@@ -37,7 +38,7 @@ const CheckingRoom: React.FC = () => {
         showsVerticalScrollIndicator={false}
       />
       {/* BUTTON */}
-      <BigButton textButton='Hoàn thành' style={{alignItems:'center'}}/>
+      <BigButton textButton='Hoàn thành' style={{marginStart:10}} onPressButton={() => NavigationService.navigate(routes.FLOORROOM2)}/>
     </View>
   )
 }

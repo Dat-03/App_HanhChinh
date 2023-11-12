@@ -9,12 +9,14 @@ import FloorRoom from '../screens/NVHC/home/FloorRoom';
 import DetailFloor from '../screens/NVHC/home/DetailFloor';
 import CheckingRoom from '../screens/NVHC/home/CheckingRoom';
 import ItemList from '../screens/NVHC/home/CheckingRoom/components/itemlist';
+import FloorRoom2 from '../screens/NVHC/home/FlooRoom2';
+import Room from '../screens/NVHC/home/FlooRoom2/component/Room';
 
 const RootNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       {/* {enableSignIn ? <AppNavigator /> : <AuthNavigator />} */}
-      <CheckingRoom/>
+      <NVHCNavigator/>
     </NavigationContainer>
   );
 };

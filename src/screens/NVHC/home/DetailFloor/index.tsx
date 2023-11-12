@@ -4,20 +4,24 @@ import useStyles from './style';
 import { Icon } from '@rneui/themed';
 import { NavigationService } from '../../../../navigation';
 import Button from '../../../NVHC/home/DetailFloor/Components/Button';
+import { BigButton } from '../../../../components';
+import { routes } from '../../../../constants';
 
 const DetailFloor: React.FC = () => {
-    const styles = useStyles();
-    const handlenPressGoback =() => {
-        NavigationService.goBack();
-    }
+  const styles = useStyles();
+  const handlenPressGoback = () => {
+    NavigationService.goBack();
+  }
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.header}>
-        <Icon name='chevron-left' type='font-awesome' onPress={handlenPressGoback}/>
+        <Icon name='chevron-left' type='font-awesome' onPress={handlenPressGoback} />
         <Text style={styles.text}>Tầng 1</Text>
         <Icon name='notifications-outline' type='ionicon' />
       </View>
-      <Button/>
+      <View style={styles.button}>
+      <BigButton textButton='Hoàn thành' onPressButton={() => NavigationService.navigate(routes.CHECKINKROOM)}/>
+      </View>
     </View>
   )
 }

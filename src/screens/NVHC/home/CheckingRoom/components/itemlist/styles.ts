@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
         marginVertical:normalize(5),
     },
     item:{
-        paddingHorizontal:normalize(5),
+     
         borderRadius:normalize(10),
         backgroundColor:'#EBEBEB',
         height:normalize(35),
-        width:normalize(110),
+        width:normalize(100),
         justifyContent:'center',
         marginRight:normalize(5)
 

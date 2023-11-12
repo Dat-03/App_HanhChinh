@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   },
   title:{
     paddingStart:normalize(20),
-    marginVertical:normalize(20),
     fontSize:normalize(18),
     fontWeight:'bold',
     color:'black'
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: normalize(23),
-    paddingVertical: normalize(30),
+    paddingVertical: normalize(15),
     paddingHorizontal: normalize(100),
     fontWeight: 'bold',
   },
