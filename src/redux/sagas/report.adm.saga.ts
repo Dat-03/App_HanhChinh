@@ -6,7 +6,7 @@ import {NavigationService} from '../../navigation';
 import {routes} from '../../constants';
 
 function* getListTeacherSaga(action: PayloadAction<any>): Generator {
-  yield put(LoadingActions.showLoading());
+  yield put(LoadingActions.showLoadingPage());
   try {
     const {data}: any = yield call(
       ReportAdmService.getReportByTeacher,
@@ -20,11 +20,12 @@ function* getListTeacherSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
-    yield put(LoadingActions.hideLoading());
+    yield put(LoadingActions.hideLoadingPage());
   }
 }
 
 function* getListAccptSaga(action: PayloadAction<any>): Generator {
+  yield put(LoadingActions.showLoadingPage());
   try {
     const {data}: any = yield call(
       ReportAdmService.getReportAccptByTeacher,
@@ -38,6 +39,7 @@ function* getListAccptSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
+    yield put(LoadingActions.hideLoadingPage());
   }
 }
 
@@ -51,6 +53,11 @@ function* getDataDetailAcceptSaga(action: PayloadAction<string>): Generator {
     if (data.status == 200) {
       console.log('run push tookit');
       yield put(ReportActions.setDetailReport(data));
+      if (data) {
+        {
+          yield put(LoadingActions.showReset());
+        }
+      }
     } else {
       console.log('Server errol !!!');
     }
@@ -70,11 +77,6 @@ function* getDoneSaga(action: PayloadAction<any>): Generator {
     console.log(data);
     if (data.status == 200) {
       console.log('run push tookit');
-      if (data) {
-        {
-          yield put(LoadingActions.showReset());
-        }
-      }
       NavigationService.navigate(routes.TIME_LINE_NVHC, {_id: data.data._id});
     } else {
       console.log('Server errol !!!');
@@ -93,11 +95,6 @@ function* getCancelSaga(action: PayloadAction<any>): Generator {
       action.payload,
     );
     if (data.status == 200) {
-      if (data) {
-        {
-          yield put(LoadingActions.showReset());
-        }
-      }
       console.log('run push tookit');
       NavigationService.navigate(routes.TIME_LINE_NVHC, {_id: data.data._id});
     } else {
@@ -110,7 +107,7 @@ function* getCancelSaga(action: PayloadAction<any>): Generator {
 }
 
 function* getHistoryAdmSaga(action: PayloadAction<any>): Generator {
-  yield put(LoadingActions.showLoading());
+  yield put(LoadingActions.showLoadingPage());
   try {
     console.log('run');
     const {data}: any = yield call(
@@ -127,7 +124,7 @@ function* getHistoryAdmSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
-    yield put(LoadingActions.hideLoading());
+    yield put(LoadingActions.hideLoadingPage());
   }
 }
 

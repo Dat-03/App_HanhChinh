@@ -5,18 +5,22 @@ import React, {FunctionComponent} from 'react';
 import {Icon} from '@rneui/themed';
 import styles from './styles';
 import {images} from '../../../../../../assets';
+import {getAuthUser, getImageUser} from '../../../../../../redux';
+import {useAppSelector} from '../../../../../../hooks';
 
 const Header_home: FunctionComponent = () => {
+  const dataUserApi = useAppSelector(getAuthUser);
+  const imageUser = useAppSelector(getImageUser);
   return (
     <View style={styles.header}>
       <TouchableOpacity>
         <Image
           style={{width: 64, height: 64, borderRadius: 99}}
-          source={images.avatar}
+          source={{uri: imageUser}}
         />
       </TouchableOpacity>
 
-      <Text style={styles.textName}>Nguyễn Văn A</Text>
+      <Text style={styles.textName}>{dataUserApi.name}</Text>
       <TouchableOpacity>
         <Icon name="bell" type="font-awesome-5" color={'white'} />
       </TouchableOpacity>

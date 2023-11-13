@@ -1,28 +1,32 @@
-import {View, Text} from 'react-native';
-import React from 'react';
-import useStyles from './styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {useAppDispatch} from '../../../../hooks';
-import {AuthActions, ReportActions} from '../../../../redux';
+import {Icon} from '@rneui/themed';
+import React, {FunctionComponent} from 'react';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {images} from '../../../../assets';
+
+import styles from './styles';
+import {useAppDispatch, useAppSelector} from '../../../../hooks';
+import {AuthActions, getAuthUser, getImageUser} from '../../../../redux';
 import {LogOut} from '../../../../utils/google';
+import {Content} from './components';
 
-const SettingNVHC: React.FC = () => {
-  const dispatch = useAppDispatch();
+const Setting: FunctionComponent = () => {
+  const dataUserApi = useAppSelector(getAuthUser);
+  const imageUser = useAppSelector(getImageUser);
 
-  const signOut = () => {
-    dispatch(AuthActions.Logout());
-    dispatch(ReportActions.clearListHistoryAdm());
-    LogOut();
-  };
-  const styles = useStyles();
   return (
     <View style={styles.container}>
-      <Text>index</Text>
-      <TouchableOpacity onPress={signOut} style={{backgroundColor: 'blue'}}>
-        <Text style={{fontSize: 40}}>Logout</Text>
-      </TouchableOpacity>
+      <View style={styles.viewUser}>
+        <Image style={styles.image} source={{uri: imageUser}} />
+        <View style={styles.viewText}>
+          <Text style={styles.textUser}>{dataUserApi.name}</Text>
+          <Text style={styles.textphone}>{dataUserApi.phone}</Text>
+        </View>
+      </View>
+      <View style={styles.viewContent}>
+        <Content />
+      </View>
     </View>
   );
 };
 
-export default SettingNVHC;
+export default Setting;

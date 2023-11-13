@@ -14,9 +14,6 @@ const Setting: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.viewHeader}>
-        <Icon name="left" type="antdesign" color={'white'} />
-      </View>
       <View style={styles.viewUser}>
         <Image style={styles.image} source={{uri: imageUser}} />
         <View style={styles.viewText}>

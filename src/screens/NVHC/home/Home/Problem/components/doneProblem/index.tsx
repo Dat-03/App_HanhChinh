@@ -48,7 +48,7 @@ const DoneProblem: React.FC = () => {
         key: dataAccept?._id,
       }),
     );
-    dispatch(ReportActions.clearListHistoryAdm());
+    // dispatch(ReportActions.clearListHistoryAdm());
   };
 
   const [selected, setSelected] = useState();
