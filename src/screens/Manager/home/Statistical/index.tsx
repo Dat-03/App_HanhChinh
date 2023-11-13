@@ -28,7 +28,8 @@ const Statistical: FunctionComponent = () => {
         </View>
         <View style={{paddingHorizontal: 2}}>
           <Text style={styles.textName}>Chung</Text>
-          <ItemButton />
+          <ItemButton
+          />
         </View>
         <Text style={styles.textName}>Công nghệ thông tin</Text>
       </View>

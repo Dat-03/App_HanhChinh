@@ -17,4 +17,5 @@ export default {
   colorInput: '#F1F4F5',
   borderButtonCamera: '#CACACA',
   buttonGray: '#F1F4F5',
+  statusText:'#7ADF86'
 };

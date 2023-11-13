@@ -20,6 +20,8 @@ const TabViewItem: React.FunctionComponent<CustomTabViewItemProps> = props => {
         titleStyle={props.titleStyle || styles.titleStyle}>
         <Tab.Item title={props.title1} />
         <Tab.Item title={props.title2} />
+        <Tab.Item title={props.title3} />
+        <Tab.Item title={props.title4} />
       </Tab>
 
       <TabView
@@ -32,6 +34,11 @@ const TabViewItem: React.FunctionComponent<CustomTabViewItemProps> = props => {
         </TabView.Item>
         <TabView.Item style={styles.containerTabView}>
           {props.screen2}
+        </TabView.Item>
+        <TabView.Item style={styles.containerTabView}>
+          {props.screen3}
+        </TabView.Item><TabView.Item style={styles.containerTabView}>
+          {props.screen4}
         </TabView.Item>
       </TabView>
     </View>

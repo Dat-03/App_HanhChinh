@@ -7,6 +7,7 @@ import Personnel from './Personnel';
 import { DetailPersonal } from './Personnel/personnelScreen/components';
 import RoomChecking from './RoomChecking';
 import Statistical from './Statistical';
+import ComputerError from './Statistical/components/ComputerError';
 
 export {default as HomeManager} from './Home';
 export const homeManagerScreens: Screen[] = [
@@ -37,5 +38,9 @@ export const homeManagerScreens: Screen[] = [
   {
     name: routes.STATISTICAL,
     component: Statistical,
+  },
+  {
+    name: routes.COMPUTERERROR,
+    component: ComputerError
   },
 ];

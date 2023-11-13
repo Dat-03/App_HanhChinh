@@ -5,7 +5,7 @@ import {getAuthUser, getImageUser} from '../../../../../../redux';
 import {useAppSelector} from '../../../../../../hooks';
 import {Icon} from '@rneui/base';
 
-const InfoHis = () => {
+const InfoHis:React.FC = () => {
 
   const imageUser = useAppSelector(getImageUser);
   const dataUserApi = useAppSelector(getAuthUser);

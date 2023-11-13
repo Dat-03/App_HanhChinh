@@ -2,6 +2,9 @@ import React from 'react';
 import {View, FlatList} from 'react-native';
 import {ButtonSimple} from '../../../../../../components';
 import styles from './styles';
+import {NavigationService} from '../../../../../../navigation';
+import {routes} from '../../../../../../constants';
+
 
 interface ButtonData {
   textButton: string;
@@ -9,6 +12,7 @@ interface ButtonData {
   type: string;
   size: number;
   color: string;
+  
 }
 
 const data: ButtonData[] = [
@@ -32,6 +36,7 @@ const data: ButtonData[] = [
     type: 'material',
     size: 28,
     color: '#ec449c',
+    
   },
   {
     textButton: 'Hành chính',
@@ -58,6 +63,7 @@ const ItemButton: React.FC = () => {
       size={item.size}
       color={item.color}
       style={styles.buttonStyle}
+      onPressButton={()=>NavigationService.navigate(routes.COMPUTERERROR)}
     />
   );
 
