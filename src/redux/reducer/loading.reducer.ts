@@ -6,6 +6,7 @@ const initialState: LoadingState = {
   isLoading: false,
   isReset: false,
   isLoadingPage: false,
+  isLoadingPageReport: false,
 };
 
 const reducer = createSlice({
@@ -25,6 +26,14 @@ const reducer = createSlice({
     hideLoadingPage: (state: LoadingState) => {
       state.isLoadingPage = false;
     },
+
+    showLoadingPageReport: (state: LoadingState) => {
+      state.isLoadingPageReport = true;
+    },
+    hideLoadingPageReport: (state: LoadingState) => {
+      state.isLoadingPageReport = false;
+    },
+
     showReset: (state: LoadingState) => {
       state.isReset = true;
     },

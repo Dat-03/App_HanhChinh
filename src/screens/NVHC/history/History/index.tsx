@@ -1,5 +1,5 @@
 import {View, Text, FlatList, ActivityIndicator} from 'react-native';
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import styles from './styles';
 import ItemHisList from './itemHisList';
 import {useAppDispatch, useAppSelector} from '../../../../hooks';
@@ -21,8 +21,10 @@ const HistoryNVHC: React.FC = () => {
   const isReset = useAppSelector(getIsReset);
   const isLoading = useAppSelector(getIsLoadingPage);
 
+  const scrollRef = useRef<FlatList | null>(null);
   useEffect(() => {
     if (isReset) {
+      scrollRef?.current?.scrollToOffset({offset: 0, animated: true});
       dispatch(ReportActions.getListHistoryAdm({pageSize: 10, page: 1}));
       dispatch(LoadingActions.hideReset());
       setPage(1);
@@ -34,7 +36,7 @@ const HistoryNVHC: React.FC = () => {
   }, [page]);
 
   const loadMoreHistory = () => {
-    if (totalPage && page < totalPage) {
+    if (totalPage && page < totalPage && !isLoading) {
       console.log(totalPage);
       setPage(page + 1);
     }
@@ -54,6 +56,7 @@ const HistoryNVHC: React.FC = () => {
   return (
     <View style={styles.container}>
       <FlatList
+        ref={scrollRef}
         data={data}
         renderItem={render}
         keyExtractor={item => item._id}

@@ -6,7 +6,7 @@ import {NavigationService} from '../../navigation';
 import {routes} from '../../constants';
 
 function* getListTeacherSaga(action: PayloadAction<any>): Generator {
-  yield put(LoadingActions.showLoading());
+  yield put(LoadingActions.showLoadingPage());
   try {
     const {data}: any = yield call(
       ReportAdmService.getReportByTeacher,
@@ -20,11 +20,12 @@ function* getListTeacherSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
-    yield put(LoadingActions.hideLoading());
+    yield put(LoadingActions.hideLoadingPage());
   }
 }
 
 function* getListAccptSaga(action: PayloadAction<any>): Generator {
+  yield put(LoadingActions.showLoadingPage());
   try {
     const {data}: any = yield call(
       ReportAdmService.getReportAccptByTeacher,
@@ -38,6 +39,7 @@ function* getListAccptSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
+    yield put(LoadingActions.hideLoadingPage());
   }
 }
 

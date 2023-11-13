@@ -9,7 +9,7 @@ import {
   ReportType,
 } from '../../../../../../../redux/types/report.type';
 import {useAppSelector} from '../../../../../../../hooks';
-import {getImageUser} from '../../../../../../../redux';
+import {getImageUser, getIsLoadingPage} from '../../../../../../../redux';
 
 const ItemListProblem: React.FC<ReportType> = props => {
   const {
@@ -25,6 +25,7 @@ const ItemListProblem: React.FC<ReportType> = props => {
     user_create,
   } = props;
   const imageUser = useAppSelector(getImageUser);
+
   const GotoDetail = () => {
     NavigationService.navigate(routes.DETAILPROBLEM, {_id: _id});
   };
