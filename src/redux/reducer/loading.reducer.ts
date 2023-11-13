@@ -5,6 +5,7 @@ import {LoadingState} from '../types';
 const initialState: LoadingState = {
   isLoading: false,
   isReset: false,
+  isLoadingPage: false,
 };
 
 const reducer = createSlice({
@@ -16,6 +17,13 @@ const reducer = createSlice({
     },
     hideLoading: (state: LoadingState) => {
       state.isLoading = false;
+    },
+
+    showLoadingPage: (state: LoadingState) => {
+      state.isLoadingPage = true;
+    },
+    hideLoadingPage: (state: LoadingState) => {
+      state.isLoadingPage = false;
     },
     showReset: (state: LoadingState) => {
       state.isReset = true;

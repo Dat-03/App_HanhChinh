@@ -105,7 +105,7 @@ function* getCancelSaga(action: PayloadAction<any>): Generator {
 }
 
 function* getHistoryAdmSaga(action: PayloadAction<any>): Generator {
-  yield put(LoadingActions.showLoading());
+  yield put(LoadingActions.showLoadingPage());
   try {
     console.log('run');
     const {data}: any = yield call(
@@ -122,7 +122,7 @@ function* getHistoryAdmSaga(action: PayloadAction<any>): Generator {
   } catch (error) {
     console.log(error);
   } finally {
-    yield put(LoadingActions.hideLoading());
+    yield put(LoadingActions.hideLoadingPage());
   }
 }
 
