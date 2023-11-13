@@ -4,20 +4,35 @@ import styles from './styles';
 import ItemHisList from './itemHisList';
 import {useAppDispatch, useAppSelector} from '../../../../../../hooks';
 import {
+  LoadingActions,
   ReportActions,
   getDataReportTeacher,
   getHistoryReportTeacher,
+  getIsReset,
   getTotalPageHistoryTeacher,
 } from '../../../../../../redux';
 import {
   HistoryReportType,
   ReportType,
 } from '../../../../../../redux/types/report.type';
+import {NavigationService} from '../../../../../../navigation';
 
 const HisList: React.FC = () => {
+  const reset = useAppSelector(getIsReset);
+
+  console.log(reset);
+
   const [page, setPage] = useState(1);
   const dispatch = useAppDispatch();
   const totalPage = useAppSelector(getTotalPageHistoryTeacher);
+
+  useEffect(() => {
+    if (reset) {
+      setPage(1);
+      dispatch(ReportActions.getListHistoryTeacher({page: page, pageSize: 10}));
+      dispatch(LoadingActions.hideReset());
+    }
+  }, [reset]);
 
   useEffect(() => {
     dispatch(ReportActions.getListHistoryTeacher({page: page, pageSize: 10}));
@@ -32,7 +47,6 @@ const HisList: React.FC = () => {
 
   const dataHistory = useAppSelector(getHistoryReportTeacher);
 
- 
   const render = ({item}: {item: ReportType}) => <ItemHisList {...item} />;
 
   return (
@@ -43,7 +57,6 @@ const HisList: React.FC = () => {
         data={dataHistory}
         renderItem={render}
         keyExtractor={item => item._id}
-        showsVerticalScrollIndicator={false}
         onEndReached={loadMoreHistory}
         onEndReachedThreshold={0.1}
       />

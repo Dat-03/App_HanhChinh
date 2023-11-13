@@ -57,6 +57,7 @@ function* getReportTeacherSaga(action: any): Generator {
       yield put(ReportActions.setReport(data));
       showToastSuccess(data.message);
       NavigationService.navigate(routes.SUPPORT, {_id: data.data._id});
+      yield put(LoadingActions.showReset());
     } else {
       showToastError(data.message);
       console.log('Server error !!!');

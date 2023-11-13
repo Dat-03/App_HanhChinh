@@ -4,13 +4,13 @@ import styles from './styles';
 import {Icon} from '@rneui/themed';
 import Switch_custom from '../../../../../../components/customs/Switch';
 import {useAppDispatch} from '../../../../../../hooks';
-import {AuthActions} from '../../../../../../redux';
+import {AuthActions, ReportActions} from '../../../../../../redux';
 import {LogOut} from '../../../../../../utils/google';
 const Content: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dispatch = useAppDispatch();
 
   const signOut = () => {
+    dispatch(ReportActions.clearListHistoryTeacher());
     dispatch(AuthActions.Logout());
     LogOut();
   };

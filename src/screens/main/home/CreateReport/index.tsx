@@ -13,6 +13,7 @@ import UpImage from './components/UpImage';
 import {backScreen} from '../../../../utils';
 import {useAppDispatch, useAppSelector} from '../../../../hooks';
 import {
+  LoadingActions,
   ReportActions,
   getAuthIdUser,
   getAuthUser,
@@ -37,6 +38,7 @@ const CreateReport = () => {
   const handlePostReport = () => {
     console.log('FormData trước khi gửi:', formdata);
     dispatch(ReportActions.postReport(formdata));
+    dispatch(ReportActions.clearListHistoryTeacher());
   };
 
   const dataRoom =

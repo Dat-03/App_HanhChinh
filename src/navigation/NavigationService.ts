@@ -62,4 +62,12 @@ export class NavigationService {
       routes,
     });
   }
+  static resetScreen() {
+    const resetAction = CommonActions.reset({
+      index: 1,
+      routes: [{name: routes.HISTORY}], // Đặt tên màn hình cần reset ở đây
+    });
+
+    navigationRef.current?.dispatch(resetAction);
+  }
 }
