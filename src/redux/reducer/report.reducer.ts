@@ -63,6 +63,12 @@ const reducer = createSlice({
         },
       };
     },
+    clearListHistoryAdm: (state: ReportState) => {
+      return {
+        ...state,
+        listHistoryAdm: {},
+      };
+    },
 
     getListCreateReport: (state: ReportState) => {
       return {
@@ -78,6 +84,12 @@ const reducer = createSlice({
         createReportData: {
           data: action.payload.data,
         },
+      };
+    },
+    clearListHistoryTeacher: (state: ReportState) => {
+      return {
+        ...state,
+        historyReportData: {},
       };
     },
 
@@ -144,8 +156,9 @@ const reducer = createSlice({
 
     clearReport: (state: ReportState) => {
       return {
-        listReportAdm: undefined,
-        listAccptReportAdm: undefined,
+        ...state,
+        listReportAdm: {},
+        listAccptReportAdm: {},
       };
     },
 
@@ -180,6 +193,7 @@ const reducer = createSlice({
 
     clearDetail: (state: ReportState) => {
       return {
+        ...state,
         detailData: {},
       };
     },

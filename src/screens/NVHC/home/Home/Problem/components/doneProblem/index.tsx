@@ -38,6 +38,7 @@ const DoneProblem: React.FC = () => {
         key: dataAccept?._id,
       }),
     );
+    // dispatch(ReportActions.clearListHistoryAdm());
   };
   const handlePressCancel = () => {
     dispatch(
@@ -47,6 +48,7 @@ const DoneProblem: React.FC = () => {
         key: dataAccept?._id,
       }),
     );
+    dispatch(ReportActions.clearListHistoryAdm());
   };
 
   const [selected, setSelected] = useState();

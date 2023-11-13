@@ -16,6 +16,7 @@ import Animated, {
 import {routes} from '../../constants';
 import {Device} from '../../utils';
 import {Home, History, Contact, Setting} from '../../screens/main';
+import {NavigationService} from '../NavigationService';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -88,6 +89,10 @@ const BottomNavigator: FunctionComponent = () => {
           const isFocused = state.index === index;
 
           const onPress = () => {
+            // if (route.name === routes.HISTORY) {
+            //   NavigationService.resetScreen();
+            // }
+
             const event = navigation.emit({
               type: 'tabPress',
               target: route.key,

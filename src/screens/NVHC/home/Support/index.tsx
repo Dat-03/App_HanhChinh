@@ -8,7 +8,7 @@ import TimelineItem from './components/Timeline';
 import styles from './styles';
 import {useRoute} from '@react-navigation/native';
 import {useAppDispatch, useAppSelector} from '../../../../hooks';
-import {ReportActions, getDetail} from '../../../../redux';
+import {LoadingActions, ReportActions, getDetail} from '../../../../redux';
 import {routes} from '../../../../constants';
 interface RouteParamsIdReport {
   _id: string;
