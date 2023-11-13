@@ -38,6 +38,7 @@ const DetailProblem: React.FC = () => {
       dispatch(ReportActions.getDetailAccept(dataDetail?._id));
       NavigationService.navigate(routes.DONEPROBLEM, {_id: dataDetail._id});
       dispatch(ReportActions.clearDetail());
+      dispatch(ReportActions.clearListHistoryAdm());
     }
   };
   return (
