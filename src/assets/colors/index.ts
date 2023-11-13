@@ -13,8 +13,11 @@ export default {
   black0: '#000000',
   grey5: '#B0B3B8', // ||
   grey3: '#667085',
+  grey4: '#7F7F7F',
   line: '#D9D9D9',
   colorInput: '#F1F4F5',
   borderButtonCamera: '#CACACA',
   buttonGray: '#F1F4F5',
+  blue0: '#2D5381',
+  blue1: '#0951A9',
 };
