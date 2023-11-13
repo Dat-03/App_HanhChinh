@@ -70,6 +70,11 @@ function* getDoneSaga(action: PayloadAction<any>): Generator {
     console.log(data);
     if (data.status == 200) {
       console.log('run push tookit');
+      if (data) {
+        {
+          yield put(LoadingActions.showReset());
+        }
+      }
       NavigationService.navigate(routes.TIME_LINE_NVHC, {_id: data.data._id});
     } else {
       console.log('Server errol !!!');
@@ -88,6 +93,11 @@ function* getCancelSaga(action: PayloadAction<any>): Generator {
       action.payload,
     );
     if (data.status == 200) {
+      if (data) {
+        {
+          yield put(LoadingActions.showReset());
+        }
+      }
       console.log('run push tookit');
       NavigationService.navigate(routes.TIME_LINE_NVHC, {_id: data.data._id});
     } else {
@@ -99,10 +109,33 @@ function* getCancelSaga(action: PayloadAction<any>): Generator {
   }
 }
 
+function* getHistoryAdmSaga(action: PayloadAction<any>): Generator {
+  yield put(LoadingActions.showLoading());
+  try {
+    console.log('run');
+    const {data}: any = yield call(
+      ReportAdmService.getHistoryAdm,
+      action.payload,
+    );
+    if (data.status == 200) {
+      console.log('run push tookit');
+      yield put(ReportActions.setListHistoryAdm(data.data));
+      // NavigationService.navigate(routes.TIME_LINE_NVHC, {_id: data.data._id});
+    } else {
+      console.log('Server errol !!!');
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    yield put(LoadingActions.hideLoading());
+  }
+}
+
 export default function* watchReportSagaAdm() {
-  yield takeEvery(ReportActions.getListReportAdm.type, getListTeacherSaga);
-  yield takeEvery(ReportActions.getListAccptReportAdm.type, getListAccptSaga);
+  yield takeLatest(ReportActions.getListReportAdm.type, getListTeacherSaga);
+  yield takeLatest(ReportActions.getListAccptReportAdm.type, getListAccptSaga);
   yield takeLatest(ReportActions.getDetailAccept.type, getDataDetailAcceptSaga);
   yield takeLatest(ReportActions.postDoneReport.type, getDoneSaga);
   yield takeLatest(ReportActions.postCancelReport.type, getCancelSaga);
+  yield takeLatest(ReportActions.getListHistoryAdm.type, getHistoryAdmSaga);
 }

@@ -15,17 +15,25 @@ const RootNavigation = () => {
 
   console.log('user api role :', dataRoleApi);
 
+  let navigationComponent;
+
+  switch (dataRoleApi) {
+    case 'TEACHER':
+      navigationComponent = <AppNavigator />;
+      break;
+    case 'ADMIN':
+      navigationComponent = <NVHCNavigator />;
+      break;
+    case 'MANAGER':
+      navigationComponent = <ManagerNavigator />;
+      break;
+    default:
+      navigationComponent = <AuthNavigator />;
+  }
+
   return (
     <NavigationContainer ref={navigationRef}>
-      {dataRoleApi === 'TEACHER' ? (
-        <AppNavigator />
-      ) : dataRoleApi === 'ADMIN' ? (
-        <NVHCNavigator />
-      ) : dataRoleApi == 'MANAGER' ? (
-        <ManagerNavigator />
-      ) : (
-        <AuthNavigator />
-      )}
+      {navigationComponent}
     </NavigationContainer>
   );
 };

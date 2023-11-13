@@ -3,7 +3,7 @@ import React from 'react';
 import useStyles from './styles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useAppDispatch} from '../../../../hooks';
-import {AuthActions} from '../../../../redux';
+import {AuthActions, ReportActions} from '../../../../redux';
 import {LogOut} from '../../../../utils/google';
 
 const SettingNVHC: React.FC = () => {
@@ -11,6 +11,7 @@ const SettingNVHC: React.FC = () => {
 
   const signOut = () => {
     dispatch(AuthActions.Logout());
+    dispatch(ReportActions.clearListHistoryAdm());
     LogOut();
   };
   const styles = useStyles();
