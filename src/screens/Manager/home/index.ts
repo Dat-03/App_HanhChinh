@@ -2,9 +2,11 @@ import {routes} from '../../../constants';
 import {Screen} from '../../../types';
 import Achievement from './Achievement';
 import Event from './Event';
+import DetailEvent from './Event/DetailEvent';
+import HistoryEvent from './HistoryEvent';
 import Incident from './Incident';
 import Personnel from './Personnel';
-import { DetailPersonal } from './Personnel/personnelScreen/components';
+import {DetailPersonal} from './Personnel/personnelScreen/components';
 import RoomChecking from './RoomChecking';
 import Statistical from './Statistical';
 
@@ -37,5 +39,13 @@ export const homeManagerScreens: Screen[] = [
   {
     name: routes.STATISTICAL,
     component: Statistical,
+  },
+  {
+    name: routes.HISTORYEVENT,
+    component: HistoryEvent,
+  },
+  {
+    name: routes.DETAILEVENT,
+    component: DetailEvent,
   },
 ];
