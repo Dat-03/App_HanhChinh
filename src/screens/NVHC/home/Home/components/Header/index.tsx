@@ -17,8 +17,7 @@ const Header_home: FunctionComponent = () => {
       <TouchableOpacity>
         <Image
           style={{width: 64, height: 64, borderRadius: 99}}
-          source={{uri: imgUser}}
-        />
+          source={{uri: imgUser}}/>
       </TouchableOpacity>
 
       <Text style={styles.textName}>{user.name}</Text>
